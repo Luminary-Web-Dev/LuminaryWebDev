@@ -1,156 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Luminary — The Living Menu</title>
-    <link rel="stylesheet" href="styles.css">
-   
+  <meta charset="UTF-8">
+  <title>Luminary — The Living Menu</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
-    <div class="logo">Luminary</div>
+  <div class="logo">Luminary</div>
 
-    <nav class="nav-links">
-        <a href="#">About</a>
-        <a href="#">Menu</a>
-        <a href="#">Events</a>
-    </nav>
+  <nav class="nav-links">
+    <a href="#">About</a>
+    <a href="#">Menu</a>
+    <a href="#">Events</a>
+  </nav>
 
-    <div class="nav-spacer"></div>
+  <div class="nav-spacer"></div>
 </header>
 
 <main class="layout">
 
-    <!-- LEFT HERO -->
-    <section class="hero-left">
-
+  <!-- LEFT HERO -->
+  <section class="hero-left">
     <div class="hero-video">
-        <!-- Video goes here -->
-           <video autoplay muted loop playsinline>
+      <video autoplay muted loop playsinline>
         <source src="videos/hero.mp4" type="video/mp4">
-    </video>
+      </video>
     </div>
 
     <div class="hero-description">
-        <h2>The Living Menu</h2>
-        <p>Seasonal expression through evolving cuisine.</p>
+      <h2>The Living Menu</h2>
+      <p>Seasonal expression through evolving cuisine.</p>
     </div>
-
-</section>
+  </section>
 
   <!-- RIGHT SIDEBAR -->
-<aside class="video-sidebar">
+  <aside class="video-sidebar">
+    <div class="sidebar-box">
 
-  <div class="sidebar-box">
+      <div class="sidebar-video">
+        <video autoplay muted loop playsinline>
+          <source src="videos/sidebar.mp4" type="video/mp4">
+        </video>
+      </div>
 
-    <!-- Top Autoplay Video -->
-    <div class="sidebar-video">
-      <video autoplay muted loop playsinline>
-        <source src="videos/sidebar.mp4" type="video/mp4">
-      </video>
+      <div class="sidebar-row">
+        <video controls>
+          <source src="videos/behind-scenes.mp4" type="video/mp4">
+        </video>
+        <p>Behind the Scene</p>
+      </div>
+
+      <div class="sidebar-row">
+        <video controls>
+          <source src="videos/chef-technique.mp4" type="video/mp4">
+        </video>
+        <p>Chef Technique Clip</p>
+      </div>
+
+      <div class="sidebar-row">
+        <video controls>
+          <source src="videos/philosophy.mp4" type="video/mp4">
+        </video>
+        <p>Philosophy Quote</p>
+      </div>
+
+      <button class="reserve-btn">Reserve</button>
+
     </div>
+  </aside>
 
-    <!-- Small Video + Text Rows -->
-    <div class="sidebar-row">
-     <video controls>
-        <source src="videos/behind-scenes.mp4" type="video/mp4">
-      </video>
-      <p>Behind the Scene</p>
+  <!-- BOTTOM SECTION -->
+  <section class="menu-section">
+    <div class="bottom-layout">
+
+      <!-- LEFT -->
+      <div class="bottom-left">
+        <div class="menu-description">
+          <h2>Seasonal Menu</h2>
+          <p>
+            The menu evolves with the seasons. Our chef selects ingredients at their peak,
+            crafting dishes that reflect freshness, balance, and intention.
+          </p>
+        </div>
+
+        <img src="images/menu.png" alt="Seasonal Menu">
+      </div>
+
+      <!-- MIDDLE -->
+      <div class="bottom-middle">
+        <h2>Chef's Recommendations</h2>
+
+        <!-- 🔥 FIREBASE INJECTS HERE -->
+        <div id="menu-items"></div>
+
+        <!-- Reservation Form -->
+        <div class="reservation-form">
+          <h3>Reserve a Table</h3>
+
+          <select>
+            <option>Select Date</option>
+          </select>
+
+          <select>
+            <option>Select Time</option>
+          </select>
+
+          <select>
+            <option>Party Size</option>
+          </select>
+
+          <button class="reserve-button">Reserve</button>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="bottom-right">
+        <video muted controls playsinline>
+          <source src="videos/farm-to-table.mp4" type="video/mp4">
+        </video>
+
+        <h2>Farm to Table</h2>
+        <p>
+          We partner with local farms to bring sustainable,
+          responsibly sourced ingredients directly to your table.
+        </p>
+      </div>
+
     </div>
-
-    <div class="sidebar-row">
-      <video controls>
-        <source src="videos/chef-technique.mp4" type="video/mp4">
-      </video>
-      <p>Chef technique clip</p>
-    </div>
-
-    <div class="sidebar-row">
-     <video controls>
-        <source src="videos/philosophy.mp4" type="video/mp4">
-      </video>
-      <p>Philosophy quote</p>
-    </div>
-
-    <button class="reserve-btn">Reserve</button>
-
-  </div>
-</aside>
-
-    <section class="menu-section">
-  <div class="bottom-layout">
-
-    <!-- LEFT: Big Menu Image + Seasonal Description -->
-   <div class="bottom-left">
-
-  <div class="menu-description">
-    <h2>Seasonal Menu</h2>
-    <p>
-      The menu evolves with the seasons. Our chef selects ingredients at their peak,
-      crafting dishes that reflect freshness, balance, and intention.
-    </p>
-  </div>
-
-  <img src="images/menu.png" alt="Seasonal Menu">
-
-</div>
-
-    <!-- MIDDLE: Chef Recommendations -->
-    <div class="bottom-middle">
-      <h2>Chef's Recommendations</h2>
-
-   <div class="bottom-middle">
-  <h2>Chef's Recommendations</h2>
-
-  <div id="menu-items"></div>
-
-  <div class="reservation-form">
-     ...
-  </div>
-</div>
-
-      <div class="reservation-form">
-  <h3>Reserve a Table</h3>
-
-  <select>
-    <option>Select Date</option>
-  </select>
-
-  <select>
-    <option>Select Time</option>
-  </select>
-
-  <select>
-    <option>Party Size</option>
-  </select>
-
-  <button class="reserve-button">Reserve</button>
-</div>
-    </div>
-
-
-    <!-- RIGHT: Farm to Table Video -->
-    <div class="bottom-right">
-      <video muted controls playsinline>
-        <source src="videos/farm-to-table.mp4" type="video/mp4">
-      </video>
-
-      <h2>Farm to Table</h2>
-      <p>
-        We partner with local farms to bring sustainable,
-        responsibly sourced ingredients directly to your table.
-      </p>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 </main>
 
+<!-- IMPORTANT: MUST BE MODULE -->
 <script type="module" src="script.js"></script>
 
 </body>
