@@ -197,6 +197,26 @@ body {
   line-height: 1.5;
 }
 
+.reservation-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.reservation-form select {
+  padding: 10px;
+  border: 1px solid #111;
+  background: white;
+}
+
+.reserve-button {
+  padding: 10px;
+  border: 1px solid #111;
+  background: transparent;
+  cursor: pointer;
+}
+
 /* ===== RIGHT COLUMN ===== */
 
 .bottom-right {
