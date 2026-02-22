@@ -14,8 +14,12 @@ body {
 
 /* ================= NAVBAR ================= */
 .navbar {
-  background: #111;
-  padding: 20px 80px;
+  background-color: #111;
+  padding: 20px 8%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -24,28 +28,25 @@ body {
   align-items: center;
 }
 
-.logo {
+.logo a {
+  text-decoration: none;
   color: white;
   font-size: 20px;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  gap: 40px;
-  align-items: center;
+  font-weight: 600;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
+  margin-left: 30px;
   font-size: 14px;
 }
 
 .nav-btn {
   border: 1px solid white;
-  padding: 6px 14px;
+  padding: 8px 14px;
 }
+
 /* ================= HERO ================= */
 
 .hero {
