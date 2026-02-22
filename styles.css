@@ -51,7 +51,7 @@ body {
 
 .hero {
   height: 520px;
-  background-image: url("images/dish1.png"); /* exact filename */
+  background-image: url("images/dish1.png"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -367,4 +367,89 @@ body {
   text-align: right;
   font-size: 13px;
   opacity: 0.6;
+}
+
+
+/* ================= ABOUT PAGE ================= */
+/* ================= PAGE HERO WITH IMAGE ================= */
+
+.page-hero {
+  height: 380px;
+  background-image: url("images/dish2.png"); /* choose your hero image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* Dark overlay */
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Content above overlay */
+.page-hero h1,
+.page-hero p {
+  position: relative;
+  z-index: 1;
+}
+
+.about-section {
+  padding: 100px 10%;
+}
+
+.about-section.light {
+  background: #f2f2f2;
+  color: #111;
+}
+
+.about-section.darker {
+  background: #e6e6e6;
+  color: #111;
+}
+
+.about-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 80px;
+}
+
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  line-height: 1.7;
+}
+
+.about-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-media img,
+.about-media video {
+  width: 100%;
+  max-width: 500px;
+  height: 260px;
+  object-fit: cover;
 }
