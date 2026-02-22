@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book a Table — Luminary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+<header class="navbar">
+  <div class="nav-container">
+
+    <div class="logo">
+      <a href="index.html">Luminary</a>
+    </div>
+
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="events.html">Private Events</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservation.html" class="nav-btn active">Book a Table</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<section class="reservation-section">
+
+  <form name="reservation"
+        method="POST"
+        data-netlify="true"
+        action="/confirmation.html"
+        id="reservationForm">
+
+    <input type="hidden" name="form-name" value="reservation">
+
+    <!-- Hidden fields from Step 1 -->
+    <input type="hidden" name="partySize" id="finalPartySize">
+    <input type="hidden" name="date" id="finalDate">
+    <input type="hidden" name="time" id="finalTime">
+    <input type="hidden" name="occasion" id="finalOccasion">
+
+    <!-- ================= STEP 1 ================= -->
+    <div id="step1" class="form-step active">
+      <p class="step-label">Step 1 of 2</p>
+      <h2>Booking Information</h2>
+
+      <label>Party Size *</label>
+      <select id="partySizeSelect" required>
+        <option value="">Select</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5+</option>
+      </select>
+
+      <label>Date *</label>
+      <input type="date" id="dateSelect" required>
+
+      <label>Time *</label>
+      <input type="time" id="timeSelect" required>
+
+      <label>Occasion</label>
+      <input type="text" id="occasionSelect">
+
+      <button type="button" id="nextBtn">Next</button>
+    </div>
+
+    <!-- ================= STEP 2 ================= -->
+    <div id="step2" class="form-step">
+      <p class="step-label">Step 2 of 2</p>
+      <h2>Your Information</h2>
+
+      <label>Name *</label>
+      <input type="text" name="name" required>
+
+      <label>Email *</label>
+      <input type="email" name="email" required>
+
+      <label>Phone *</label>
+      <input type="tel" name="phone" required>
+
+      <label>Special Requests</label>
+      <textarea name="requests"></textarea>
+
+      <div class="form-buttons">
+        <button type="button" id="backBtn">Back</button>
+        <button type="submit">Confirm Reservation</button>
+      </div>
+    </div>
+
+  </form>
+
+</section>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h4>Contact Us</h4>
+      <p>0420 Solstice Way</p>
+      <p>Tempe, AZ 85281</p>
+      <p>(480) 888 - 5862</p>
+      <p>hello@luminary.com</p>
+      <p>events@luminary.com</p>
+      <p>Saturday - Sunday</p>
+      <p>10:00 AM - 10:00 PM</p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Helpful Links</h4>
+      <p>About</p>
+      <p>FAQ’s</p>
+      <p>Menu</p>
+      <p>Events</p>
+      <p>Careers</p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Follow Us</h4>
+      <p>Instagram</p>
+      <p>Facebook</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © Luminary 2026
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

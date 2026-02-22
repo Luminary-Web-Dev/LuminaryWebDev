@@ -371,11 +371,11 @@ body {
 
 
 /* ================= ABOUT PAGE ================= */
-/* ================= PAGE HERO WITH IMAGE ================= */
+
 
 .page-hero {
   height: 380px;
-  background-image: url("images/dish2.png"); /* choose your hero image */
+  background-image: url("images/dish2.png"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -452,4 +452,52 @@ body {
   max-width: 500px;
   height: 260px;
   object-fit: cover;
+}
+
+
+
+/* ================= Reservation PAGE ================= */
+.reservation-section {
+  padding: 100px 0;
+  background: #f2f2f2;
+}
+
+#reservationForm {
+  max-width: 500px;
+  margin: 80px auto;
+  background: white;
+  padding: 40px;
+}
+
+.form-step {
+  display: none;
+  flex-direction: column;
+}
+
+.form-step.active {
+  display: flex;
+}
+
+.form-step label {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.form-step input,
+.form-step select,
+.form-step textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
