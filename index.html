@@ -88,61 +88,146 @@
 </section>
 
 
-<!-- ================= MENU ================= -->
-<section class="menu-section">
 
-  <div class="menu-header">
-    <h2>Menu</h2>
-    <p>Appetizers</p>
-  </div>
+<!-- ================= Menu CAROUSEL SECTION ================= -->
+<section class="carousel-section">
 
-  <div class="menu-slider">
+  <h2 class="carousel-title">Menu</h2>
 
-    <button class="menu-arrow left">&#8249;</button>
+  <div class="carousel">
 
-    <div class="menu-image">
-  <img src="images/menu.png" alt="Menu">
-</div>
+    <button class="carousel-btn left" onclick="changeSlide(-1)">&#8249;</button>
 
-    <button class="menu-arrow right">&#8250;</button>
+    <!-- ===== APPETIZERS ===== -->
+    <div class="carousel-slide active">
+      <h3 class="carousel-category">Appetizers</h3>
+      <img src="images/dish1.png" class="carousel-image">
 
-  </div>
-
-  <div class="menu-items">
-
-    <div class="menu-item">
-      <h4>Starlight Tartare <span>/ 11</span></h4>
-      <p>Finely diced seasonal tuna with yuzu, avocado, and a touch of edible gold.</p>
+      <div class="carousel-items">
+        <div class="carousel-item">
+          <h4>Starlight Tartare <span>/ 11</span></h4>
+          <p>Seasonal tuna with yuzu and avocado.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Nebula Carpaccio <span>/ 10</span></h4>
+          <p>Beetroot and radish with truffle vinaigrette.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Lunar Croquettes <span>/ 12</span></h4>
+          <p>Crispy potato bites with saffron aioli.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Celestial Garden <span>/ 10</span></h4>
+          <p>Roasted seasonal vegetables.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="menu-item">
-      <h4>Nebula Carpaccio <span>/ 10</span></h4>
-      <p>Paper-thin slices of beetroot and radish, finished with truffle vinaigrette.</p>
+    <!-- ===== SIGNATURE PLATES ===== -->
+    <div class="carousel-slide">
+      <h3 class="carousel-category">Signature Plates</h3>
+      <img src="images/dish2.png" class="carousel-image">
+
+      <div class="carousel-items">
+        <div class="carousel-item">
+          <h4>Galactic Ribeye <span>/ 32</span></h4>
+          <p>Grass-fed ribeye with herb butter.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Celestial Lobster <span>/ 36</span></h4>
+          <p>Butter-poached lobster with citrus glaze.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Cosmic Duck <span>/ 28</span></h4>
+          <p>Seared duck with fig reduction.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Solar Lamb <span>/ 30</span></h4>
+          <p>Herb crusted lamb with garlic jus.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="menu-item">
-      <h4>Lunar Croquettes <span>/ 12</span></h4>
-      <p>Crispy potato and fontina bites served with smoked saffron aioli.</p>
+    <!-- ===== DESSERT ===== -->
+    <div class="carousel-slide">
+      <h3 class="carousel-category">Dessert</h3>
+      <img src="images/menu.png" class="carousel-image">
+
+      <div class="carousel-items">
+        <div class="carousel-item">
+          <h4>Moonlight Mousse <span>/ 12</span></h4>
+          <p>Dark chocolate mousse with vanilla cream.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Starfruit Tart <span>/ 10</span></h4>
+          <p>Citrus tart with almond crust.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Galaxy Cheesecake <span>/ 11</span></h4>
+          <p>Baked cheesecake with berry compote.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Cosmic Sorbet <span>/ 9</span></h4>
+          <p>Seasonal fruit sorbet.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="menu-item">
-      <h4>Celestial Garden Plate <span>/ 10</span></h4>
-      <p>Roasted seasonal vegetables with comet herb oil and toasted seeds.</p>
+    <!-- ===== BEVERAGES ===== -->
+    <div class="carousel-slide">
+      <h3 class="carousel-category">Beverages</h3>
+      <img src="images/dish1.png" class="carousel-image">
+
+      <div class="carousel-items">
+        <div class="carousel-item">
+          <h4>Celestial Wine <span>/ 14</span></h4>
+          <p>House red or white selection.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Galaxy Sparkling <span>/ 16</span></h4>
+          <p>Premium sparkling wine.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Solar Tea <span>/ 6</span></h4>
+          <p>Fresh brewed herbal tea.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Lunar Coffee <span>/ 5</span></h4>
+          <p>Locally roasted espresso blend.</p>
+        </div>
+      </div>
     </div>
 
-  </div>
+    <!-- ===== COCKTAILS ===== -->
+    <div class="carousel-slide">
+      <h3 class="carousel-category">Cocktails</h3>
+      <img src="images/dish2.png" class="carousel-image">
 
-  <div class="menu-dots">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+      <div class="carousel-items">
+        <div class="carousel-item">
+          <h4>Stellar Martini <span>/ 15</span></h4>
+          <p>Vodka, dry vermouth, citrus twist.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Cosmic Old Fashioned <span>/ 16</span></h4>
+          <p>Bourbon with smoked bitters.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Galaxy Margarita <span>/ 14</span></h4>
+          <p>Tequila with fresh lime.</p>
+        </div>
+        <div class="carousel-item">
+          <h4>Lunar Spritz <span>/ 13</span></h4>
+          <p>Prosecco with elderflower.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-btn right" onclick="changeSlide(1)">&#8250;</button>
+
   </div>
 
 </section>
-
-
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
@@ -180,5 +265,5 @@
   <div class="footer-bottom">
     © Luminary 2026
   </div>
-
+<script src="script.js"></script>
 </footer>

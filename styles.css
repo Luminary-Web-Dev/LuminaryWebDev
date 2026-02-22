@@ -251,25 +251,87 @@ body {
   color: #dcdcdc;
   line-height: 1.6;
 }
+/* ================= CAROUSEL SECTION ================= */
 
-/* ===== DOTS ===== */
+.carousel-section {
+  background: #3b3b3b;
+  color: white;
+  padding: 140px 0;
+  text-align: center;
+}
 
-.menu-dots {
+.carousel-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.carousel-category {
+  font-size: 20px;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carousel-slide {
+  display: none;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-image {
+  width: 100%;
+  max-width: 800px;
+  height: 320px;
+  object-fit: cover;
+  margin: 0 auto 50px;
+}
+
+.carousel-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 60px;
+  text-align: left;
+}
+
+.carousel-item h4 {
   display: flex;
-  justify-content: center;
-  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 
-.menu-dots span {
-  width: 7px;
-  height: 7px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.4;
+.carousel-item span {
+  opacity: 0.7;
 }
 
-.menu-dots span:first-child {
-  opacity: 1;
+.carousel-item p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 40%;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.carousel-btn.left {
+  left: -60px;
+}
+
+.carousel-btn.right {
+  right: -60px;
 }
 /* ================= FOOTER ================= */
 
