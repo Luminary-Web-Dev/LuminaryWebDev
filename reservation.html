@@ -25,7 +25,12 @@
 
   </div>
 </header>
-
+<!-- ================= HERO ================= -->
+<section class="page-hero">
+  <div class="hero-content">
+    <h1>Make Your Reservation</h1>
+  </div>
+</section>
 
 <section class="reservation-section">
 
@@ -45,9 +50,15 @@
 
     <!-- ================= STEP 1 ================= -->
     <div id="step1" class="form-step active">
-      <p class="step-label">Step 1 of 2</p>
-      <h2>Booking Information</h2>
 
+  <div class="form-header">
+    <h2>Booking Information</h2>
+    <span class="step-label">Step 1 of 2</span>
+  </div>
+
+  <div class="form-grid">
+
+    <div>
       <label>Party Size *</label>
       <select id="partySizeSelect" required>
         <option value="">Select</option>
@@ -57,18 +68,30 @@
         <option>4</option>
         <option>5+</option>
       </select>
+    </div>
 
+    <div>
       <label>Date *</label>
       <input type="date" id="dateSelect" required>
+    </div>
 
-      <label>Time *</label>
-      <input type="time" id="timeSelect" required>
-
+    <div>
       <label>Occasion</label>
       <input type="text" id="occasionSelect">
-
-      <button type="button" id="nextBtn">Next</button>
     </div>
+
+    <div>
+      <label>Time *</label>
+      <input type="time" id="timeSelect" required>
+    </div>
+
+  </div>
+
+  <div class="form-actions">
+    <button type="button" id="nextBtn">Next</button>
+  </div>
+
+</div>
 
     <!-- ================= STEP 2 ================= -->
     <div id="step2" class="form-step">

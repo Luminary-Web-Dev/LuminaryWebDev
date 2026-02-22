@@ -463,12 +463,12 @@ body {
 }
 
 #reservationForm {
-  max-width: 500px;
-  margin: 80px auto;
+  max-width: 950px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 70px 80px;
   background: white;
-  padding: 40px;
 }
-
 .form-step {
   display: none;
   flex-direction: column;
@@ -500,4 +500,60 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+/* ================= FORM HEADER ================= */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 70px;
+}
+
+.form-header h2 {
+  margin: 0;
+}
+
+.step-label {
+  font-size: 14px;
+  color: #777;
+}
+
+/* ================= GRID LAYOUT ================= */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 100px;
+}
+
+.form-grid label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-grid input,
+.form-grid select {
+  width: 100%;
+  padding: 18px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  background: #f2f2f2;
+}
+
+/* ================= BUTTON ALIGNMENT ================= */
+
+
+.form-actions button {
+  justify-content: flex-end;
+  padding: 12px 40px;
+  background: #e6e6e6;
+  border: 1px solid #bbb;
+  color: #888;
+  cursor: pointer;
+}
+
+.form-actions button.active-btn {
+  background: #111;
+  color: white;
+  border: none;
 }
