@@ -3,140 +3,216 @@
 <head>
   <meta charset="UTF-8">
   <title>Luminary — The Living Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVIGATION ================= -->
 <header class="navbar">
-  <div class="logo">Luminary</div>
+  <div class="nav-container">
+    <div class="logo">Luminary</div>
 
-  <nav class="nav-links">
-    <a href="#">About</a>
-    <a href="#">Menu</a>
-    <a href="#">Events</a>
-  </nav>
-
-  <div class="nav-spacer"></div>
+    <nav class="nav-links">
+      <a href="#">About</a>
+      <a href="#">Private Events</a>
+      <a href="#">Menu</a>
+      <a href="#" class="nav-btn">Book a Table</a>
+    </nav>
+  </div>
 </header>
 
-<main class="layout">
 
-  <!-- LEFT HERO -->
-  <section class="hero-left">
-    <div class="hero-video">
-      <video autoplay muted loop playsinline>
-        <source src="videos/hero.mp4" type="video/mp4">
-      </video>
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Celestial in spirit. Precise in execution.</h1>
+    <p>
+      Through thoughtful technique and carefully sourced ingredients,
+      each dish is designed to reveal depth, contrast, and luminous discovery.
+    </p>
+    <a href="#" class="hero-btn">Book a Table</a>
+  </div>
+</section>
+
+
+<!-- ================= WELCOME ================= -->
+<section class="welcome">
+  <h2>Welcome to Luminary</h2>
+</section>
+
+
+<!-- ================= OUR STORY ================= -->
+<section class="split-section light">
+
+  <div class="split-text">
+    <h3>Our Story</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <a href="#" class="learn-link">Learn More →</a>
+  </div>
+
+  <div class="split-media">
+    <video controls>
+      <source src="videos/behind-scenes.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</section>
+
+
+<!-- ================= CHEF PHILOSOPHY ================= -->
+<section class="split-section darker reverse">
+
+  <div class="split-media">
+    <video controls>
+      <source src="videos/philosophy.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="split-text">
+    <h3>Chef Philosophy</h3>
+    <p>
+      Celestial in spirit. Precise in execution.
+      Each dish reveals balance, depth, and discovery.
+    </p>
+    <a href="#" class="learn-link">Learn More →</a>
+  </div>
+
+</section>
+
+
+<!-- ================= PRIVATE DINING ================= -->
+<section class="split-section light">
+
+  <div class="split-text">
+    <h3>Private Dining</h3>
+    <p>
+      Host your next gathering in an intimate, celestial setting.
+      We offer curated menus and tailored service for special occasions.
+    </p>
+    <a href="#" class="outline-btn">Inquire</a>
+  </div>
+
+  <div class="split-media">
+    <video controls>
+      <source src="videos/farm-to-table.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</section>
+
+
+<!-- ================= MAKE YOUR RESERVATION ================= -->
+<section class="reservation-section">
+
+  <h2>Make Your Reservation</h2>
+
+  <form class="reservation-form">
+
+    <div class="form-row">
+      <input type="date" required>
+      <input type="time" required>
     </div>
 
-    <div class="hero-description">
-      <h2>The Living Menu</h2>
-      <p>Seasonal expression through evolving cuisine.</p>
+    <div class="form-row">
+      <select required>
+        <option value="">Occasion</option>
+        <option>Anniversary</option>
+        <option>Birthday</option>
+        <option>Business Dinner</option>
+      </select>
+
+      <select required>
+        <option value="">Party Size</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4+</option>
+      </select>
     </div>
-  </section>
 
-  <!-- RIGHT SIDEBAR -->
-  <aside class="video-sidebar">
-    <div class="sidebar-box">
+    <button type="submit" class="primary-btn">
+      Next
+    </button>
 
-      <div class="sidebar-video">
-        <video autoplay muted loop playsinline>
-          <source src="videos/sidebar.mp4" type="video/mp4">
-        </video>
-      </div>
+  </form>
 
-      <div class="sidebar-row">
-        <video controls>
-          <source src="videos/behind-scenes.mp4" type="video/mp4">
-        </video>
-        <p>Behind the Scene</p>
-      </div>
+</section>
 
-      <div class="sidebar-row">
-        <video controls>
-          <source src="videos/chef-technique.mp4" type="video/mp4">
-        </video>
-        <p>Chef Technique Clip</p>
-      </div>
 
-      <div class="sidebar-row">
-        <video controls>
-          <source src="videos/philosophy.mp4" type="video/mp4">
-        </video>
-        <p>Philosophy Quote</p>
-      </div>
+<!-- ================= MENU ================= -->
+<section class="menu-section">
 
-      <button class="reserve-btn">Reserve</button>
+  <div class="menu-header">
+    <h2>Menu</h2>
+    <p>Appetizers</p>
+  </div>
 
+  <div class="menu-content">
+
+    <div class="menu-image">
+      <img src="menu.png" alt="Menu Image">
     </div>
-  </aside>
 
-  <!-- BOTTOM SECTION -->
-  <section class="menu-section">
-    <div class="bottom-layout">
+    <div class="menu-grid">
 
-      <!-- LEFT -->
-      <div class="bottom-left">
-        <div class="menu-description">
-          <h2>Seasonal Menu</h2>
-          <p>
-            The menu evolves with the seasons. Our chef selects ingredients at their peak,
-            crafting dishes that reflect freshness, balance, and intention.
-          </p>
-        </div>
-
-        <img src="images/menu.png" alt="Seasonal Menu">
+      <div class="menu-item">
+        <img src="dish1.png" alt="Dish 1">
+        <h4>Starlight Tartare <span>/ 11</span></h4>
+        <p>Finely diced seasonal tuna with yuzu and avocado.</p>
       </div>
 
-      <!-- MIDDLE -->
-      <div class="bottom-middle">
-        <h2>Chef's Recommendations</h2>
-
-        <!-- 🔥 FIREBASE INJECTS HERE -->
-        <div id="menu-items"></div>
-
-        <!-- Reservation Form -->
-        <div class="reservation-form">
-          <h3>Reserve a Table</h3>
-
-          <select>
-            <option>Select Date</option>
-          </select>
-
-          <select>
-            <option>Select Time</option>
-          </select>
-
-          <select>
-            <option>Party Size</option>
-          </select>
-
-          <button class="reserve-button">Reserve</button>
-        </div>
-      </div>
-
-      <!-- RIGHT -->
-      <div class="bottom-right">
-        <video muted controls playsinline>
-          <source src="videos/farm-to-table.mp4" type="video/mp4">
-        </video>
-
-        <h2>Farm to Table</h2>
-        <p>
-          We partner with local farms to bring sustainable,
-          responsibly sourced ingredients directly to your table.
-        </p>
+      <div class="menu-item">
+        <img src="dish2.png" alt="Dish 2">
+        <h4>Nebula Carpaccio <span>/ 10</span></h4>
+        <p>Paper-thin slices of beetroot and radish.</p>
       </div>
 
     </div>
-  </section>
+
+  </div>
+
+</section>
 
 </main>
 
-<!-- IMPORTANT: MUST BE MODULE -->
-<script type="module" src="script.js"></script>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+  <div class="footer-column">
+    <h4>Contact Us</h4>
+    <p>0420 Solstice Way</p>
+    <p>Tempe, AZ 85281</p>
+    <p>(480) 888 - 5862</p>
+    <p>hello@luminary.com</p>
+  </div>
+
+  <div class="footer-column">
+    <h4>Helpful Links</h4>
+    <p>About</p>
+    <p>FAQ’s</p>
+    <p>Menu</p>
+    <p>Events</p>
+    <p>Careers</p>
+  </div>
+
+  <div class="footer-column">
+    <h4>Follow Us</h4>
+    <p>Instagram</p>
+    <p>Facebook</p>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© Luminary 2026</p>
+  </div>
+
+</footer>
 
 </body>
-</html>
