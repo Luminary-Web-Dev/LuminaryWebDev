@@ -17,14 +17,15 @@
     </div>
 
     <nav class="nav-links">
-      <a href="about.html">About</a>
-      <a href="events.html">Private Events</a>
-      <a href="menu.html">Menu</a>
-      <a href="reservation.html" class="nav-btn active">Book a Table</a>
+    <a href="about.html">About</a>
+    <a href="events.html">Private Events</a>
+    <a href="menu.html">Menu</a>
+    <a href="reservation.html" class="nav-btn active">Book a Table</a>
     </nav>
 
   </div>
 </header>
+
 <!-- ================= HERO ================= -->
 <section class="page-hero">
   <div class="hero-content">
@@ -32,6 +33,7 @@
   </div>
 </section>
 
+<!-- ================= RESERVATION SECTION ================= -->
 <section class="reservation-section">
 
   <form name="reservation"
@@ -51,74 +53,98 @@
     <!-- ================= STEP 1 ================= -->
     <div id="step1" class="form-step active">
 
-  <div class="form-header">
-    <h2>Booking Information</h2>
-    <span class="step-label">Step 1 of 2</span>
-  </div>
+      <div class="form-header">
+        <h2>Booking Information</h2>
+        <span class="step-label">Step 1 of 2</span>
+      </div>
 
-  <div class="form-grid">
+      <div class="form-grid">
 
-    <div>
-      <label>Party Size *</label>
-      <select id="partySizeSelect" required>
-        <option value="">Select</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5+</option>
-      </select>
+        <div>
+          <label>Party Size *</label>
+          <select id="partySizeSelect" required>
+            <option value="">Select</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5+</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Date *</label>
+          <input type="date" id="dateSelect" required>
+        </div>
+
+        <div>
+          <label>Occasion</label>
+          <input type="text" id="occasionSelect">
+        </div>
+
+        <div>
+          <label>Time *</label>
+          <input type="time" id="timeSelect" required>
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="nextBtn">Next</button>
+      </div>
+
     </div>
-
-    <div>
-      <label>Date *</label>
-      <input type="date" id="dateSelect" required>
-    </div>
-
-    <div>
-      <label>Occasion</label>
-      <input type="text" id="occasionSelect">
-    </div>
-
-    <div>
-      <label>Time *</label>
-      <input type="time" id="timeSelect" required>
-    </div>
-
-  </div>
-
-  <div class="form-actions">
-    <button type="button" id="nextBtn">Next</button>
-  </div>
-
-</div>
 
     <!-- ================= STEP 2 ================= -->
     <div id="step2" class="form-step">
-      <p class="step-label">Step 2 of 2</p>
+
+      <div class="form-header">
+        <button type="button" id="backBtn" class="back-btn">‹ Back</button>
+        <span class="step-label">Step 2 of 2</span>
+      </div>
+
       <h2>Your Information</h2>
 
-      <label>Name *</label>
-      <input type="text" name="name" required>
+      <div class="form-grid">
 
-      <label>Email *</label>
-      <input type="email" name="email" required>
+        <div>
+          <label>Name *</label>
+          <input type="text" name="name" required>
+        </div>
 
-      <label>Phone *</label>
-      <input type="tel" name="phone" required>
+        <div>
+          <label>Email *</label>
+          <input type="email" name="email" required>
+        </div>
 
-      <label>Special Requests</label>
-      <textarea name="requests"></textarea>
+        <div>
+          <label>Phone *</label>
+          <input type="tel" name="phone" required>
+        </div>
 
-      <div class="form-buttons">
-        <button type="button" id="backBtn">Back</button>
-        <button type="submit">Confirm Reservation</button>
+        <div>
+          <label>Dietary Restrictions</label>
+          <input type="text" name="dietary">
+        </div>
+
+        <div class="full-width">
+          <label>Special Requests</label>
+          <textarea name="requests"></textarea>
+        </div>
+
       </div>
+
+      <div class="form-actions">
+        <button type="submit" class="primary-btn">
+          Confirm Reservation
+        </button>
+      </div>
+
     </div>
 
   </form>
-
 </section>
+
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
 
