@@ -542,18 +542,16 @@ button {
 
 /* ================= BUTTON ALIGNMENT ================= */
 
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 60px;
+}
 
 .form-actions button {
-  justify-content: flex-end;
   padding: 12px 40px;
   background: #e6e6e6;
   border: 1px solid #bbb;
   color: #888;
   cursor: pointer;
-}
-
-.form-actions button.active-btn {
-  background: #111;
-  color: white;
-  border: none;
 }
