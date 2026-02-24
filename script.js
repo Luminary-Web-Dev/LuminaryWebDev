@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const backBtn = document.getElementById("backBtn");
   const step1 = document.getElementById("step1");
   const step2 = document.getElementById("step2");
+  const reservationForm = document.getElementById("reservationForm");
 
   if (nextBtn && backBtn && step1 && step2) {
 
@@ -59,14 +60,20 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      document.getElementById("finalPartySize").value = party;
-      document.getElementById("finalDate").value = date;
-      document.getElementById("finalTime").value = time;
-      document.getElementById("finalOccasion").value = occasion;
+      // Copy values into hidden fields (Netlify will capture these)
+      document.getElementById("partySizeHidden").value = party;
+      document.getElementById("dateHidden").value = date;
+      document.getElementById("timeHidden").value = time;
+      document.getElementById("occasionHidden").value = occasion;
+
+      // Save to localStorage for confirmation page display
+      localStorage.setItem("partySize", party);
+      localStorage.setItem("date", date);
+      localStorage.setItem("time", time);
+      localStorage.setItem("occasion", occasion);
 
       step1.classList.remove("active");
       step2.classList.add("active");
-
     });
 
     backBtn.addEventListener("click", () => {
@@ -77,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
-
 
 /* =====================================================
    MOBILE NAVIGATION (HAMBURGER MENU)
@@ -92,6 +98,44 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.addEventListener("click", function () {
       navLinks.classList.toggle("active");
     });
+  }
+
+});
+
+/* ================= CONFIRMATION PAGE ================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const confirmParty = document.getElementById("confirmPartySize");
+
+  if (confirmParty) {
+
+    const partySize = localStorage.getItem("partySize");
+    const date = localStorage.getItem("date");
+    const time = localStorage.getItem("time");
+    const occasion = localStorage.getItem("occasion");
+    const email = localStorage.getItem("email");
+
+    if (partySize) {
+      confirmParty.textContent = partySize;
+    }
+
+    if (date && time) {
+      const dateTimeElement = document.getElementById("confirmDateTime");
+      if (dateTimeElement) {
+        dateTimeElement.textContent = date + " – " + time;
+      }
+    }
+
+    const occasionElement = document.getElementById("confirmOccasion");
+    if (occasion && occasionElement) {
+      occasionElement.textContent = occasion;
+    }
+
+    const emailElement = document.getElementById("confirmEmail");
+    if (email && emailElement) {
+      emailElement.textContent = email;
+    }
   }
 
 });
