@@ -603,13 +603,14 @@ button{
 
 .form-actions button {
   padding: 14px 60px;
-  background: #f2f2f2;;
-  color: #000;;
+  background: #f2f2f2;
+  color: #000;
   border: none;
   transition: 0.3s ease;
 }
 .form-actions button:hover {
   background: #000;
+  color:floralwhite
 }
 
 /* ================= STEP 2 ONLY ================= */
@@ -685,4 +686,237 @@ button{
   display: flex;
   gap: 20px;
   justify-content: center;
+}
+
+
+
+/* =====================================================
+   RESPONSIVE BREAKPOINTS
+   ===================================================== */
+
+
+/* ================= TABLET (≤1024px) ================= */
+@media (max-width: 1024px) {
+
+  #reservationForm {
+    padding: 60px 50px;
+  }
+
+  .form-grid {
+    gap: 30px 50px;
+  }
+
+}
+
+
+/* ================= MOBILE (≤768px) ================= */
+@media (max-width: 768px) {
+
+  /* ---------- FORM ---------- */
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  #reservationForm {
+    padding: 40px 25px;
+  }
+
+  .form-actions {
+    justify-content: center;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .page-hero {
+    height: 300px;
+  }
+
+  .page-hero h1 {
+    font-size: 26px;
+  }
+
+  /* ---------- NAVIGATION ---------- */
+
+  .nav-container {
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #111;
+    padding: 20px;
+    z-index: 2000;
+  }
+
+  .nav-links a {
+    padding: 15px 0;
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+}
+
+
+/* ================= SMALL PHONES (≤480px) ================= */
+@media (max-width: 480px) {
+
+  #reservationForm {
+    padding: 30px 18px;
+  }
+
+  .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .step-label {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+}
+
+/* =========================================
+   NAVIGATION (FINAL CLEAN VERSION)
+========================================= */
+
+/* Desktop */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .nav-container {
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #111;
+    padding: 20px;
+    z-index: 9999;
+  }
+
+  .nav-links a {
+    padding: 15px 0;
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+}
+
+/* =========================================
+   NAVIGATION RESET (WORKING VERSION)
+========================================= */
+
+/* Desktop Default */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .nav-container {
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide menu by default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #111;
+    padding: 20px;
+    z-index: 9999;
+  }
+
+  /* Show when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 15px 0;
+    display: block;
+  }
+
+}
+
+/* ================= NAV CONTAINER FIX ================= */
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
