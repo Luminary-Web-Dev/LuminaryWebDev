@@ -28,11 +28,18 @@ body {
   align-items: center;
 }
 
-.logo a {
+a {
   text-decoration: none;
   color: white;
   font-size: 20px;
   font-weight: 600;
+}
+
+.logo {
+  width: 10vw;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a {
