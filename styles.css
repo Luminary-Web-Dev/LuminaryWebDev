@@ -1013,3 +1013,20 @@ button{
   justify-content: space-between;
   align-items: center;
 }
+
+/* ================= FONTS ================= */
+h1, h2 {
+  font-family: "the-seasons", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3, h4 {
+  font-family: "elza-round-variable", sans-serif;
+  font-variation-settings: "wght" 700;  
+}
+
+p, a, input, span {
+  font-family: "elza-round-variable", sans-serif;
+  font-variation-settings: "wght" 300;  
+}
