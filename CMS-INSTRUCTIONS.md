@@ -35,6 +35,20 @@ Launching prematurely will waste the 300 free monthly build credits.
 2. Enter the email address of your client
 3. They will receive an invitation email to set up their account
 
+### How to Add More Users to Manage Content
+
+To give additional people access to edit content through the CMS:
+
+1. Go to your Netlify site dashboard
+2. Click on the "Identity" tab
+3. Click "Invite users"
+4. Enter the email address of the person you want to add
+5. Click "Send"
+6. They will receive an invitation email with a link to create their account
+7. Once they accept and create a password, they can log in at `https://your-site-name.netlify.app/admin/`
+
+Note: All invited users will have full editing access to all content sections.
+
 ### 4. Access the CMS
 
 - Your client can access the CMS at: `https://your-site-name.netlify.app/admin/`
