@@ -799,39 +799,6 @@ button{
 /* ================= MOBILE (≤768px) ================= */
 @media (max-width: 768px) {
 
-  /* ---------- CAROUSEL ---------- */
-  .carousel-image {
-    height: auto;
-  }
-
-  /* ---------- FORM ---------- */
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  #reservationForm {
-    padding: 40px 25px;
-  }
-
-  .form-actions {
-    justify-content: center;
-  }
-
-  .form-actions button {
-    width: 100%;
-  }
-
-  /* ---------- HERO ---------- */
-  .page-hero {
-    height: 300px;
-  }
-
-  .page-hero h1 {
-    font-size: 26px;
-  }
-
-  /* ---------- NAVIGATION ---------- */
   .navbar {
     padding: 20px;
   }
@@ -842,18 +809,20 @@ button{
 
   .hamburger {
     display: block;
+    font-size: 28px;
   }
 
   .nav-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
+    top: 80px;
+    right: 20px;
+    width: 260px;
     background: #111;
-    padding: 20px;
+    padding: 30px;
     z-index: 9999;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
   }
 
   .nav-links.active {
@@ -862,7 +831,11 @@ button{
 
   .nav-links a {
     padding: 15px 0;
-    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
   }
 
 }
