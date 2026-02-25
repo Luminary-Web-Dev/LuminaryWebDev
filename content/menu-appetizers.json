@@ -1,0 +1,25 @@
+{
+  "image": "/images/dish1.png",
+  "items": [
+    {
+      "name": "Starlight Tartare",
+      "price": 11,
+      "description": "Finely diced seasonal tuna with yuzu, avocado, and a touch of edible gold."
+    },
+    {
+      "name": "Nebula Carpaccio",
+      "price": 10,
+      "description": "Paper-thin slices of beetroot and radish, finished with truffle vinaigrette."
+    },
+    {
+      "name": "Lunar Croquettes",
+      "price": 12,
+      "description": "Crispy potato and fontina bites served with smoked saffron aioli."
+    },
+    {
+      "name": "Celestial Garden Plate",
+      "price": 10,
+      "description": "Roasted seasonal vegetables with comet herb oil and a sprinkle of toasted seeds."
+    }
+  ]
+}
