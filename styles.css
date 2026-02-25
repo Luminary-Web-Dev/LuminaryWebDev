@@ -13,10 +13,11 @@ body {
 }
 
 
+
+
 /* ================= NAVIGATION (MOBILE FIRST) ================= */
 
-/* ================= HEADER (MOBILE FIRST) ================= */
-
+/* ===== HEADER ===== */
 .navbar {
   background: #07040f;
   padding: 20px;
@@ -33,6 +34,14 @@ body {
   position: relative;
 }
 
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+/* ===== HAMBURGER (VISIBLE ON MOBILE) ===== */
 .hamburger {
   position: absolute;
   left: 20px;
@@ -43,20 +52,40 @@ body {
   cursor: pointer;
 }
 
-.logo a {
+/* ===== MOBILE MENU (HIDDEN BY DEFAULT) ===== */
+.nav-links {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.96);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+  z-index: 10000;
+}
+
+.nav-links.active {
+  transform: translateY(0);
+}
+
+.nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 20px;
-  letter-spacing: 2px;
+  font-size: 22px;
+}
+
+.nav-links a.active {
+  border: none;
 }
 
 /* ================= DESKTOP NAV ================= */
 @media (min-width: 769px) {
 
   .nav-container {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 
   .hamburger {
@@ -83,69 +112,7 @@ body {
   }
 
 }
-
-/* ===== MOBILE MENU (HIDDEN BY DEFAULT) ===== */
-.nav-links {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.96);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  transform: translateY(-100%);
-  transition: transform 0.4s ease;
-  z-index: 10000;
-}
-
-.nav-links.active {
-  transform: translateY(0);
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 22px;
-  padding: 0;
-  transition: 0.3s ease;
-}
-
-.nav-links a.active {
-  border: none;
-}
-
-.nav-btn {
-  border: none;
-}
-
-/* ================= DESKTOP ================= */
-@media (min-width: 769px) {
-
-  .hamburger {
-    display: none;
-  }
-
-  .nav-links {
-    position: static;
-    transform: none;
-    background: none;
-    flex-direction: row;
-    gap: 20px;
-    height: auto;
-    justify-content: flex-end;
-  }
-
-  .nav-links a {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
-
-  .nav-links a.active {
-    border: 1px solid white;
-  }
-
-}
+🎯
 
 
 /* ================= HERO ================= */
@@ -440,16 +407,15 @@ body {
 .footer {
   background-color: #070016;
   color: white;
-  padding: 80px 0 30px;
+   padding: 70px 0 30px;
   font-family: 'Cormorant Garamond', serif;
 }
 
 .footer-inner {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 40px;
 }
-
 /* ===== TOP SECTION ===== */
 
 .footer-top {
@@ -492,13 +458,24 @@ body {
   border-top: 1px solid rgba(255,255,255,0.3);
 }
 
-/* Bottom */
 .footer-bottom {
-  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
   font-size: 14px;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
+.footer-bottom a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  opacity: 1;
+}
 
 /* ================= ABOUT PAGE ================= */
 
@@ -698,7 +675,7 @@ button{
 
 /* Section background */
 .confirmation-section {
-  background: #dcdcdc; /* light gray */
+  background: #dcdcdc; 
   padding: 120px 0;
   display: flex;
   justify-content: center;
@@ -925,10 +902,9 @@ button{
 /* ================= MOBILE (≤768px) ================= */
 @media (max-width: 768px) {
 
-  .navbar {
-    padding: 20px;
-  }
-
+ .navbar {
+  padding: 20px 40px;
+}
   .nav-container {
     position: relative;
   }
