@@ -1,0 +1,25 @@
+{
+  "image": "/images/dish2.png",
+  "items": [
+    {
+      "name": "Solar Flare Spritz",
+      "price": 13,
+      "description": "Blood orange aperitif, prosecco, and a splash of sparkling water with a citrus twist."
+    },
+    {
+      "name": "Nebula Negroni",
+      "price": 12,
+      "description": "Gin, sweet vermouth, and house-infused hibiscus Campari, served with an ice sphere."
+    },
+    {
+      "name": "Midnight Orbit Martini",
+      "price": 10,
+      "description": "Vodka, elderflower liqueur, fresh lemon, and a shimmer of edible silver dust."
+    },
+    {
+      "name": "Eclipse Old Fashioned",
+      "price": 9,
+      "description": "Small-batch bourbon, smoked star anise syrup, orange bitters, and a flamed citrus peel."
+    }
+  ]
+}
