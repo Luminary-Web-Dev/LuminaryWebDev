@@ -119,17 +119,20 @@ body {
 
 .hero {
   height: 520px;
-  background-image: url("images/dish1.png"); 
+  background-image: url("images/dish1.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+
+  padding-left: 80px;
+  padding-right: 180px;  
+
   position: relative;
   color: white;
-  padding: 0 80px;
 }
 
 /* Dark overlay for readability */
@@ -142,13 +145,14 @@ body {
 
 /* Content stays above overlay */
 .hero-content {
+  max-width: 1000px;   /* 🔥 wider so text runs across */
+  text-align: left;
   position: relative;
-  max-width: 560px;   
 }
-
 .hero-content h1 {
-  font-size: 52px;   
-  line-height: 1.2;
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 24px;
 }
 
 .hero-content p {
@@ -1018,3 +1022,10 @@ main {
 }
 
 
+.page-width {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
