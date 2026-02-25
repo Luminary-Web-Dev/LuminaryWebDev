@@ -27,7 +27,8 @@ Launching prematurely will waste the 300 free monthly build credits.
 2. Click "Enable Identity"
 3. Under "Registration preferences", select "Invite only"
 4. Under "External providers", you can optionally enable Google/GitHub login
-5. Go to "Settings and usage" → scroll to "Git Gateway" → click "Enable Git Gateway"
+5. **⚠️ CRITICAL:** Go to "Settings and usage" → scroll to "Git Gateway" → click "Enable Git Gateway"
+   - **Without Git Gateway enabled, the CMS cannot save changes!**
 
 ### 3. Invite Users
 
@@ -114,4 +115,3 @@ Client edits CMS → Updates JSON files → Git commit → Netlify deploys → S
 - The site will rebuild automatically after publishing changes
 - Changes typically appear within 1-2 minutes
 - Nothing changes on the live site until the client actively edits through the CMS
-
