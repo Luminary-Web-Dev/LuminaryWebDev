@@ -107,8 +107,11 @@ Client edits CMS → Updates JSON files → Git commit → Netlify deploys → S
 
 ## Notes
 
+- The 2-step reservation form and confirmation page are configured for Netlify Forms detection
+- Form submissions will appear in your Netlify dashboard under "Forms"
 - Changes are saved to your Git repository automatically
 - Each publish creates a new commit
 - The site will rebuild automatically after publishing changes
 - Changes typically appear within 1-2 minutes
 - Nothing changes on the live site until the client actively edits through the CMS
+
