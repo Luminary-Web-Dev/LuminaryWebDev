@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Luminary — The Living Menu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://use.typekit.net/kay5xhu.css">
   <link rel="icon" type="image/x-icon" href="images/favicon.svg">
@@ -11,21 +12,18 @@
 
 <body>
 
-
 <!-- ================= NAVIGATION ================= -->
 <header class="navbar">
   <div class="nav-container">
-   
 
-    <!-- Logo -->
     <div class="logo">
-      <a href="index.html"><img class="logo" src="images/logo.svg"></a>
+      <a href="index.html">
+        <img src="images/logo.svg" alt="Luminary Logo">
+      </a>
     </div>
 
-     <button class="hamburger" id="hamburger">☰</button>
-    
+    <button class="hamburger" id="hamburger">☰</button>
 
-    <!-- Navigation Links -->
     <nav class="nav-links" id="navLinks">
       <a href="about.html">About</a>
       <a href="events.html">Private Events</a>
@@ -36,262 +34,126 @@
   </div>
 </header>
 
-
 <main>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="hero-content">
-  
-    <h1>Celestial in spirit. Precise in execution.</h1>
-    <p>
-      Through thoughtful technique and carefully sourced ingredients,
-      each dish is designed to reveal depth, contrast, and luminous discovery.
-    </p>
-    <a href="reservation.html" class="hero-btn">
-  Book a Table
-</a>
-  </div>
-</section>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Celestial in spirit. Precise in execution.</h1>
+      <p>
+        Through thoughtful technique and carefully sourced ingredients,
+        each dish is designed to reveal depth, contrast, and luminous discovery.
+      </p>
+      <a href="reservation.html" class="hero-btn">Reserve a table</a>
+    </div>
+  </section>
 
 
-<!-- ================= WELCOME ================= -->
-<section class="welcome">
-  <h2>Welcome to Luminary</h2>
-</section>
+  <!-- ================= WELCOME ================= -->
+  <section class="welcome">
+    <h2>Welcome to Luminary</h2>
+  </section>
 
 
-<!-- ================= OUR STORY ================= -->
-<section class="split-section light">
-
-  <div class="split-text">
-    <h3>Our Story</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <a href="#" class="learn-link">Learn More →</a>
-  </div>
-
-  <div class="split-media">
-    <video controls>
-      <source src="videos/behind-scenes.mp4" type="video/mp4">
-    </video>
-  </div>
-
-</section>
-
-
-<!-- ================= CHEF PHILOSOPHY ================= -->
-<section class="split-section darker">
-
-  <div class="split-media">
-    <video controls>
-      <source src="videos/philosophy.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="split-text">
-    <h3>Chef Philosophy</h3>
-    <p>
-      Celestial in spirit. Precise in execution.
-      Each dish reveals balance, depth, and discovery.
-    </p>
-    <a href="#" class="learn-link">Learn More →</a>
-  </div>
-
-</section>
-
-
-
-<!-- ================= Menu CAROUSEL SECTION ================= -->
-<section class="carousel-section">
-
-  <h2 class="carousel-title">Menu</h2>
-
-  <div class="carousel">
-
-    <button class="carousel-btn left" onclick="changeSlide(-1)">&#8249;</button>
-
-    <!-- ===== APPETIZERS ===== -->
-<div class="carousel-slide active">
-  <h3 class="carousel-category">Appetizers</h3>
-  <img src="images/dish1.png" class="carousel-image" alt="Appetizers">
-
-  <div class="carousel-items">
-
-    <div class="carousel-item">
-      <h4>Starlight Tartare <span>/ 11</span></h4>
-    <p>Finely diced seasonal tuna with yuzu, avocado, and a touch of edible gold.</p>
+  <!-- ================= OUR STORY ================= -->
+  <section class="split-section light">
+    <div class="split-text">
+      <h3>Our Story</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <a href="#" class="learn-link">Learn More →</a>
     </div>
 
-    <div class="carousel-item">
-      <h4>Nebula Carpaccio <span>/ 10</span></h4>
-      <p>Paper-thin slices of beetroot and radish, finished with truffle vinaigrette.</p>
+    <div class="split-media">
+      <video controls>
+        <source src="videos/behind-scenes.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+
+  <!-- ================= CHEF PHILOSOPHY ================= -->
+  <section class="split-section darker">
+    <div class="split-media">
+      <video controls>
+        <source src="videos/philosophy.mp4" type="video/mp4">
+      </video>
     </div>
 
-    <div class="carousel-item">
-     <h4>Lunar Croquettes <span>/ 12</span></h4>
-    <p>Crispy potato and fontina bites served with smoked saffron aioli.</p>
+    <div class="split-text">
+      <h3>Chef Philosophy</h3>
+      <p>
+        Celestial in spirit. Precise in execution.
+        Each dish reveals balance, depth, and discovery.
+      </p>
+      <a href="#" class="learn-link">Learn More →</a>
     </div>
-
-    <div class="carousel-item">
-      <h4>Celestial Garden Plate <span>/ 10</span></h4>
-    <p>Roasted seasonal vegetables with comet herb oil and a sprinkle of toasted seeds.</p>
-    </div>
-
-  </div>
-</div>
+  </section>
 
 
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
 
-    <!-- ===== SIGNATURE PLATES ===== -->
-    <div class="carousel-slide">
-      <h3 class="carousel-category">Signature Plates</h3>
-      <img src="images/dish2.png" class="carousel-image">
+    <div class="footer-inner">
 
-      <div class="carousel-items">
-        <div class="carousel-item">
-          <h4>Galactic Sea Bass <span>/ 18</span></h4>
-<p>Pan-seared sea bass with a star anise glaze, served atop smoked leek purée.</p>
+      <div class="footer-top">
+
+        <!-- LEFT SIDE -->
+        <div class="footer-brand">
+          <h2 class="footer-logo">LUMIN✦RY</h2>
+
+          <div class="footer-column">
+            <h4>Follow Us</h4>
+            <p>Instagram</p>
+            <p>Facebook</p>
+          </div>
         </div>
-        <div class="carousel-item">
-          <h4>Nebula Lamb Loin <span>/ 19</span></h4>
-<p>Herb-crusted lamb loin with rich black garlic jus, served with moonlit potato gratin.</p>
+
+        <!-- RIGHT SIDE -->
+        <div class="footer-columns">
+
+          <div class="footer-column">
+            <h4>Contact Us</h4>
+            <p>0420 Solstice Way</p>
+            <p>Tempe, AZ 85281</p>
+            <p>(480) 888 - 5862</p>
+            <p>hello@luminary.com</p>
+            <p>events@luminary.com</p>
+            <p>Saturday - Sunday</p>
+            <p>10:00 AM - 10:00 PM</p>
+          </div>
+
+          <div class="footer-column">
+            <h4>Helpful Links</h4>
+            <p>About</p>
+            <p>FAQ’s</p>
+            <p>Menu</p>
+            <p>Events</p>
+            <p>Careers</p>
+          </div>
+
         </div>
-        <div class="carousel-item">
-          <h4>Cosmic Mushroom Risotto <span>/ 17</span></h4>
-<p>Creamy arborio rice with wild forest mushrooms, parmesan dust, and truffle oil.</p>
-        </div>
-        <div class="carousel-item">
-          <h4>Solar Flare Duck Breast <span>/ 20</span></h4>
-<p>Crispy-skinned duck with blood orange gastrique, served with celestial spiced lentils.</p>
-        </div>
+
       </div>
+
+      <div class="footer-divider"></div>
+
     </div>
 
-    <!-- ===== DESSERT ===== -->
-    <div class="carousel-slide">
-      <h3 class="carousel-category">Dessert</h3>
-      <img src="images/menu.png" class="carousel-image">
-
-      <div class="carousel-items">
-        <div class="carousel-item">
-          <h4>Stardust Chocolate Sphere <span>/ 11</span></h4>
-<p>Dark chocolate sphere filled with passionfruit mousse and a cosmic reveal.</p>
-        </div>
-        <div class="carousel-item">
-          <h4>Aurora Meringue Cloud <span>/ 9</span></h4>
-        <p>Light, airy meringue with lavender cream, freeze-dried berries, and golden syrup.</p>
-        </div>
-        <div class="carousel-item">
-          <h4>Comet Lemon Tart <span>/ 10</span></h4>
-        <p>Tangy lemon curd on a crisp almond crust, topped with candied citrus peel and star sugar.</p>
-        </div>
-        <div class="carousel-item">
-          <h4>Moonlit Panna Cotta <span>/ 10</span></h4>
-            <p>Silky vanilla panna cotta with blackberry nebula compote and a sprinkle of silver dust.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== BEVERAGES ===== -->
-    <div class="carousel-slide">
-      <h3 class="carousel-category">Beverages</h3>
-      <img src="images/dish1.png" class="carousel-image">
-
-      <div class="carousel-items">
-        <div class="carousel-item">
-          <h4>Solar Citrus Elixir <span>/ 11</span></h4>
-<p>Fresh-squeezed blood orange, yuzu, and sparkling mineral water with a lemon twist.</p>
-        </div>
-        <div class="carousel-item">
-          <h4>Moonflower Iced Tea <span>/ 8</span></h4>
-<p>Delicate jasmine tea with white peach and a hint of elderflower, lightly chilled.</p>
-        </div>
-        <div class="carousel-item">
-          <h4>Stardew Botanical Tonic <span>/ 10</span></h4>
-<p>House-infused rosemary, cucumber, and lime with artisanal tonic water.</p>
-        </div>
-        <div class="carousel-item">
-          <h4>Nebula Cold Brew <span>/ 8</span></h4>
-<p>Smooth single-origin cold brew with vanilla bean and a touch of oat milk.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== COCKTAILS ===== -->
-    <div class="carousel-slide">
-      <h3 class="carousel-category">Cocktails</h3>
-      <img src="images/dish2.png" class="carousel-image">
-
-      <div class="carousel-items">
-        <div class="carousel-item">
-         <h4>Solar Flare Spritz <span>/ 13</span></h4>
-<p>Blood orange aperitif, prosecco, and a splash of sparkling water with a citrus twist.</p>
-
-        </div>
-        <div class="carousel-item">
-          <h4>Nebula Negroni <span>/ 12</span></h4>
-<p>Gin, sweet vermouth, and house-infused hibiscus Campari, served with an ice sphere.</p>
-        </div>
-        <div class="carousel-item">
-          <h4>Midnight Orbit Martini <span>/ 10</span></h4>
-<p>Vodka, elderflower liqueur, fresh lemon, and a shimmer of edible silver dust.</p>
-        </div>
-        <div class="carousel-item">
-          <h4>Eclipse Old Fashioned <span>/ 9</span></h4>
-<p>Small-batch bourbon, smoked star anise syrup, orange bitters, and a flamed citrus peel.</p>
-        </div>
-      </div>
-    </div>
-
-    <button class="carousel-btn right" onclick="changeSlide(1)">&#8250;</button>
-
-  </div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-
-  <div class="footer-container">
-
-    <div class="footer-column">
-      <h4>Contact Us</h4>
-      <p>0420 Solstice Way</p>
-      <p>Tempe, AZ 85281</p>
-      <p>(480) 888 - 5862</p>
-      <p>hello@luminary.com</p>
-      <p>events@luminary.com</p>
-      <p>Saturday - Sunday</p>
-      <p>10:00 AM - 10:00 PM</p>
-    </div>
-
-    <div class="footer-column">
-      <h4>Helpful Links</h4>
-      <p>About</p>
-      <p>FAQ’s</p>
-      <p>Menu</p>
-      <p>Events</p>
-      <p>Careers</p>
-    </div>
-
-    <div class="footer-column">
-      <h4>Follow Us</h4>
-      <p>Instagram</p>
-      <p>Facebook</p>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    © Luminary 2026
-  </div>
   </footer>
+
+</main>
+
 <script src="script.js"></script>
+
+<!-- Netlify form detection backup -->
 <form name="reservation" data-netlify="true" hidden>
-  <input type="hidden" name="form-name" value="reservation">
+  <input type="hidden" name="form-name" value="reservation" />
+  <input type="text" name="name" />
+  <input type="email" name="email" />
 </form>
+
 </body>
 </html>
