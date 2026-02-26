@@ -1,3 +1,14 @@
+:root {
+  --cream: #FFFAEC;
+  --terracotta: #906057;
+  --plum: #4C444E;
+  --deep: #0C0910;
+
+  --font-primary: 'Elza Round', sans-serif;
+  --font-secondary: 'The Seasons', serif;
+}
+
+
 /* ================= RESET ================= */
 * {
   margin: 0;
@@ -7,8 +18,8 @@
 
 body {
   font-family: serif;
-  background: #f2f2f2;
-  color: #111;
+  background: var(--cream);
+  color: var(--deep);
   line-height: 1.6;
 }
 
@@ -37,7 +48,7 @@ body {
 }
 
 .logo a {
-  color: white;
+  color: var(--cream);
   text-decoration: none;
   font-size: 20px;
   letter-spacing: 2px;
@@ -46,10 +57,10 @@ body {
 /* ===== HAMBURGER (VISIBLE ON MOBILE) ===== */
 .hamburger {
   display: none; 
-  font-size: 26px;
+  font-size: 36px;
   background: none;
   border: none;
-  color: white;
+  color: var(--cream);
   cursor: pointer;
 }
 
@@ -57,7 +68,7 @@ body {
 .nav-links {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.96);
+  background: rgba(255, 253, 253, 0.96);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,14 +84,37 @@ body {
 }
 
 .nav-links a {
-  color: white;
+  color: var(--cream);
   text-decoration: none;
   font-size: 22px;
 }
 
+.nav-links .nav-btn {
+  padding: 8px 20px;
+  color: var(--cream);
+}
+.nav-btn {
+  padding: 8px 20px;
+}
+
+.nav-links a.active {
+  border: 1px solid var(--cream);
+  padding: 8px 20px;
+  display: inline-block;
+}
 .nav-links a.active {
   border: none;
 }
+/* ================= hover  ================= */
+
+.hero-btn:hover {
+  background: var(--cream);
+  border-color: var(--cream);
+   color: var(--deep);
+}
+
+
+
 
 /* ================= DESKTOP NAV ================= */
 @media (min-width: 769px) {
@@ -107,10 +141,11 @@ body {
     font-size: 16px;
     padding: 8px 14px;
   }
-
-  .nav-links a.active {
-    border: 1px solid white;
-  }
+.nav-links a.active {
+    border: 1px solid var(--cream);
+    padding: 8px 14px;
+    color: var(--cream);
+}
 
 }
 
@@ -118,7 +153,7 @@ body {
 /* ================= HERO ================= */
 
 .hero {
-  height: 520px;
+  height: 620px;
   background-image: url("images/dish1.png");
   background-size: cover;
   background-position: center;
@@ -126,13 +161,13 @@ body {
 
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 
-  padding-left: 80px;
-  padding-right: 160px;   
+  padding-left: 8px;
+  padding-right: 1px;   
 
   position: relative;
-  color: white;
+  color: var(--cream);
 }
 
 /* Dark overlay for readability */
@@ -140,13 +175,13 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(12, 9, 16, 0.65);
 }
 
 /* Content stays above overlay */
 .hero-content {
-  max-width: 1000px;   /* 🔥 wider so text runs across */
-  text-align: left;
+  max-width: 1000px;   
+  text-align: center;
   position: relative;
 }
 .hero-content h1 {
@@ -156,16 +191,15 @@ body {
 }
 
 .hero-content p {
-  font-size: 16px;
   margin-bottom: 25px;
 }
 
 .hero-btn {
    margin-top: 10px;
-  border: 1px solid white;
+  border: 1px solid var(--cream); /* FIXED */
   padding: 10px 24px;
   text-decoration: none;
-  color: white;
+  color: var(--cream);
   display: inline-block;
 }
 
@@ -173,7 +207,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 80px;
+  padding: 10px 0px;
 }
 
 
@@ -181,11 +215,18 @@ body {
 .welcome {
   text-align: center;
   padding: 60px 0;
-  background: #f2f2f2;
+  background: var(--cream);
 }
 
+
 .welcome h2 {
-  font-size: 22px;
+  font-size: 60px;
+  font-weight: 400;   /* keep it elegant, not bold */
+  letter-spacing: 1px;
+}
+
+section.welcome h2 {
+  color: var(--plum) !important;
 }
 
 /* ================= SPLIT SECTIONS ================= */
@@ -197,12 +238,44 @@ body {
   padding: 100px 80px;
 }
 
-.split-section.light {
-  background: #f2f2f2;
+/* LIGHT SECTION (cream background) */
+.split-section.light .learn-link {
+  color: var(--deep);
+}
+
+.split-section.light .learn-link .arrow {
+  color: var(--deep);
+}
+
+
+/* DARK SECTION (plum background) */
+.split-section.darker .learn-link {
+  color: var(--cream);
+}
+
+.split-section.darker .learn-link .arrow {
+  color: var(--cream);
+}
+
+.split-section.light h3 {
+  color: var(--deep); /* opposite of cream */
+}
+
+.split-section.light p {
+  color: var(--deep);
 }
 
 .split-section.darker {
-  background: #e6e6e6;
+  background: var(--plum);
+  margin-bottom: 0px;
+}
+
+.split-section.darker h3 {
+  color: var(--cream); /* opposite of plum */
+}
+
+.split-section.darker p {
+  color: var(--cream);
 }
 
 .split-section.reverse {
@@ -213,28 +286,32 @@ body {
   flex: 1;
 }
 
+/* Headings */
 .split-text h3 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 30px;
 }
 
+/* Paragraph */
 .split-text p {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 20px;
 }
 
+/* Learn link */
 .learn-link {
   text-decoration: none;
-  color: #111;
-  font-size: 14px;
+  font-size: 20px;
 }
 
+/* Outline button */
 .outline-btn {
-  border: 1px solid #111;
   padding: 8px 18px;
   text-decoration: none;
-  color: #111;
   display: inline-block;
 }
 
+/* Media */
 .split-media {
   flex: 1;
 }
@@ -250,8 +327,8 @@ body {
 /* ================= MENU SECTION ================= */
 
 .menu-section {
-  background: #3b3b3b;
-  color: white;
+  background: var(--deep);
+  color: var(--cream);
   padding: 120px 0 80px;
   text-align: center;
 }
@@ -266,6 +343,9 @@ body {
   margin-bottom: 60px;
   opacity: 0.8;
 }
+
+
+
 
 /* ===== IMAGE AREA ===== */
 
@@ -286,7 +366,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,250,236,0.3);
 }
 
 /* ===== ARROWS ===== */
@@ -294,7 +374,7 @@ body {
 .menu-arrow {
   background: none;
   border: none;
-  color: white;
+  color: var(--cream);
   font-size: 42px;
   cursor: pointer;
   opacity: 0.7;
@@ -330,14 +410,16 @@ body {
 
 .menu-item p {
   font-size: 14px;
-  color: #dcdcdc;
+  color: var(--cream);
   line-height: 1.6;
 }
-/* ================= CAROUSEL SECTION ================= */
 
+
+
+/* ================= CAROUSEL SECTION ================= */
 .carousel-section {
-  background: #3b3b3b;
-  color: white;
+  background: var(--deep);
+  color: var(--cream);
   padding: 140px 0;
   text-align: center;
 }
@@ -402,7 +484,7 @@ body {
   top: 40%;
   background: none;
   border: none;
-  color: white;
+  color: var(--cream);
   font-size: 40px;
   cursor: pointer;
   opacity: 0.7;
@@ -416,18 +498,13 @@ body {
   right: 10px;
 }
 
+
+
 /* ================= FOOTER ================= */
 
 .footer {
-  background-color: #070016;
-  color: white;
-  padding: 60px 80px 30px; /* left/right padding controls layout */
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.footer {
-  background-color: #070016;
-  color: white;
+  background-color: var(--deep);
+  color: var(--cream);
   padding: 60px 80px 30px; /* left/right padding controls layout */
   font-family: 'Cormorant Garamond', serif;
 }
@@ -473,11 +550,12 @@ body {
 
 .footer-divider {
   width: 100%;
-  border-top: 1px solid rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(255,250,236,0.4);
   margin: 50px 0 25px;
 }
 
 .footer-bottom {
+  color: var(--cream);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -487,7 +565,7 @@ body {
 }
 
 .footer-bottom a {
-  color: white;
+  color: var(--cream);
   text-decoration: none;
   transition: 0.3s ease;
 }
@@ -496,7 +574,6 @@ body {
   opacity: 1;
 }
 
-/* ================= ABOUT PAGE ================= */
 
 
 .page-hero {
@@ -510,7 +587,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: var(--cream);
 }
 
 /* Dark overlay */
@@ -518,7 +595,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(12, 9, 16, 0.6);
 }
 
 /* Content above overlay */
@@ -533,13 +610,13 @@ body {
 }
 
 .about-section.light {
-  background: #f2f2f2;
-  color: #111;
+  background: var(--cream);
+  color: var(--deep);
 }
 
 .about-section.darker {
-  background: #e6e6e6;
-  color: #111;
+  background: var(--deep);
+  color: var(--cream);
 }
 
 .about-row {
@@ -580,17 +657,24 @@ body {
 }
 
 
+
+
+
+
+
+
+
 /* ================= Reservation PAGE ================= */
 .reservation-section {
   padding: 100px 0;
-  background: #f2f2f2;
+    background: var(--terracotta);
 }
 
 #reservationForm {
   max-width: 950px;
   margin: 0 auto;
   padding: 70px 80px;
-  background: white;
+  background: var(--cream);
   box-sizing: border-box;
 }
 .form-step {
@@ -612,15 +696,17 @@ body {
 .form-step textarea {
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--deep);
   width: 100%;
   box-sizing: border-box;
+  color: var(--deep);
+  background: var(--cream);
 }
 
 button{
   padding: 14px 60px;
-  background: #000;
-  color: #fff;
+  background: var(--deep);
+  color: var(--cream);
   border: none;
   font-size: 15px;
   cursor: pointer;
@@ -629,14 +715,14 @@ button{
 /* ================= Reservation PAGE  ================= */
 .reservation-section {
   padding: 100px 0;
-  background: #f2f2f2;
+   background: var(--terracotta);
 }
 
 #reservationForm {
   max-width: 950px;
   margin: 0 auto;
   padding: 70px 80px;
-  background: white;
+  background: var(--cream);
   box-sizing: border-box;
 }
 .form-step {
@@ -658,15 +744,17 @@ button{
 .form-step textarea {
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--deep);
   width: 100%;
   box-sizing: border-box;
+  color: var(--deep);
+  background: var(--cream);
 }
 
 button{
   padding: 14px 60px;
-  background: #000;
-  color: #fff;
+  background: var(--deep);
+  color: var(--cream);
   border: none;
   font-size: 15px;
   cursor: pointer;
@@ -681,7 +769,7 @@ main {
 /* ================= CONFIRMATION PAGE EXACT MATCH ================= */
 
 .page-hero {
-  height: 300px;
+  height: 520px;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -690,14 +778,14 @@ main {
 }
 
 .page-hero h1 {
-  color: #fff;
-  font-size: 32px;
-  font-weight: 600;
+  color: var(--cream);
+  font-size: 18px;
+  font-weight: 5;
 }
 
 /* Section background */
 .confirmation-section {
-  background: #dcdcdc; 
+  background: var(--cream); 
   padding: 120px 0;
   display: flex;
   justify-content: center;
@@ -705,7 +793,7 @@ main {
 
 /* Centered white card */
 .confirmation-card {
-  background: #f5f5f5;
+  background: var(--cream);
   width: 760px;
   max-width: 90%;
   padding: 70px 80px;
@@ -733,24 +821,23 @@ main {
 
 /* Outline button */
 .outline-btn {
-  border: 1px solid #000;
+  border: 1px solid var(--deep);
   padding: 12px 40px;
   text-decoration: none;
-  color: #000;
+  color: var(--deep);
 }
 
 /* Filled button */
 .primary-btn {
-  background: #000;
-  color: #fff;
+  background: var(--deep);
+  color: var(--cream);
   padding: 12px 40px;
   text-decoration: none;
 }
 
-
 /* Reservation details box */
 .reservation-details {
-  border: 1px solid #000;
+  border: 1px solid var(--deep);
   padding: 40px;
   margin: 40px 0;
   text-align: left;
@@ -770,6 +857,9 @@ main {
   margin-bottom: 40px;
 }
 
+
+
+
 /* ================= FORM HEADER ================= */
 .form-header {
   display: flex;
@@ -784,7 +874,7 @@ main {
 
 .step-label {
   font-size: 14px;
-  color: #777;
+  color: var(--deep);
 }
 
 /* ================= GRID LAYOUT step 1================= */
@@ -804,8 +894,9 @@ main {
   width: 100%;
   padding: 18px;
   font-size: 16px;
-  border: 1px solid #aaa;
-  background: #f2f2f2;
+  border: 1px solid var(--deep);
+  background: var(--cream);
+  color: var(--deep);
 }
 
 /* ================= BUTTON ALIGNMENT for reservation ================= */
@@ -818,14 +909,15 @@ main {
 
 .form-actions button {
   padding: 14px 60px;
-  background: #f2f2f2;
-  color: #000;
+  background: var(--cream);
+  color: var(--deep);
   border: none;
   transition: 0.3s ease;
 }
+
 .form-actions button:hover {
-  background: #000;
-  color:floralwhite
+  background: var(--deep);
+  color: var(--cream);
 }
 
 /* ================= STEP 2 ONLY ================= */
@@ -842,8 +934,9 @@ main {
   width: 100%;
   padding: 18px;
   font-size: 16px;
-  border: 1px solid #aaa;
-  background: #f2f2f2;
+  border: 1px solid var(--deep);
+  background: var(--cream);
+  color: var(--deep);
 }
 
 #step2 textarea {
@@ -855,13 +948,21 @@ main {
   justify-content: center; 
   margin-top: 60px;
 }
+
+
+
+
+
+
+
+
 /* ================= STEP 2 BUTTONS ================= */
 
 /* Back button */
 .back-btn {
   background: transparent;
   border: none;
-  color: #111;
+  color: var(--deep);
   font-size: 15px;
   cursor: pointer;
   padding: 0;
@@ -870,8 +971,8 @@ main {
 /* Confirm button */
 .primary-btn:hover {
   padding: 14px 60px;
-  background: #000;
-  color: #fff;
+  background: var(--deep);
+  color: var(--cream);
   border: none;
   font-size: 15px;
   cursor: pointer;
@@ -888,7 +989,7 @@ main {
 }
 
 .confirmation-card {
-  background: #fff;
+  background: var(--cream);
   padding: 60px 80px;
   max-width: 700px;
   text-align: center;
@@ -943,10 +1044,10 @@ main {
     top: 80px;
     right: 20px;
     width: 260px;
-    background: #111;
+    background: var(--deep);
     padding: 30px;
     z-index: 9999;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 40px rgba(12,9,16,0.4);
   }
 
   .nav-links.active {
@@ -955,7 +1056,7 @@ main {
 
   .nav-links a {
     padding: 15px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,250,236,0.1);
   }
 
   .nav-links a:last-child {
@@ -1008,7 +1109,7 @@ main {
   font-size: 26px;
   background: none;
   border: none;
-  color: white;
+  color: var(--cream);
   cursor: pointer;
 }
 
