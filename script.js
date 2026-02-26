@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
 /* =====================================================
    RESERVATION PAGE LOGIC
    ===================================================== */
@@ -81,6 +80,20 @@ document.addEventListener("DOMContentLoaded", function () {
       step1.classList.add("active");
     });
 
+  }
+
+  /* ================= SAVE EMAIL ON SUBMIT ================= */
+
+  if (reservationForm) {
+    reservationForm.addEventListener("submit", function () {
+
+      const emailInput = reservationForm.querySelector('input[name="email"]');
+
+      if (emailInput) {
+        localStorage.setItem("email", emailInput.value);
+      }
+
+    });
   }
 
 });
