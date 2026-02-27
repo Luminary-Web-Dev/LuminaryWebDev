@@ -839,10 +839,12 @@ button{
 
 /* Filled button */
 .primary-btn {
+display: inline-block;
+  padding: 14px 32px;
   background: var(--deep);
   color: var(--cream);
-  padding: 12px 40px;
   text-decoration: none;
+  width: auto;
 }
 
 /* Reservation details box */
@@ -1007,6 +1009,9 @@ button{
 }
 
 
+/* =====================================================
+   event.html  only
+   ===================================================== */
 
 
 /* ================= EVENTS PAGE SPLIT LAYOUT ================= */
@@ -1028,9 +1033,9 @@ button{
 .events-page-text {
   display: flex;
   flex-direction: column;
-  gap: 60px; /* space between the two text blocks */
-  max-width: 520px;
+  gap: 50px; /* space BETWEEN the two blocks only */
 }
+
 
 
 /* EVENTS BUTTON */
@@ -1041,10 +1046,15 @@ button{
   padding: 14px 28px;
   text-decoration: none;
   font-weight: 500;
-  width: fit-content; /* keeps button from stretching */
+  width: auto; /* keeps button from stretching */
   margin-top: 10px;
   transition: 0.3s ease;
+   align-self: flex-start;
+  
 }
+
+
+
 
 
 
@@ -1055,9 +1065,8 @@ button{
 .event-block {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 18px;  /* space between h2, paragraph, button */
 }
-
 .events-page-right img {
   width: 100%;
   height: 100%;
@@ -1065,7 +1074,17 @@ button{
   display: block;
 }
 
+.events-page-left {
+  color: var(--cream);
+}
 
+.events-page-left h2 {
+  color: var(--cream);
+}
+
+.events-page-left p {
+  color: var(--cream);
+}
 
 
 
