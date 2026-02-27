@@ -1,0 +1,21 @@
+{
+  "categories": [
+    {
+      "name": "Appetizers",
+      "image": "/images/appetizers.jpg",
+      "video": "",
+      "items": [
+        {
+          "name": "Starlight Tartare",
+          "price": 11,
+          "description": "Finely diced seasonal tuna with yuzu and avocado."
+        },
+        {
+          "name": "Lunar Croquettes",
+          "price": 12,
+          "description": "Crispy potato and fontina bites."
+        }
+      ]
+    }
+  ]
+}

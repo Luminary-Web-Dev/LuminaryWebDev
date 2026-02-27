@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Private Dining and Events",
+    "image": "/images/events-hero.jpg"
+  },
+  "private_dining": {
+    "title": "Private Dining",
+    "paragraph1": "Lorem ipsum dolor sit amet...",
+    "paragraph2": "Ut enim ad minim veniam...",
+    "paragraph3": "Duis aute irure dolor...",
+    "image": "/images/private-dining.jpg",
+    "video": ""
+  },
+  "event_hosting": {
+    "title": "Event Hosting",
+    "paragraph1": "Lorem ipsum dolor sit amet...",
+    "paragraph2": "Ut enim ad minim veniam...",
+    "paragraph3": "Duis aute irure dolor...",
+    "image": "/images/event-hosting.jpg",
+    "video": ""
+  }
+}

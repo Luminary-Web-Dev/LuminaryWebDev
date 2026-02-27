@@ -2,150 +2,89 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
+
+  # ================= HOMEPAGE =================
   - name: "homepage"
     label: "Homepage"
     files:
-      - label: "Hero Section"
-        name: "hero"
-        file: "content/hero.json"
+      - label: "Homepage Content"
+        name: "homepage"
+        file: "content/homepage.json"
+        format: "json"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
-      
-      - label: "Our Story"
-        name: "our_story"
-        file: "content/our-story.json"
-        fields:
-          - {label: "Title", name: "title", widget: "string", default: "Our Story"}
-          - {label: "Paragraph", name: "paragraph", widget: "text"}
-          - {label: "Video", name: "video", widget: "file", allow_multiple: false}
-      
-      - label: "Chef Philosophy"
-        name: "chef_philosophy"
-        file: "content/chef-philosophy.json"
-        fields:
-          - {label: "Title", name: "title", widget: "string", default: "Chef Philosophy"}
-          - {label: "Paragraph", name: "paragraph", widget: "text"}
-          - {label: "Video", name: "video", widget: "file", allow_multiple: false}
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+          - { label: "Hero Video", name: "hero_video", widget: "file", required: false }
 
+          - { label: "Our Story Title", name: "our_story_title", widget: "string", default: "Our Story" }
+          - { label: "Our Story Text", name: "our_story_text", widget: "text" }
+          - { label: "Our Story Image", name: "our_story_image", widget: "image", required: false }
+          - { label: "Our Story Video", name: "our_story_video", widget: "file", required: false }
+
+          - { label: "Chef Philosophy Title", name: "chef_title", widget: "string", default: "Chef Philosophy" }
+          - { label: "Chef Philosophy Text", name: "chef_text", widget: "text" }
+          - { label: "Chef Philosophy Image", name: "chef_image", widget: "image", required: false }
+          - { label: "Chef Philosophy Video", name: "chef_video", widget: "file", required: false }
+
+  # ================= ABOUT PAGE =================
   - name: "about"
     label: "About Page"
     files:
-      - label: "Our Story Section"
-        name: "about_story"
-        file: "content/about-story.json"
+      - label: "About Content"
+        name: "about"
+        file: "content/about.json"
+        format: "json"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Paragraph 1", name: "paragraph1", widget: "text"}
-          - {label: "Paragraph 2", name: "paragraph2", widget: "text"}
-          - {label: "Paragraph 3", name: "paragraph3", widget: "text"}
-          - {label: "Video", name: "video", widget: "file"}
-          - {label: "Image", name: "image", widget: "image"}
-      
-      - label: "Chef Philosophy Section"
-        name: "about_chef"
-        file: "content/about-chef.json"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Paragraph 1", name: "paragraph1", widget: "text"}
-          - {label: "Paragraph 2", name: "paragraph2", widget: "text"}
-          - {label: "Paragraph 3", name: "paragraph3", widget: "text"}
-          - {label: "Video", name: "video", widget: "file"}
-          - {label: "Image", name: "image", widget: "image"}
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+          - { label: "Hero Video", name: "hero_video", widget: "file", required: false }
 
+          - { label: "Our Story Text", name: "our_story_text", widget: "text" }
+          - { label: "Chef Philosophy Text", name: "chef_text", widget: "text" }
+
+  # ================= EVENTS PAGE =================
   - name: "events"
     label: "Events Page"
     files:
-      - label: "Private Dining"
-        name: "private_dining"
-        file: "content/private-dining.json"
+      - label: "Events Content"
+        name: "events"
+        file: "content/events.json"
+        format: "json"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Paragraph 1", name: "paragraph1", widget: "text"}
-          - {label: "Paragraph 2", name: "paragraph2", widget: "text"}
-          - {label: "Paragraph 3", name: "paragraph3", widget: "text"}
-          - {label: "Image", name: "image", widget: "image"}
-          - {label: "Video", name: "video", widget: "file"}
-      
-      - label: "Event Hosting"
-        name: "event_hosting"
-        file: "content/event-hosting.json"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Paragraph 1", name: "paragraph1", widget: "text"}
-          - {label: "Paragraph 2", name: "paragraph2", widget: "text"}
-          - {label: "Paragraph 3", name: "paragraph3", widget: "text"}
-          - {label: "Image", name: "image", widget: "image"}
-          - {label: "Video", name: "video", widget: "file"}
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
 
+          - { label: "Private Dining Text", name: "private_text", widget: "text" }
+          - { label: "Event Hosting Text", name: "hosting_text", widget: "text" }
+          - { label: "Events Image", name: "events_image", widget: "image", required: false }
+          - { label: "Events Video", name: "events_video", widget: "file", required: false }
+
+  # ================= MENU =================
   - name: "menu"
     label: "Menu"
     files:
-      - label: "Appetizers"
-        name: "appetizers"
-        file: "content/menu-appetizers.json"
+      - label: "Full Menu"
+        name: "menu"
+        file: "content/menu.json"
+        format: "json"
         fields:
-          - {label: "Category Image", name: "image", widget: "image"}
-          - label: "Items"
-            name: "items"
+          - label: "Categories"
+            name: "categories"
             widget: "list"
             fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Price", name: "price", widget: "number"}
-              - {label: "Description", name: "description", widget: "text"}
-      
-      - label: "Signature Plates"
-        name: "signature"
-        file: "content/menu-signature.json"
-        fields:
-          - {label: "Category Image", name: "image", widget: "image"}
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Price", name: "price", widget: "number"}
-              - {label: "Description", name: "description", widget: "text"}
-      
-      - label: "Desserts"
-        name: "desserts"
-        file: "content/menu-desserts.json"
-        fields:
-          - {label: "Category Image", name: "image", widget: "image"}
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Price", name: "price", widget: "number"}
-              - {label: "Description", name: "description", widget: "text"}
-      
-      - label: "Beverages"
-        name: "beverages"
-        file: "content/menu-beverages.json"
-        fields:
-          - {label: "Category Image", name: "image", widget: "image"}
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Price", name: "price", widget: "number"}
-              - {label: "Description", name: "description", widget: "text"}
-      
-      - label: "Cocktails"
-        name: "cocktails"
-        file: "content/menu-cocktails.json"
-        fields:
-          - {label: "Category Image", name: "image", widget: "image"}
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Price", name: "price", widget: "number"}
-              - {label: "Description", name: "description", widget: "text"}
+              - { label: "Category Name", name: "category_name", widget: "string" }
+              - { label: "Category Image", name: "category_image", widget: "image", required: false }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Item Name", name: "name", widget: "string" }
+                  - { label: "Price", name: "price", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Video", name: "video", widget: "file", required: false }

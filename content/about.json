@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "About Luminary",
+    "image": "/images/about-hero.jpg"
+  },
+  "our_story": {
+    "title": "Our Story",
+    "paragraph1": "Lorem ipsum dolor sit amet...",
+    "paragraph2": "Ut enim ad minim veniam...",
+    "paragraph3": "Duis aute irure dolor...",
+    "image": "/images/about-story.jpg",
+    "video": ""
+  },
+  "chef_philosophy": {
+    "title": "Chef Philosophy",
+    "paragraph1": "Lorem ipsum dolor sit amet...",
+    "paragraph2": "Ut enim ad minim veniam...",
+    "paragraph3": "Duis aute irure dolor...",
+    "image": "/images/about-chef.jpg",
+    "video": ""
+  }
+}
