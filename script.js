@@ -174,17 +174,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
   
 
 /* ================= CMS LOADER ================= */
@@ -208,6 +197,14 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch(err => console.error("Homepage CMS error:", err));
   }
+
+
+
+
+
+
+
+
 
   // ================= ABOUT =================
   if (page.includes("about.html")) {
