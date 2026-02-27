@@ -1,6 +1,6 @@
 /* =====================================================
    CAROUSEL SECTION
-   ===================================================== */
+===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -33,9 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
 /* =====================================================
    RESERVATION PAGE LOGIC
-   ===================================================== */
+===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -44,6 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const step1 = document.getElementById("step1");
   const step2 = document.getElementById("step2");
   const reservationForm = document.getElementById("reservationForm");
+
+  /* ---------- STEP SWITCHING ---------- */
 
   if (nextBtn && backBtn && step1 && step2) {
 
@@ -59,13 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Copy values into hidden fields (Netlify will capture these)
+      // Copy values into hidden fields (for Netlify)
       document.getElementById("partySizeHidden").value = party;
       document.getElementById("dateHidden").value = date;
       document.getElementById("timeHidden").value = time;
       document.getElementById("occasionHidden").value = occasion;
 
-      // Save to localStorage for confirmation page display
+      // Save to localStorage (for confirmation page)
       localStorage.setItem("partySize", party);
       localStorage.setItem("date", date);
       localStorage.setItem("time", time);
@@ -82,25 +85,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
-  /* ================= SAVE EMAIL ON SUBMIT ================= */
+  /* ---------- SAVE & SUBMIT ---------- */
 
   if (reservationForm) {
-    reservationForm.addEventListener("submit", function () {
+    reservationForm.addEventListener("submit", function (e) {
 
+      e.preventDefault(); // stop default Netlify redirect
+
+      const formData = new FormData(reservationForm);
+
+      // Save email for confirmation page
       const emailInput = reservationForm.querySelector('input[name="email"]');
-
       if (emailInput) {
         localStorage.setItem("email", emailInput.value);
       }
 
+      fetch("/", {
+        method: "POST",
+        body: formData
+      })
+      .then(() => {
+        window.location.href = "/confirmation.html";
+      })
+      .catch((error) => {
+        alert("There was a problem submitting the form.");
+        console.error(error);
+      });
+
     });
   }
 
-});
+}); // ← properly closes reservation DOMContentLoaded
+
 
 /* =====================================================
-   MOBILE NAVIGATION (HAMBURGER MENU)
-   ===================================================== */
+   MOBILE NAVIGATION
+===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -115,7 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-/* ================= CONFIRMATION PAGE ================= */
+
+/* =====================================================
+   CONFIRMATION PAGE
+===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
