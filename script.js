@@ -174,4 +174,108 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+
+
+
+
+
+
+
+
+
+
+
+  
+
+/* ================= CMS LOADER ================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const page = window.location.pathname;
+
+  // ================= HOMEPAGE =================
+  if (page.includes("index.html") || page === "/") {
+
+    fetch("content/homepage.json")
+      .then(res => res.json())
+      .then(data => {
+
+        if (document.getElementById("heroTitle")) {
+          document.getElementById("heroTitle").textContent = data.hero.title;
+          document.getElementById("heroDescription").textContent = data.hero.description;
+        }
+
+      })
+      .catch(err => console.error("Homepage CMS error:", err));
+  }
+
+  // ================= ABOUT =================
+  if (page.includes("about.html")) {
+
+    fetch("content/about.json")
+      .then(res => res.json())
+      .then(data => {
+
+        if (document.getElementById("aboutHeroTitle")) {
+          document.getElementById("aboutHeroTitle").textContent = data.hero.title;
+        }
+
+      })
+      .catch(err => console.error("About CMS error:", err));
+  }
+
+  // ================= EVENTS =================
+  if (page.includes("events.html")) {
+
+    fetch("content/events.json")
+      .then(res => res.json())
+      .then(data => {
+
+        if (document.getElementById("eventsHeroTitle")) {
+          document.getElementById("eventsHeroTitle").textContent = data.hero.title;
+        }
+
+      })
+      .catch(err => console.error("Events CMS error:", err));
+  }
+
+  // ================= MENU =================
+  if (page.includes("menu.html")) {
+
+    fetch("content/menu.json")
+      .then(res => res.json())
+      .then(data => {
+
+        const container = document.getElementById("menuContainer");
+        if (!container) return;
+
+        container.innerHTML = "";
+
+        data.categories.forEach(category => {
+
+          const section = document.createElement("div");
+
+          section.innerHTML = `<h2>${category.name}</h2>`;
+
+          category.items.forEach(item => {
+            section.innerHTML += `
+              <div class="menu-item">
+                <h3>${item.name} / ${item.price}</h3>
+                <p>${item.description}</p>
+              </div>
+            `;
+          });
+
+          container.appendChild(section);
+        });
+
+      })
+      .catch(err => console.error("Menu CMS error:", err));
+  }
+
+});
+
+
+
+
 });

@@ -17,6 +17,8 @@
 }
 
 body {
+
+  padding-top: 95px; /* height of navbar */
   font-family: serif;
   background: var(--cream);
   color: var(--deep);
@@ -191,7 +193,14 @@ body {
 }
 
 .hero-content p {
-  margin-bottom: 25px;
+  margin-bottom: 0px;
+}
+.hero {
+  margin-bottom: 0;
+}
+
+.events-page-split {
+  margin-top: 0px;
 }
 
 .hero-btn {
@@ -575,13 +584,14 @@ section.welcome h2 {
 }
 
 
-
 .page-hero {
   height: 380px;
-  background-image: url("images/dish2.png"); 
+  padding-top: 95px; /* height of navbar */
+  background-image: url("images/dish2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   position: relative;
   display: flex;
   align-items: center;
@@ -589,6 +599,8 @@ section.welcome h2 {
   text-align: center;
   color: var(--cream);
 }
+
+
 
 /* Dark overlay */
 .page-hero::before {
@@ -615,8 +627,9 @@ section.welcome h2 {
 }
 
 .about-section.darker {
-  background: var(--deep);
+  background: var(--plum);
   color: var(--cream);
+  padding: 130px 8%;
 }
 
 .about-row {
@@ -655,9 +668,6 @@ section.welcome h2 {
   max-width: 500px;
   height: auto;   
 }
-
-
-
 
 
 
@@ -761,12 +771,8 @@ button{
   transition: 0.3s ease;
 }
 
-main {
-  margin-top: 95px; /* same height as navbar */
-}
 
-
-/* ================= CONFIRMATION PAGE EXACT MATCH ================= */
+/* ================= CONFIRMATION PAGE ================= */
 
 .page-hero {
   height: 520px;
@@ -775,6 +781,10 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.page-hero {
+  height: 520px;
 }
 
 .page-hero h1 {
@@ -950,12 +960,6 @@ main {
 }
 
 
-
-
-
-
-
-
 /* ================= STEP 2 BUTTONS ================= */
 
 /* Back button */
@@ -1001,6 +1005,70 @@ main {
   gap: 20px;
   justify-content: center;
 }
+
+
+
+
+/* ================= EVENTS PAGE SPLIT LAYOUT ================= */
+
+.events-page-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+
+.events-page-left {
+  background: var(--terracotta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 100px;
+}
+
+.events-page-text {
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* space between the two text blocks */
+  max-width: 520px;
+}
+
+
+/* EVENTS BUTTON */
+.events-primary-btn {
+  display: inline-block;
+  background: var(--deep);
+  color: var(--cream);
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: 500;
+  width: fit-content; /* keeps button from stretching */
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+
+
+.events-primary-btn:hover {
+  opacity: 0.85;
+}
+
+.event-block {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.events-page-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+
+
 
 
 /* =====================================================
