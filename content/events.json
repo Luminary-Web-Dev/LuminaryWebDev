@@ -5,7 +5,6 @@
     "image": "",
     "video": ""
   },
-
   "private_dining": {
     "title": "...",
     "paragraph1": "...",
@@ -15,7 +14,6 @@
     "button_text": "Inquire Now",
     "button_link": "mailto:events@luminary.com"
   },
-
   "event_hosting": {
     "title": "...",
     "paragraph1": "...",
@@ -24,5 +22,9 @@
     "image": "...",
     "button_text": "Inquire Now",
     "button_link": "mailto:events@luminary.com"
-  }
+  },
+  "hero_title": "Private  Dining And Events",
+  "private_text": "trdsjyrtdfvugjbhjuydrfhgbhkyugbnm.l,mhbn\nhtegsrdcjyhtjghvbkjhbnjkhmbnmjhmnbkn\ntesgdxcvyjhbn,mhngfsxdcgvbhnjm,mnbvccvbnm",
+  "hosting_text": "trdsjyrtdfvugjbhjuydrfhgbhkyugbnm.l,mhbn\nhtegsrdcjyhtjghvbkjhbnjkhmbnmjhmnbkn\ntesgdxcvyjhbn,mhngfsxdcgvbhnjm,mnbvccvbnm",
+  "events_image": "/images/uploads/img_3887.jpeg"
 }
