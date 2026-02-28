@@ -119,31 +119,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ================= EVENTS PAGE ================= */
 
-  if (page.endsWith("events.html")) {
+if (page.endsWith("events.html")) {
 
-    fetch("content/events.json")
-      .then(res => res.json())
-      .then(data => {
+  fetch("content/events.json")
+    .then(res => res.json())
+    .then(data => {
 
-        document.getElementById("eventsHeroTitle").textContent = data.hero_title || "";
+      // HERO
+      document.getElementById("eventsHeroTitle").textContent =
+        data.hero_title || "";
 
-        const heroSection = document.getElementById("eventsHero");
-        if (heroSection && data.hero_image) {
-          heroSection.style.backgroundImage = `url(${data.hero_image})`;
-          heroSection.style.backgroundSize = "cover";
-          heroSection.style.backgroundPosition = "center";
-        }
+      document.getElementById("eventsHeroDescription").textContent =
+        data.hero_description || "";
 
-        document.getElementById("privateDiningText").textContent = data.private_text || "";
-        document.getElementById("eventHostingText").textContent = data.hosting_text || "";
+      const heroSection = document.getElementById("eventsHero");
+      if (heroSection && data.hero_image) {
+        heroSection.style.backgroundImage =
+          `url(${data.hero_image})`;
+        heroSection.style.backgroundSize = "cover";
+        heroSection.style.backgroundPosition = "center";
+      }
 
-        if (data.events_image) {
-          document.getElementById("eventsRightImage").src = data.events_image;
-        }
+      // PRIVATE DINING
+      document.getElementById("privateDiningTitle").textContent =
+        "Private Dining";
 
-      })
-      .catch(err => console.error("Events CMS error:", err));
-  }
+      document.getElementById("privateDiningText").textContent =
+        data.private_text || "";
+
+      // EVENT HOSTING
+      document.getElementById("eventHostingTitle").textContent =
+        "Event Hosting";
+
+      document.getElementById("eventHostingText").textContent =
+        data.hosting_text || "";
+
+      // RIGHT IMAGE
+      if (data.events_image) {
+        document.getElementById("eventsRightImage").src =
+          data.events_image;
+      }
+
+    })
+    .catch(err => console.error("Events CMS error:", err));
+}
 
 
   /* ================= ABOUT PAGE ================= */
