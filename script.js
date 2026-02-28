@@ -135,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
 /* =====================================================
    CONFIRMATION PAGE
 ===================================================== */
@@ -144,37 +143,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const confirmParty = document.getElementById("confirmPartySize");
 
-  if (confirmParty) {
+  if (!confirmParty) return;
 
-    const partySize = localStorage.getItem("partySize");
-    const date = localStorage.getItem("date");
-    const time = localStorage.getItem("time");
-    const occasion = localStorage.getItem("occasion");
-    const email = localStorage.getItem("email");
+  const partySize = localStorage.getItem("partySize");
+  const date = localStorage.getItem("date");
+  const time = localStorage.getItem("time");
+  const occasion = localStorage.getItem("occasion");
+  const email = localStorage.getItem("email");
 
-    if (partySize) {
-      confirmParty.textContent = partySize;
-    }
+  if (partySize) {
+    confirmParty.textContent = partySize;
+  }
 
-    if (date && time) {
-      const dateTimeElement = document.getElementById("confirmDateTime");
-      if (dateTimeElement) {
-        dateTimeElement.textContent = date + " – " + time;
-      }
-    }
-
-    const occasionElement = document.getElementById("confirmOccasion");
-    if (occasion && occasionElement) {
-      occasionElement.textContent = occasion;
-    }
-
-    const emailElement = document.getElementById("confirmEmail");
-    if (email && emailElement) {
-      emailElement.textContent = email;
+  if (date && time) {
+    const dateTimeElement = document.getElementById("confirmDateTime");
+    if (dateTimeElement) {
+      dateTimeElement.textContent = date + " – " + time;
     }
   }
 
-  
+  const occasionElement = document.getElementById("confirmOccasion");
+  if (occasion && occasionElement) {
+    occasionElement.textContent = occasion;
+  }
+
+  const emailElement = document.getElementById("confirmEmail");
+  if (email && emailElement) {
+    emailElement.textContent = email;
+  }
+
+});
+
+
 /* =====================================================
    CMS LOADER
 ===================================================== */
@@ -184,110 +184,38 @@ document.addEventListener("DOMContentLoaded", function () {
   const page = window.location.pathname;
 
   // ================= HOMEPAGE =================
-  if (page.includes("index.html") || page === "/") {
+  if (page === "/" || page.endsWith("index.html")) {
 
     fetch("/content/homepage.json")
       .then(res => res.json())
       .then(data => {
 
-        document.getElementById("heroTitle").textContent = data.hero_title;
-        document.getElementById("heroDescription").textContent = data.hero_description;
-        document.getElementById("ourStoryTitle").textContent = data.our_story_title;
-        document.getElementById("ourStoryText").textContent = data.our_story_text;
-        document.getElementById("chefTitle").textContent = data.chef_title;
-        document.getElementById("chefText").textContent = data.chef_text;
+        if (document.getElementById("heroTitle")) {
+          document.getElementById("heroTitle").textContent = data.hero_title;
+        }
+
+        if (document.getElementById("heroDescription")) {
+          document.getElementById("heroDescription").textContent = data.hero_description;
+        }
+
+        if (document.getElementById("ourStoryTitle")) {
+          document.getElementById("ourStoryTitle").textContent = data.our_story_title;
+        }
+
+        if (document.getElementById("ourStoryText")) {
+          document.getElementById("ourStoryText").textContent = data.our_story_text;
+        }
+
+        if (document.getElementById("chefTitle")) {
+          document.getElementById("chefTitle").textContent = data.chef_title;
+        }
+
+        if (document.getElementById("chefText")) {
+          document.getElementById("chefText").textContent = data.chef_text;
+        }
 
       })
       .catch(err => console.error("Homepage CMS error:", err));
   }
 
 });
-
-  // ================= ABOUT =================
-  if (page.includes("about.html")) {
-
-    fetch("/content/about.json")
-      .then(res => res.json())
-      .then(data => {
-
-        const heroTitle = document.getElementById("aboutHeroTitle");
-        if (heroTitle && data.hero_title) {
-          heroTitle.textContent = data.hero_title;
-        }
-
-        const storyText = document.getElementById("aboutStoryText");
-        if (storyText && data.our_story_text) {
-          storyText.textContent = data.our_story_text;
-        }
-
-        const chefText = document.getElementById("aboutChefText");
-        if (chefText && data.chef_text) {
-          chefText.textContent = data.chef_text;
-        }
-
-      })
-      .catch(err => console.error("About CMS error:", err));
-  }
-
-  // ================= EVENTS =================
-  if (page.includes("events.html")) {
-
-    fetch("/content/events.json")
-      .then(res => res.json())
-      .then(data => {
-
-        const heroTitle = document.getElementById("eventsHeroTitle");
-        if (heroTitle && data.hero_title) {
-          heroTitle.textContent = data.hero_title;
-        }
-
-        const privateText = document.getElementById("privateText");
-        if (privateText && data.private_text) {
-          privateText.textContent = data.private_text;
-        }
-
-        const hostingText = document.getElementById("hostingText");
-        if (hostingText && data.hosting_text) {
-          hostingText.textContent = data.hosting_text;
-        }
-
-      })
-      .catch(err => console.error("Events CMS error:", err));
-  }
-
-  // ================= MENU =================
-  if (page.includes("menu.html")) {
-
-    fetch("/content/menu.json")
-      .then(res => res.json())
-      .then(data => {
-
-        const container = document.getElementById("menuContainer");
-        if (!container) return;
-
-        container.innerHTML = "";
-
-        data.categories.forEach(category => {
-
-          const section = document.createElement("div");
-          section.innerHTML = `<h2>${category.category_name}</h2>`;
-
-          category.items.forEach(item => {
-            section.innerHTML += `
-              <div class="menu-item">
-                <h3>${item.name} / ${item.price}</h3>
-                <p>${item.description}</p>
-              </div>
-            `;
-          });
-
-          container.appendChild(section);
-        });
-
-      })
-      .catch(err => console.error("Menu CMS error:", err));
-  }
-
-});
-
-
