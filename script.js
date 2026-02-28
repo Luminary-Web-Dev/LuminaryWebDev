@@ -214,8 +214,27 @@ if (page === "/" || page.endsWith("index.html")) {
       if (document.getElementById("chefText")) {
         document.getElementById("chefText").textContent = data.chef_text;
       }
+      // HERO IMAGE
+      if (data.hero_image) {
+        const img = document.getElementById("heroImage");
+        img.src = data.hero_image;
+        img.style.display = "block";
+      }
 
-      // 🔥 IMAGES (THIS WAS MISSING)
+      // HERO VIDEO
+      if (data.hero_video) {
+        const video = document.getElementById("heroVideo");
+        const source = document.getElementById("heroVideoSource");
+
+        source.src = data.hero_video;
+        video.load();
+        video.style.display = "block";
+      }
+
+
+            
+
+      //  IMAGES 
 
       if (document.getElementById("ourStoryImage") && data.our_story_image) {
         document.getElementById("ourStoryImage").src = data.our_story_image;
