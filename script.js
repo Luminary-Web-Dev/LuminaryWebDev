@@ -27,112 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* =====================================================
-   RESERVATION PAGE LOGIC
-===================================================== */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  const nextBtn = document.getElementById("nextBtn");
-  const backBtn = document.getElementById("backBtn");
-  const step1 = document.getElementById("step1");
-  const step2 = document.getElementById("step2");
-  const reservationForm = document.getElementById("reservationForm");
-
-  if (nextBtn && backBtn && step1 && step2) {
-
-    nextBtn.addEventListener("click", () => {
-
-      const party = document.getElementById("partySizeSelect").value;
-      const date = document.getElementById("dateSelect").value;
-      const time = document.getElementById("timeSelect").value;
-      const occasion = document.getElementById("occasionSelect").value;
-
-      if (!party || !date || !time) {
-        alert("Please complete all required fields.");
-        return;
-      }
-
-      localStorage.setItem("partySize", party);
-      localStorage.setItem("date", date);
-      localStorage.setItem("time", time);
-      localStorage.setItem("occasion", occasion);
-
-      step1.classList.remove("active");
-      step2.classList.add("active");
-    });
-
-    backBtn.addEventListener("click", () => {
-      step2.classList.remove("active");
-      step1.classList.add("active");
-    });
-  }
-
-  if (reservationForm) {
-    reservationForm.addEventListener("submit", function (e) {
-
-      e.preventDefault();
-
-      const formData = new FormData(reservationForm);
-
-      const emailInput = reservationForm.querySelector('input[name="email"]');
-      if (emailInput) {
-        localStorage.setItem("email", emailInput.value);
-      }
-
-      fetch("/", {
-        method: "POST",
-        body: formData
-      })
-      .then(() => {
-        window.location.href = "/confirmation.html";
-      })
-      .catch((error) => {
-        alert("There was a problem submitting the form.");
-        console.error(error);
-      });
-    });
-  }
-
-});
-
-
-/* =====================================================
-   CONFIRMATION PAGE
-===================================================== */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  const confirmParty = document.getElementById("confirmPartySize");
-  if (!confirmParty) return;
-
-  const partySize = localStorage.getItem("partySize");
-  const date = localStorage.getItem("date");
-  const time = localStorage.getItem("time");
-  const occasion = localStorage.getItem("occasion");
-  const email = localStorage.getItem("email");
-
-  if (partySize) confirmParty.textContent = partySize;
-
-  const dateTimeElement = document.getElementById("confirmDateTime");
-  if (date && time && dateTimeElement) {
-    dateTimeElement.textContent = date + " – " + time;
-  }
-
-  const occasionElement = document.getElementById("confirmOccasion");
-  if (occasion && occasionElement) {
-    occasionElement.textContent = occasion;
-  }
-
-  const emailElement = document.getElementById("confirmEmail");
-  if (email && emailElement) {
-    emailElement.textContent = email;
-  }
-
-});
-
-
-/* =====================================================
-   CAROUSEL INITIALIZER (REUSABLE)
+   CAROUSEL INITIALIZER
 ===================================================== */
 
 function initializeCarousel() {
@@ -194,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (page === "/" || page.endsWith("index.html")) {
 
-    fetch("/content/homepage.json")
+    fetch("content/homepage.json")
       .then(res => res.json())
       .then(data => {
 
@@ -205,24 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("chefTitle").textContent = data.chef_title || "";
         document.getElementById("chefText").textContent = data.chef_text || "";
 
-        const heroImage = document.getElementById("heroImage");
-        const heroVideo = document.getElementById("heroVideo");
-        const heroVideoSource = document.getElementById("heroVideoSource");
-
-        if (heroImage && heroVideo && heroVideoSource) {
-
-          heroImage.style.display = "none";
-          heroVideo.style.display = "none";
-
-          if (data.hero_video) {
-            heroVideoSource.src = data.hero_video;
-            heroVideo.load();
-            heroVideo.style.display = "block";
-          }
-          else if (data.hero_image) {
-            heroImage.src = data.hero_image;
-            heroImage.style.display = "block";
-          }
+        if (data.hero_image) {
+          document.getElementById("heroImage").src = data.hero_image;
         }
 
         if (data.our_story_image) {
@@ -238,125 +117,79 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
- /* ================= EVENTS PAGE ================= */
+  /* ================= EVENTS PAGE ================= */
 
-if (page.endsWith("events.html")) {
+  if (page.endsWith("events.html")) {
 
-  fetch("/content/events.json")
-    .then(res => res.json())
-    .then(data => {
+    fetch("content/events.json")
+      .then(res => res.json())
+      .then(data => {
 
-      // HERO TITLE
-      const heroTitle = document.getElementById("eventsHeroTitle");
-      if (heroTitle) heroTitle.textContent = data.hero_title || "";
+        document.getElementById("eventsHeroTitle").textContent = data.hero_title || "";
 
-      // HERO IMAGE (background)
-      const heroSection = document.getElementById("eventsHero");
-      if (heroSection && data.hero_image) {
-        heroSection.style.backgroundImage = `url(${data.hero_image})`;
-        heroSection.style.backgroundSize = "cover";
-        heroSection.style.backgroundPosition = "center";
-      }
+        const heroSection = document.getElementById("eventsHero");
+        if (heroSection && data.hero_image) {
+          heroSection.style.backgroundImage = `url(${data.hero_image})`;
+          heroSection.style.backgroundSize = "cover";
+          heroSection.style.backgroundPosition = "center";
+        }
 
-      // PRIVATE DINING
-      const privateText = document.getElementById("privateDiningText");
-      if (privateText) privateText.textContent = data.private_text || "";
+        document.getElementById("privateDiningText").textContent = data.private_text || "";
+        document.getElementById("eventHostingText").textContent = data.hosting_text || "";
 
-      // EVENT HOSTING
-      const hostingText = document.getElementById("eventHostingText");
-      if (hostingText) hostingText.textContent = data.hosting_text || "";
+        if (data.events_image) {
+          document.getElementById("eventsRightImage").src = data.events_image;
+        }
 
-      // RIGHT IMAGE
-      const rightImage = document.getElementById("eventsRightImage");
-      if (rightImage && data.events_image) {
-        rightImage.src = data.events_image;
-      }
-
-    })
-    .catch(err => console.error("Events CMS error:", err));
-}
-
-
+      })
+      .catch(err => console.error("Events CMS error:", err));
+  }
 
 
   /* ================= ABOUT PAGE ================= */
 
-if (page.endsWith("about.html")) {
+  if (page.endsWith("about.html")) {
 
-  fetch("/content/about.json")
-    .then(res => res.json())
-    .then(data => {
+    fetch("content/about.json")
+      .then(res => res.json())
+      .then(data => {
 
-      /* ========= HERO ========= */
+        document.getElementById("aboutHeroTitle").textContent = data.hero_title || "";
 
-      const heroTitle = document.getElementById("aboutHeroTitle");
-      const heroImage = document.getElementById("aboutHeroImage");
-      const heroVideo = document.getElementById("aboutHeroVideo");
-      const heroVideoSource = document.getElementById("aboutHeroVideoSource");
-
-      if (heroTitle) heroTitle.textContent = data.hero_title || "";
-
-      if (heroImage && heroVideo && heroVideoSource) {
-
-        heroImage.style.display = "none";
-        heroVideo.style.display = "none";
-
-        if (data.hero_video) {
-          heroVideoSource.src = data.hero_video;
-          heroVideo.load();
-          heroVideo.style.display = "block";
+        if (data.hero_image) {
+          document.getElementById("aboutHeroImage").src = data.hero_image;
         }
-        else if (data.hero_image) {
-          heroImage.src = data.hero_image;
-          heroImage.style.display = "block";
+
+        document.getElementById("aboutStoryTitle").textContent = data.story_title || "";
+        document.getElementById("aboutStoryText").textContent = data.story_text || "";
+
+        if (data.story_image) {
+          document.getElementById("aboutStoryImage").src = data.story_image;
         }
-      }
 
-      /* ========= STORY ========= */
+        document.getElementById("aboutSecondaryText").textContent = data.secondary_story_text || "";
 
-      const storyTitle = document.getElementById("aboutStoryTitle");
-      const storyText = document.getElementById("aboutStoryText");
-      const storyImage = document.getElementById("aboutStoryImage");
+        if (data.secondary_story_image) {
+          document.getElementById("aboutSecondaryImage").src = data.secondary_story_image;
+        }
 
-      if (storyTitle) storyTitle.textContent = data.story_title || "";
-      if (storyText) storyText.textContent = data.story_text || "";
-      if (storyImage && data.story_image) {
-        storyImage.src = data.story_image;
-      }
+        document.getElementById("aboutChefTitle").textContent = data.chef_title || "";
+        document.getElementById("aboutChefText").textContent = data.chef_text || "";
 
-      /* ========= SECOND STORY ========= */
+        if (data.chef_image) {
+          document.getElementById("aboutChefImage").src = data.chef_image;
+        }
 
-      const secondaryText = document.getElementById("aboutSecondaryText");
-      const secondaryImage = document.getElementById("aboutSecondaryImage");
-
-      if (secondaryText) secondaryText.textContent = data.secondary_story_text || "";
-      if (secondaryImage && data.secondary_story_image) {
-        secondaryImage.src = data.secondary_story_image;
-      }
-
-      /* ========= CHEF ========= */
-
-      const chefTitle = document.getElementById("aboutChefTitle");
-      const chefText = document.getElementById("aboutChefText");
-      const chefImage = document.getElementById("aboutChefImage");
-
-      if (chefTitle) chefTitle.textContent = data.chef_title || "";
-      if (chefText) chefText.textContent = data.chef_text || "";
-      if (chefImage && data.chef_image) {
-        chefImage.src = data.chef_image;
-      }
-
-    })
-    .catch(err => console.error("About CMS error:", err));
-}
-
+      })
+      .catch(err => console.error("About CMS error:", err));
+  }
 
 
   /* ================= MENU ================= */
 
   if (page.endsWith("menu.html")) {
 
-    fetch("/content/menu.json")
+    fetch("content/menu.json")
       .then(res => res.json())
       .then(data => {
 
@@ -372,24 +205,14 @@ if (page.endsWith("about.html")) {
           if (index === 0) slide.classList.add("active");
 
           slide.innerHTML = `
-  <h3 class="carousel-category">${category.category_name}</h3>
+            <h3 class="carousel-category">${category.category_name}</h3>
 
-  <div class="carousel-image-wrapper">
-    ${category.category_image 
-      ? `<img src="${category.category_image}" class="carousel-image" alt="${category.category_name}">`
-      : ""
-    }
-  </div>
-
-  <div class="carousel-items">
-    ${category.items.map(item => `
-      <div class="carousel-item">
-        <h4>${item.name} <span>/ ${item.price}</span></h4>
-        <p>${item.description}</p>
-      </div>
-    `).join("")}
-  </div>
-
+            <div class="carousel-image-wrapper">
+              ${category.category_image 
+                ? `<img src="${category.category_image}" class="carousel-image" alt="${category.category_name}">`
+                : ""
+              }
+            </div>
 
             <div class="carousel-items">
               ${category.items.map(item => `
