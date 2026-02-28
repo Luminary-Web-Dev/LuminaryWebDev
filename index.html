@@ -24,6 +24,9 @@
       </a>
     </div>
 
+
+    
+
     <button class="hamburger" id="hamburger">☰</button>
 
     <nav class="nav-links" id="navLinks">
@@ -164,5 +167,13 @@
   <input type="email" name="email" />
 </form>
 
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("login", function () {
+      document.location.href = "/admin/";
+    });
+  }
+</script>
 </body>
 </html>
