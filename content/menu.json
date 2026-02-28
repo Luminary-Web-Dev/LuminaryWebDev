@@ -1,18 +1,172 @@
 {
   "categories": [
     {
-      "name": "Appetizers",
-      "image": "/images/dish1.png",
+      "category_name": "Appetizers",
+      "category_image": "/images/uploads/appetizers.jpg",
       "items": [
         {
-          "title": "Starlight Tartare",
-          "price": "11",
-          "description": "Finely diced seasonal tuna with yuzu, avocado, and a touch of edible gold."
+          "name": "Burrata & Heirloom Tomatoes",
+          "price": "14",
+          "description": "Fresh burrata, seasonal tomatoes, basil oil, sea salt.",
+          "image": "",
+          "video": ""
         },
         {
-          "title": "Nebula Carpaccio",
+          "name": "Crispy Calamari",
+          "price": "16",
+          "description": "Lightly fried calamari, lemon aioli, charred citrus.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Wild Mushroom Tart",
+          "price": "13",
+          "description": "Seasonal mushrooms, truffle cream, flaky pastry.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Charred Octopus",
+          "price": "18",
+          "description": "Grilled octopus, fingerling potatoes, smoked paprika.",
+          "image": "",
+          "video": ""
+        }
+      ]
+    },
+    {
+      "category_name": "Entrées",
+      "category_image": "/images/uploads/entrees.jpg",
+      "items": [
+        {
+          "name": "Pan-Seared Sea Bass",
+          "price": "32",
+          "description": "Lemon beurre blanc, roasted vegetables.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Filet Mignon",
+          "price": "45",
+          "description": "Grass-fed filet, garlic mashed potatoes.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Wild Mushroom Risotto",
+          "price": "28",
+          "description": "Creamy arborio rice, parmesan, truffle oil.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Roasted Half Chicken",
+          "price": "29",
+          "description": "Herb jus, charred broccolini.",
+          "image": "",
+          "video": ""
+        }
+      ]
+    },
+    {
+      "category_name": "Desserts",
+      "category_image": "/images/uploads/desserts.jpg",
+      "items": [
+        {
+          "name": "Dark Chocolate Mousse",
+          "price": "12",
+          "description": "Valrhona chocolate, whipped cream, sea salt.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Crème Brûlée",
+          "price": "11",
+          "description": "Vanilla custard, caramelized sugar crust.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Lemon Tart",
           "price": "10",
-          "description": "Paper-thin slices of beetroot and radish, finished with truffle vinaigrette."
+          "description": "Citrus curd, toasted meringue.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Tiramisu",
+          "price": "12",
+          "description": "Espresso-soaked ladyfingers, mascarpone.",
+          "image": "",
+          "video": ""
+        }
+      ]
+    },
+    {
+      "category_name": "Cocktails",
+      "category_image": "/images/uploads/cocktails.jpg",
+      "items": [
+        {
+          "name": "Classic Negroni",
+          "price": "15",
+          "description": "Gin, Campari, sweet vermouth.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Smoked Old Fashioned",
+          "price": "16",
+          "description": "Bourbon, smoked oak, bitters.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "French 75",
+          "price": "14",
+          "description": "Gin, lemon, prosecco.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Spicy Margarita",
+          "price": "14",
+          "description": "Tequila, lime, chili infusion.",
+          "image": "",
+          "video": ""
+        }
+      ]
+    },
+    {
+      "category_name": "Non-Alcoholic Beverages",
+      "category_image": "/images/uploads/beverages.jpg",
+      "items": [
+        {
+          "name": "Sparkling Citrus Elixir",
+          "price": "8",
+          "description": "Blood orange, yuzu, sparkling mineral water.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Jasmine Iced Tea",
+          "price": "6",
+          "description": "White peach, elderflower, lightly chilled.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Cold Brew Coffee",
+          "price": "7",
+          "description": "Single-origin cold brew with vanilla bean.",
+          "image": "",
+          "video": ""
+        },
+        {
+          "name": "Fresh Lemonade",
+          "price": "6",
+          "description": "House-made lemonade with seasonal citrus.",
+          "image": "",
+          "video": ""
         }
       ]
     }
