@@ -1,13 +1,8 @@
 {
-  "story_secondary_text": "Guests can enjoy the warm atmosphere...",
-  "secondary_story_text": "trdsjyrtdfvugjbhjuydrfhgbhkyugbnm.l,mhbn\nhtegsrdcjyhtjghvbkjhbnjkhmbnmjhmnbkn\ntesgdxcvyjhbn,mhngfsxdcgvbhnjm,mnbvccvbnm",
-  "chef_image": "/images/uploads/screenshot_20250211_120008_gallery.jpg",
-  "chef_text": "Executive Chef Brie Lumière builds each dish...",
-  "story_secondary_image": "/images/uploads/story-2.jpg",
-  "story_title": "Our Story",
-  "story_image": "/images/uploads/git_450-550_luminary_photo_-_video_foodplating02_v2.jpg",
-  "hero_title": "About Luminary",
-  "hero_image": "/images/uploads/git_450-550_luminary_photo_-_video_atmosphere03_v2.jpg",
-  "story_text": "Luminary is an approachable fine-dining experience...",
-  "chef_title": "Chef Philosophy"
+  "hero_title": "Private Dining And Events",
+  "hero_image": "/images/uploads/your-hero-image.jpg",
+  "private_text": "Private Dining description goes here.",
+  "hosting_text": "Event Hosting description goes here.",
+  "events_image": "/images/uploads/your-right-side-image.jpg",
+  "events_video": ""
 }

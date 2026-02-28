@@ -238,30 +238,43 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* ================= EVENTS ================= */
+ /* ================= EVENTS PAGE ================= */
 
-  if (page.endsWith("events.html")) {
+if (page.endsWith("events.html")) {
 
-    fetch("/content/events.json")
-      .then(res => res.json())
-      .then(data => {
+  fetch("/content/events.json")
+    .then(res => res.json())
+    .then(data => {
 
-        const heroTitle = document.getElementById("eventsHeroTitle");
-        const heroDesc = document.getElementById("eventsHeroDescription");
-        const heroSection = document.getElementById("eventsHero");
+      // HERO TITLE
+      const heroTitle = document.getElementById("eventsHeroTitle");
+      if (heroTitle) heroTitle.textContent = data.hero_title || "";
 
-        if (heroTitle) heroTitle.textContent = data.hero_title;
-        if (heroDesc) heroDesc.textContent = data.hero_description;
+      // HERO IMAGE (background)
+      const heroSection = document.getElementById("eventsHero");
+      if (heroSection && data.hero_image) {
+        heroSection.style.backgroundImage = `url(${data.hero_image})`;
+        heroSection.style.backgroundSize = "cover";
+        heroSection.style.backgroundPosition = "center";
+      }
 
-        if (heroSection && data.hero_image) {
-          heroSection.style.backgroundImage = `url(${data.hero_image})`;
-          heroSection.style.backgroundSize = "cover";
-          heroSection.style.backgroundPosition = "center";
-        }
+      // PRIVATE DINING
+      const privateText = document.getElementById("privateDiningText");
+      if (privateText) privateText.textContent = data.private_text || "";
 
-      })
-      .catch(err => console.error("Events CMS error:", err));
-  }
+      // EVENT HOSTING
+      const hostingText = document.getElementById("eventHostingText");
+      if (hostingText) hostingText.textContent = data.hosting_text || "";
+
+      // RIGHT IMAGE
+      const rightImage = document.getElementById("eventsRightImage");
+      if (rightImage && data.events_image) {
+        rightImage.src = data.events_image;
+      }
+
+    })
+    .catch(err => console.error("Events CMS error:", err));
+}
 
 
 
