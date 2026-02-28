@@ -38,23 +38,24 @@
 
   <h2 class="carousel-title">Menu</h2>
 
-  <div class="carousel">
+ <div class="carousel">
 
-    <!-- LEFT ARROW -->
+  <div class="carousel-viewport">
+
     <button class="carousel-btn left" onclick="changeSlide(-1)">&#8249;</button>
 
-    <!-- CMS SLIDES CONTAINER -->
-    <div id="menuSlidesContainer">
-      <!-- Slides generated from menu.json -->
+    <div id="menuSlidesContainer" class="carousel-track">
+      <!-- Slides injected here -->
     </div>
 
-    <!-- RIGHT ARROW -->
     <button class="carousel-btn right" onclick="changeSlide(1)">&#8250;</button>
 
-    <!-- DOTS -->
-    <div class="carousel-dots" id="carouselDots"></div>
-
   </div>
+
+  <!-- DOTS UNDER EVERYTHING -->
+  <div class="carousel-dots" id="carouselDots"></div>
+
+</div>
 
 </section>
 
