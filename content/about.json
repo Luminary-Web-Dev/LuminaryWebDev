@@ -1,8 +1,15 @@
 {
-  "hero_title": "Private Dining And Events",
-  "hero_image": "/images/uploads/your-hero-image.jpg",
+  "secondary_story_text": "more Text >>>>>>>>>>>>>>>>>>>>>>>>>\n<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",
+  "chef_text": "Philosophy text >>>>>>>>>>>>>>>>>>>>>>>>>>..\n<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",
+  "secondary_story_image": "/images/uploads/git_450-550_luminary_photo_-_video_chopping01_v2.png",
   "private_text": "Private Dining description goes here.",
+  "story_title": "Our Story",
+  "story_image": "/images/uploads/git_450-550_luminary_photo_-_video_foodplating02_v2.jpg",
   "hosting_text": "Event Hosting description goes here.",
+  "hero_title": " ABOUT PAGE",
+  "events_video": "",
   "events_image": "/images/uploads/your-right-side-image.jpg",
-  "events_video": ""
+  "hero_image": "/images/uploads/git_450-550_luminary_photo_-_video_atmosphere03_v2.jpg",
+  "story_text": "TEX ..................................\n,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+  "chef_title": "Chef Philosophy"
 }
