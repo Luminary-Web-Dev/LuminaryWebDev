@@ -264,6 +264,67 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
+
+
+  /* ================= ABOUT PAGE ================= */
+
+if (page.endsWith("about.html")) {
+
+  fetch("/content/about.json")
+    .then(res => res.json())
+    .then(data => {
+
+      // HERO
+      const heroTitle = document.getElementById("aboutHeroTitle");
+      const heroSection = document.getElementById("aboutHero");
+
+      if (heroTitle) heroTitle.textContent = data.hero_title;
+
+      if (heroSection && data.hero_image) {
+        heroSection.style.backgroundImage = `url(${data.hero_image})`;
+        heroSection.style.backgroundSize = "cover";
+        heroSection.style.backgroundPosition = "center";
+      }
+
+      // STORY SECTION
+      const storyTitle = document.getElementById("storyTitle");
+      const storyText = document.getElementById("storyText");
+      const storyImage = document.getElementById("storyImage");
+
+      if (storyTitle) storyTitle.textContent = data.story_title;
+      if (storyText) storyText.textContent = data.story_text;
+      if (storyImage && data.story_image) {
+        storyImage.src = data.story_image;
+      }
+
+      // SECONDARY STORY
+      const secondaryText = document.getElementById("secondaryStoryText");
+      const secondaryImage = document.getElementById("secondaryStoryImage");
+
+      if (secondaryText) secondaryText.textContent = data.secondary_story_text;
+      if (secondaryImage && data.secondary_story_image) {
+        secondaryImage.src = data.secondary_story_image;
+      }
+
+      // CHEF SECTION
+      const chefTitle = document.getElementById("aboutChefTitle");
+      const chefText = document.getElementById("aboutChefText");
+      const chefImage = document.getElementById("aboutChefImage");
+
+      if (chefTitle) chefTitle.textContent = data.chef_title;
+      if (chefText) chefText.textContent = data.chef_text;
+      if (chefImage && data.chef_image) {
+        chefImage.src = data.chef_image;
+      }
+
+    })
+    .catch(err => console.error("About CMS error:", err));
+}
+
+
+
+
+
   /* ================= MENU ================= */
 
   if (page.endsWith("menu.html")) {
