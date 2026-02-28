@@ -28,9 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       showSlide(currentSlide);
     };
-
   }
-
 });
 
 
@@ -46,8 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const step2 = document.getElementById("step2");
   const reservationForm = document.getElementById("reservationForm");
 
-  /* ---------- STEP SWITCHING ---------- */
-
   if (nextBtn && backBtn && step1 && step2) {
 
     nextBtn.addEventListener("click", () => {
@@ -62,13 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Copy values into hidden fields (for Netlify)
       document.getElementById("partySizeHidden").value = party;
       document.getElementById("dateHidden").value = date;
       document.getElementById("timeHidden").value = time;
       document.getElementById("occasionHidden").value = occasion;
 
-      // Save to localStorage (for confirmation page)
       localStorage.setItem("partySize", party);
       localStorage.setItem("date", date);
       localStorage.setItem("time", time);
@@ -82,19 +76,15 @@ document.addEventListener("DOMContentLoaded", function () {
       step2.classList.remove("active");
       step1.classList.add("active");
     });
-
   }
-
-  /* ---------- SAVE & SUBMIT ---------- */
 
   if (reservationForm) {
     reservationForm.addEventListener("submit", function (e) {
 
-      e.preventDefault(); // stop default Netlify redirect
+      e.preventDefault();
 
       const formData = new FormData(reservationForm);
 
-      // Save email for confirmation page
       const emailInput = reservationForm.querySelector('input[name="email"]');
       if (emailInput) {
         localStorage.setItem("email", emailInput.value);
@@ -111,11 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("There was a problem submitting the form.");
         console.error(error);
       });
-
     });
   }
-
-}); // ← properly closes reservation DOMContentLoaded
+});
 
 
 /* =====================================================
@@ -132,8 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
       navLinks.classList.toggle("active");
     });
   }
-
 });
+
 
 /* =====================================================
    CONFIRMATION PAGE
@@ -142,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
 
   const confirmParty = document.getElementById("confirmPartySize");
-
   if (!confirmParty) return;
 
   const partySize = localStorage.getItem("partySize");
@@ -151,9 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const occasion = localStorage.getItem("occasion");
   const email = localStorage.getItem("email");
 
-  if (partySize) {
-    confirmParty.textContent = partySize;
-  }
+  if (partySize) confirmParty.textContent = partySize;
 
   if (date && time) {
     const dateTimeElement = document.getElementById("confirmDateTime");
@@ -171,7 +156,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (email && emailElement) {
     emailElement.textContent = email;
   }
-
 });
 
 
@@ -183,77 +167,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const page = window.location.pathname;
 
-  // ================= HOMEPAGE =================
-if (page === "/" || page.endsWith("index.html")) {
+  if (page === "/" || page.endsWith("index.html")) {
 
-  fetch("/content/homepage.json")
-    .then(res => res.json())
-    .then(data => {
+    fetch("/content/homepage.json")
+      .then(res => res.json())
+      .then(data => {
 
-      // TEXT
-      if (document.getElementById("heroTitle")) {
-        document.getElementById("heroTitle").textContent = data.hero_title;
-      }
+        // TEXT
+        document.getElementById("heroTitle").textContent = data.hero_title || "";
+        document.getElementById("heroDescription").textContent = data.hero_description || "";
+        document.getElementById("ourStoryTitle").textContent = data.our_story_title || "";
+        document.getElementById("ourStoryText").textContent = data.our_story_text || "";
+        document.getElementById("chefTitle").textContent = data.chef_title || "";
+        document.getElementById("chefText").textContent = data.chef_text || "";
 
-      if (document.getElementById("heroDescription")) {
-        document.getElementById("heroDescription").textContent = data.hero_description;
-      }
+        // HERO MEDIA (Video > Image > Dark)
+        const heroImage = document.getElementById("heroImage");
+        const heroVideo = document.getElementById("heroVideo");
+        const heroVideoSource = document.getElementById("heroVideoSource");
 
-      if (document.getElementById("ourStoryTitle")) {
-        document.getElementById("ourStoryTitle").textContent = data.our_story_title;
-      }
+        if (heroImage && heroVideo && heroVideoSource) {
 
-      if (document.getElementById("ourStoryText")) {
-        document.getElementById("ourStoryText").textContent = data.our_story_text;
-      }
+          heroImage.style.display = "none";
+          heroVideo.style.display = "none";
 
-      if (document.getElementById("chefTitle")) {
-        document.getElementById("chefTitle").textContent = data.chef_title;
-      }
+          if (data.hero_video) {
+            heroVideoSource.src = data.hero_video;
+            heroVideo.load();
+            heroVideo.style.display = "block";
+          }
+          else if (data.hero_image) {
+            heroImage.src = data.hero_image;
+            heroImage.style.display = "block";
+          }
+        }
 
-      if (document.getElementById("chefText")) {
-        document.getElementById("chefText").textContent = data.chef_text;
-      }
-      // HERO IMAGE
-      if (data.hero_image) {
-        const img = document.getElementById("heroImage");
-        img.src = data.hero_image;
-        img.style.display = "block";
-      }
+        // SECTION IMAGES
+        if (data.our_story_image) {
+          document.getElementById("ourStoryImage").src = data.our_story_image;
+        }
 
-      // HERO VIDEO
-      if (data.hero_video) {
-        const video = document.getElementById("heroVideo");
-        const source = document.getElementById("heroVideoSource");
+        if (data.chef_image) {
+          document.getElementById("chefImage").src = data.chef_image;
+        }
 
-        source.src = data.hero_video;
-        video.load();
-        video.style.display = "block";
-      }
+      })
+      .catch(err => console.error("Homepage CMS error:", err));
+  }
 
-
-      // Smart Priority video to override image
-
-      if (data.hero_video) {
-        // show video
-      } else if (data.hero_image) {
-           // show image
-      }
-
-
-            
-
-      //  IMAGES 
-
-      if (document.getElementById("ourStoryImage") && data.our_story_image) {
-        document.getElementById("ourStoryImage").src = data.our_story_image;
-      }
-
-      if (document.getElementById("chefImage") && data.chef_image) {
-        document.getElementById("chefImage").src = data.chef_image;
-      }
-
-    })
-    .catch(err => console.error("Homepage CMS error:", err));
-}
 });
