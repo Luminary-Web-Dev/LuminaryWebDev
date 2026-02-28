@@ -1,15 +1,13 @@
 {
-  "hero_title": "About Luminary",
-  "hero_image": "/images/uploads/about-hero.jpg",
-
-  "story_title": "Our Story",
-  "story_text": "Luminary is an approachable fine-dining experience...",
-  "story_image": "/images/uploads/story-1.jpg",
-
   "story_secondary_text": "Guests can enjoy the warm atmosphere...",
-  "story_secondary_image": "/images/uploads/story-2.jpg",
-
-  "chef_title": "Chef Philosophy",
+  "secondary_story_text": "...............................................\n...............................................\n...............................................",
+  "chef_image": "/images/uploads/screenshot_20250211_120008_gallery.jpg",
   "chef_text": "Executive Chef Brie Lumière builds each dish...",
-  "chef_image": "/images/uploads/chef.jpg"
+  "story_secondary_image": "/images/uploads/story-2.jpg",
+  "story_title": "Our Story",
+  "story_image": "/images/uploads/git_450-550_luminary_photo_-_video_foodplating02_v2.jpg",
+  "hero_title": "About Luminary",
+  "hero_image": "/images/uploads/git_450-550_luminary_photo_-_video_atmosphere03_v2.jpg",
+  "story_text": "Luminary is an approachable fine-dining experience...",
+  "chef_title": "Chef Philosophy"
 }
