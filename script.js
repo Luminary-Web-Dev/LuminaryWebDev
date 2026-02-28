@@ -232,6 +232,15 @@ if (page === "/" || page.endsWith("index.html")) {
       }
 
 
+      // Smart Priority video to override image
+
+      if (data.hero_video) {
+        // show video
+      } else if (data.hero_image) {
+           // show image
+      }
+
+
             
 
       //  IMAGES 
