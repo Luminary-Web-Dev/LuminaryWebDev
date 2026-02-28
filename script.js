@@ -119,8 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ================= EVENTS PAGE ================= */
 
-if (page.endsWith("events.html")) {
-
+if (page.endsWith("events") || page.endsWith("events.html")) {
   fetch("content/events.json")
     .then(res => res.json())
     .then(data => {
