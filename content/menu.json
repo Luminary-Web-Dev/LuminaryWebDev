@@ -7,14 +7,20 @@
         {
           "title": "Starlight Tartare",
           "price": "11",
-          "description": "Finely diced seasonal tuna with yuzu, avocado, and a touch of edible gold."
+          "description": "Finely diced seasonal tuna with yuzu, avocado, and a touch of edible gold.",
+          "name": "garlic",
+          "image": "/images/uploads/git_450-550_luminary_photo_-_video_kitchen02_v2.jpg"
         },
         {
           "title": "Nebula Carpaccio",
           "price": "10",
-          "description": "Paper-thin slices of beetroot and radish, finished with truffle vinaigrette."
+          "description": "Paper-thin slices of beetroot and radish, finished with truffle vinaigrette.",
+          "image": "/images/uploads/git_450-550_luminary_photo_-_video_chopping01_v2.png",
+          "name": "onion"
         }
-      ]
+      ],
+      "category_name": "Menu",
+      "category_image": "/images/uploads/screenshot_20250211_120008_gallery.jpg"
     }
   ]
 }
