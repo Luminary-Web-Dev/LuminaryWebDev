@@ -6,22 +6,22 @@
       "items": [
         {
           "name": "Burrata & Heirloom Tomatoes",
-          "price": "14",
+          "price": "16",
           "description": "Fresh burrata, seasonal tomatoes, basil oil, sea salt."
         },
         {
           "name": "Crispy Calamari",
-          "price": "16",
+          "price": "20",
           "description": "Lightly fried calamari, lemon aioli, charred citrus."
         },
         {
           "name": "Wild Mushroom Tart",
-          "price": "13",
+          "price": "10",
           "description": "Seasonal mushrooms, truffle cream, flaky pastry."
         },
         {
           "name": "Charred Octopus",
-          "price": "18",
+          "price": "22",
           "description": "Grilled octopus, fingerling potatoes, smoked paprika."
         }
       ]
