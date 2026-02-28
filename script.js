@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* =====================================================
-   MOBILE NAVIGATION
+   MOBILE NAVIGATION (RESTORED FULL VERSION)
 ===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -115,11 +115,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("navLinks");
 
-  if (hamburger && navLinks) {
-    hamburger.addEventListener("click", function () {
-      navLinks.classList.toggle("active");
+  if (!hamburger || !navLinks) return;
+
+  // Toggle nav
+  hamburger.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("open");
+    document.body.classList.toggle("nav-open");
+  });
+
+  // Close nav when clicking any link
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      hamburger.classList.remove("open");
+      document.body.classList.remove("nav-open");
     });
-  }
+  });
+
 });
 
 
