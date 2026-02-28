@@ -184,57 +184,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const page = window.location.pathname;
 
   // ================= HOMEPAGE =================
-  if (page === "/" || page.includes("index.html")) {
+if (page.includes("index.html") || page === "/") {
 
-    fetch("/content/homepage.json")
-      .then(res => res.json())
-      .then(data => {
+  fetch("content/homepage.json")
+    .then(res => res.json())
+    .then(data => {
 
-        const heroTitle = document.getElementById("heroTitle");
-        if (heroTitle && data.hero_title) {
-          heroTitle.textContent = data.hero_title;
-        }
+      if (document.getElementById("heroTitle")) {
+        document.getElementById("heroTitle").textContent = data.hero_title;
+      }
 
-        const heroDescription = document.getElementById("heroDescription");
-        if (heroDescription && data.hero_description) {
-          heroDescription.textContent = data.hero_description;
-        }
+      if (document.getElementById("heroDescription")) {
+        document.getElementById("heroDescription").textContent = data.hero_description;
+      }
 
-        const ourStoryTitle = document.getElementById("ourStoryTitle");
-        if (ourStoryTitle && data.our_story_title) {
-          ourStoryTitle.textContent = data.our_story_title;
-        }
+      if (document.getElementById("ourStoryTitle")) {
+        document.getElementById("ourStoryTitle").textContent = data.our_story_title;
+      }
 
-        const ourStoryText = document.getElementById("ourStoryText");
-        if (ourStoryText && data.our_story_text) {
-          ourStoryText.textContent = data.our_story_text;
-        }
+      if (document.getElementById("ourStoryText")) {
+        document.getElementById("ourStoryText").textContent = data.our_story_text;
+      }
 
-        const chefTitle = document.getElementById("chefTitle");
-        if (chefTitle && data.chef_title) {
-          chefTitle.textContent = data.chef_title;
-        }
+      if (document.getElementById("chefTitle")) {
+        document.getElementById("chefTitle").textContent = data.chef_title;
+      }
 
-        const chefText = document.getElementById("chefText");
-        if (chefText && data.chef_text) {
-          chefText.textContent = data.chef_text;
-        }
+      if (document.getElementById("chefText")) {
+        document.getElementById("chefText").textContent = data.chef_text;
+      }
 
-        const ourStoryVideoSource = document.getElementById("ourStoryVideoSource");
-        if (ourStoryVideoSource && data.our_story_video) {
-          ourStoryVideoSource.src = data.our_story_video;
-          document.getElementById("ourStoryVideo").load();
-        }
-
-        const chefVideoSource = document.getElementById("chefVideoSource");
-        if (chefVideoSource && data.chef_video) {
-          chefVideoSource.src = data.chef_video;
-          document.getElementById("chefVideo").load();
-        }
-
-      })
-      .catch(err => console.error("Homepage CMS error:", err));
-  }
+    })
+    .catch(err => console.error("Homepage CMS error:", err));
+}
 
   // ================= ABOUT =================
   if (page.includes("about.html")) {
