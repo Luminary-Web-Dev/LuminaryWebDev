@@ -1,22 +1,28 @@
 {
   "hero": {
-    "title": "Private Dining and Events",
-    "image": "/images/events-hero.jpg"
+    "title": "...",
+    "description": "...",
+    "image": "",
+    "video": ""
   },
+
   "private_dining": {
-    "title": "Private Dining",
-    "paragraph1": "Lorem ipsum dolor sit amet...",
-    "paragraph2": "Ut enim ad minim veniam...",
-    "paragraph3": "Duis aute irure dolor...",
-    "image": "/images/private-dining.jpg",
-    "video": ""
+    "title": "...",
+    "paragraph1": "...",
+    "paragraph2": "...",
+    "paragraph3": "...",
+    "image": "...",
+    "button_text": "Inquire Now",
+    "button_link": "mailto:events@luminary.com"
   },
+
   "event_hosting": {
-    "title": "Event Hosting",
-    "paragraph1": "Lorem ipsum dolor sit amet...",
-    "paragraph2": "Ut enim ad minim veniam...",
-    "paragraph3": "Duis aute irure dolor...",
-    "image": "/images/event-hosting.jpg",
-    "video": ""
+    "title": "...",
+    "paragraph1": "...",
+    "paragraph2": "...",
+    "paragraph3": "...",
+    "image": "...",
+    "button_text": "Inquire Now",
+    "button_link": "mailto:events@luminary.com"
   }
 }

@@ -228,4 +228,40 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch(err => console.error("Homepage CMS error:", err));
   }
 
+
+ // ================= EVENTS PAGE =================
+if (page.endsWith("events.html")) {
+
+  fetch("/content/events.json")
+    .then(res => res.json())
+    .then(data => {
+
+      const heroSection = document.getElementById("eventsHero");
+      const heroTitle = document.getElementById("eventsHeroTitle");
+      const heroDesc = document.getElementById("eventsHeroDescription");
+
+      if (heroTitle) heroTitle.textContent = data.hero.title;
+      if (heroDesc) heroDesc.textContent = data.hero.description;
+
+      if (heroSection) {
+        heroSection.style.background = "var(--deep)";
+
+        if (data.hero.image) {
+          heroSection.style.backgroundImage = `url(${data.hero.image})`;
+          heroSection.style.backgroundSize = "cover";
+          heroSection.style.backgroundPosition = "center";
+        }
+
+        if (data.hero.video) {
+          heroSection.innerHTML += `
+            <video autoplay muted loop playsinline class="hero-bg">
+              <source src="${data.hero.video}" type="video/mp4">
+            </video>
+          `;
+        }
+      }
+
+    })
+    .catch(err => console.error("Events CMS error:", err));
+}
 });

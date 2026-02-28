@@ -14,8 +14,10 @@
 
 <body>
 
+<!-- ================= NAVIGATION ================= -->
 <header class="navbar">
   <div class="nav-container">
+
     <div class="logo">
       <a href="index.html">
         <img src="images/logo.svg" alt="Luminary Logo">
@@ -24,27 +26,40 @@
 
     <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">☰</button>
 
-<nav class="nav-links" id="navLinks">
-  <a href="about.html" class="nav-link">About</a>
-  <a href="events.html" class="nav-link">Private Events</a>
-  <a href="menu.html" class="nav-link">Menu</a>
-  <a href="reservation.html" class="nav-btn">Book a Table</a>
-</nav>
+    <nav class="nav-links" id="navLinks">
+      <a href="about.html">About</a>
+      <a href="events.html">Private Events</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservation.html" class="nav-btn">Book a Table</a>
+    </nav>
 
   </div>
 </header>
 
+<!-- ================= HERO (CMS CONTROLLED) ================= -->
+<section class="page-hero">
+  <div class="hero-content">
+    <h1 id="heroTitle">Loading...</h1>
+    <p id="heroDescription"></p>
+  </div>
 
-
+  <!-- Optional Media -->
+  <div class="hero-media">
+    <img id="heroImage" class="hero-bg" src="" alt="">
+    <video id="heroVideo" class="hero-bg" autoplay muted loop playsinline>
+      <source id="heroVideoSource" src="" type="video/mp4">
+    </video>
+  </div>
+</section>
 
 <main>
 
-  <!-- WELCOME -->
+  <!-- ================= WELCOME ================= -->
   <section class="welcome">
     <h2>Welcome to Luminary</h2>
   </section>
 
-  <!-- OUR STORY -->
+  <!-- ================= OUR STORY ================= -->
   <section class="split-section light">
     <div class="split-text">
       <h3 id="ourStoryTitle">Loading...</h3>
@@ -59,7 +74,7 @@
     </div>
   </section>
 
-  <!-- CHEF PHILOSOPHY -->
+  <!-- ================= CHEF PHILOSOPHY ================= -->
   <section class="split-section darker">
     <div class="split-media">
       <img id="chefImage" src="" alt="Chef Philosophy Image">
@@ -83,7 +98,6 @@
 
     <div class="footer-top">
 
-      <!-- LEFT SIDE -->
       <div class="footer-brand">
         <h2 class="footer-logo">LUMIN✦RY</h2>
 
@@ -94,7 +108,6 @@
         </div>
       </div>
 
-      <!-- RIGHT SIDE -->
       <div class="footer-columns">
 
         <div class="footer-column">
@@ -120,14 +133,20 @@
       </div>
 
     </div>
-
+<!-- ================= EVENTS HERO ================= -->
+<section class="events-hero" id="eventsHero">
+  <div class="events-hero-inner">
+    <h1 id="eventsHeroTitle">Loading...</h1>
+    <p id="eventsHeroDescription">Loading...</p>
+  </div>
+</section>
     <div class="footer-divider"></div>
 
     <div class="footer-bottom">
-  <a href="#">Privacy Policy</a>
-  <a href="#">Terms of Service</a>
-  <span>© Luminary 2026</span>
-</div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <span>© Luminary 2026</span>
+    </div>
 
   </div>
 
@@ -135,9 +154,7 @@
 
 <script src="script.js"></script>
 
-
-
-<!-- Netlify form detection backup -->
+<!-- Netlify Form Detection Backup -->
 <form name="reservation" data-netlify="true" hidden>
   <input type="hidden" name="form-name" value="reservation" />
   <input type="text" name="name" />

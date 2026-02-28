@@ -8,29 +8,18 @@
   <link rel="stylesheet" href="https://use.typekit.net/kay5xhu.css">
   <link rel="icon" type="image/x-icon" href="images/favicon.svg">
 </head>
+
 <body>
-<body>
 
-
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Private Dining & Events</h1>
-    <p>Elevated gatherings. Seamless execution.</p>
-  </div>
-</section>
-
-
-
-
-  
 <!-- ================= NAVIGATION ================= -->
 <header class="navbar">
   <div class="nav-container">
 
     <div class="logo">
-      <a href="index.html"><img class="logo" src="images/logo.svg"></a>
-    </div>  
+      <a href="index.html">
+        <img src="images/logo.svg" alt="Luminary Logo">
+      </a>
+    </div>
 
     <button class="hamburger" id="hamburger">☰</button>
 
@@ -43,6 +32,14 @@
 
   </div>
 </header>
+
+<!-- ================= EVENTS HERO ================= -->
+<section class="events-hero" id="eventsHero">
+  <div class="events-hero-inner">
+    <h1 id="eventsHeroTitle">Loading...</h1>
+    <p id="eventsHeroDescription">Loading...</p>
+  </div>
+</section>
 
 <main>
 
@@ -57,7 +54,6 @@
           Host an intimate dining experience in a refined and thoughtfully
           designed setting.
         </p>
-       
       </div>
 
       <div class="event-block">
@@ -66,7 +62,7 @@
           From engagement parties to corporate receptions, Luminary
           provides a sophisticated venue rooted in elegance and warmth.
         </p>
-       <a href="#" class="events-primary-btn">Inquire Now</a>
+        <a href="#" class="events-primary-btn">Inquire Now</a>
       </div>
 
     </div>
@@ -82,12 +78,9 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-
   <div class="footer-inner">
-
     <div class="footer-top">
 
-      <!-- LEFT SIDE -->
       <div class="footer-brand">
         <h2 class="footer-logo">LUMIN✦RY</h2>
 
@@ -98,9 +91,7 @@
         </div>
       </div>
 
-      <!-- RIGHT SIDE -->
       <div class="footer-columns">
-
         <div class="footer-column">
           <h4>Contact Us</h4>
           <p>0420 Solstice Way</p>
@@ -120,7 +111,6 @@
           <p>Events</p>
           <p>Careers</p>
         </div>
-
       </div>
 
     </div>
@@ -128,25 +118,14 @@
     <div class="footer-divider"></div>
 
     <div class="footer-bottom">
-  <a href="#">Privacy Policy</a>
-  <a href="#">Terms of Service</a>
-  <span>© Luminary 2026</span>
-</div>
-
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <span>© Luminary 2026</span>
+    </div>
   </div>
-
 </footer>
 
 <script src="script.js"></script>
-
-
-
-<!-- Netlify form detection backup -->
-<form name="reservation" data-netlify="true" hidden>
-  <input type="hidden" name="form-name" value="reservation" />
-  <input type="text" name="name" />
-  <input type="email" name="email" />
-</form>
 
 </body>
 </html>
