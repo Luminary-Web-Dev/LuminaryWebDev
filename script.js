@@ -184,39 +184,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const page = window.location.pathname;
 
   // ================= HOMEPAGE =================
-if (page.includes("index.html") || page === "/") {
+  if (page.includes("index.html") || page === "/") {
 
-  fetch("content/homepage.json")
-    .then(res => res.json())
-    .then(data => {
+    fetch("/content/homepage.json")
+      .then(res => res.json())
+      .then(data => {
 
-      if (document.getElementById("heroTitle")) {
         document.getElementById("heroTitle").textContent = data.hero_title;
-      }
-
-      if (document.getElementById("heroDescription")) {
         document.getElementById("heroDescription").textContent = data.hero_description;
-      }
-
-      if (document.getElementById("ourStoryTitle")) {
         document.getElementById("ourStoryTitle").textContent = data.our_story_title;
-      }
-
-      if (document.getElementById("ourStoryText")) {
         document.getElementById("ourStoryText").textContent = data.our_story_text;
-      }
-
-      if (document.getElementById("chefTitle")) {
         document.getElementById("chefTitle").textContent = data.chef_title;
-      }
-
-      if (document.getElementById("chefText")) {
         document.getElementById("chefText").textContent = data.chef_text;
-      }
 
-    })
-    .catch(err => console.error("Homepage CMS error:", err));
-}
+      })
+      .catch(err => console.error("Homepage CMS error:", err));
+  }
+
+});
 
   // ================= ABOUT =================
   if (page.includes("about.html")) {
