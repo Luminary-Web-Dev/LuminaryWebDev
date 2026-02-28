@@ -16,7 +16,7 @@
   },
   "hero_title": "Hero",
   "hero_image": "/images/uploads/git_450-550_luminary_photo_-_video_atmosphere03_v2.jpg",
-  "hero_video": "/images/uploads/git_450-550_luminary_photo_-_video_kitchen02_v2.jpg",
+  "hero_video": "/images/uploads/git_450-550_luminary_photo_-_video_chopping01_v2.png",
   "hero_description": "This  is the hero description",
   "hero": {
     "title": "Celestial in spirit. Precise in execution.",
@@ -25,6 +25,6 @@
   },
   "our_story_title": "Our Story ",
   "our_story_video": "/images/uploads/git_450-550_luminary_photo_-_video_chopping01_v2.png",
-  "our_story_image": "",
+  "our_story_image": "/images/uploads/git_450-550_luminary_photo_-_video_foodplating02_v2.jpg",
   "chef_title": "Chef Philosophy goes here"
 }
