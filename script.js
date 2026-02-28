@@ -274,45 +274,61 @@ if (page.endsWith("about.html")) {
     .then(res => res.json())
     .then(data => {
 
-      // HERO
+      /* ========= HERO ========= */
+
       const heroTitle = document.getElementById("aboutHeroTitle");
-      const heroSection = document.getElementById("aboutHero");
+      const heroImage = document.getElementById("aboutHeroImage");
+      const heroVideo = document.getElementById("aboutHeroVideo");
+      const heroVideoSource = document.getElementById("aboutHeroVideoSource");
 
-      if (heroTitle) heroTitle.textContent = data.hero_title;
+      if (heroTitle) heroTitle.textContent = data.hero_title || "";
 
-      if (heroSection && data.hero_image) {
-        heroSection.style.backgroundImage = `url(${data.hero_image})`;
-        heroSection.style.backgroundSize = "cover";
-        heroSection.style.backgroundPosition = "center";
+      if (heroImage && heroVideo && heroVideoSource) {
+
+        heroImage.style.display = "none";
+        heroVideo.style.display = "none";
+
+        if (data.hero_video) {
+          heroVideoSource.src = data.hero_video;
+          heroVideo.load();
+          heroVideo.style.display = "block";
+        }
+        else if (data.hero_image) {
+          heroImage.src = data.hero_image;
+          heroImage.style.display = "block";
+        }
       }
 
-      // STORY SECTION
-      const storyTitle = document.getElementById("storyTitle");
-      const storyText = document.getElementById("storyText");
-      const storyImage = document.getElementById("storyImage");
+      /* ========= STORY ========= */
 
-      if (storyTitle) storyTitle.textContent = data.story_title;
-      if (storyText) storyText.textContent = data.story_text;
+      const storyTitle = document.getElementById("aboutStoryTitle");
+      const storyText = document.getElementById("aboutStoryText");
+      const storyImage = document.getElementById("aboutStoryImage");
+
+      if (storyTitle) storyTitle.textContent = data.story_title || "";
+      if (storyText) storyText.textContent = data.story_text || "";
       if (storyImage && data.story_image) {
         storyImage.src = data.story_image;
       }
 
-      // SECONDARY STORY
-      const secondaryText = document.getElementById("secondaryStoryText");
-      const secondaryImage = document.getElementById("secondaryStoryImage");
+      /* ========= SECOND STORY ========= */
 
-      if (secondaryText) secondaryText.textContent = data.secondary_story_text;
+      const secondaryText = document.getElementById("aboutSecondaryText");
+      const secondaryImage = document.getElementById("aboutSecondaryImage");
+
+      if (secondaryText) secondaryText.textContent = data.secondary_story_text || "";
       if (secondaryImage && data.secondary_story_image) {
         secondaryImage.src = data.secondary_story_image;
       }
 
-      // CHEF SECTION
+      /* ========= CHEF ========= */
+
       const chefTitle = document.getElementById("aboutChefTitle");
       const chefText = document.getElementById("aboutChefText");
       const chefImage = document.getElementById("aboutChefImage");
 
-      if (chefTitle) chefTitle.textContent = data.chef_title;
-      if (chefText) chefText.textContent = data.chef_text;
+      if (chefTitle) chefTitle.textContent = data.chef_title || "";
+      if (chefText) chefText.textContent = data.chef_text || "";
       if (chefImage && data.chef_image) {
         chefImage.src = data.chef_image;
       }
@@ -320,8 +336,6 @@ if (page.endsWith("about.html")) {
     })
     .catch(err => console.error("About CMS error:", err));
 }
-
-
 
 
 
