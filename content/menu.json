@@ -7,34 +7,25 @@
         {
           "name": "Burrata & Heirloom Tomatoes",
           "price": "14",
-          "description": "Fresh burrata, seasonal tomatoes, basil oil, sea salt.",
-          
+          "description": "Fresh burrata, seasonal tomatoes, basil oil, sea salt."
         },
         {
           "name": "Crispy Calamari",
           "price": "16",
-          "description": "Lightly fried calamari, lemon aioli, charred citrus.",
-     
+          "description": "Lightly fried calamari, lemon aioli, charred citrus."
         },
         {
           "name": "Wild Mushroom Tart",
           "price": "13",
-          "description": "Seasonal mushrooms, truffle cream, flaky pastry.",
-        
+          "description": "Seasonal mushrooms, truffle cream, flaky pastry."
         },
         {
           "name": "Charred Octopus",
           "price": "18",
-          "description": "Grilled octopus, fingerling potatoes, smoked paprika.",
-          
+          "description": "Grilled octopus, fingerling potatoes, smoked paprika."
         }
       ]
     },
-
-
-
-
-
     {
       "category_name": "Entrées",
       "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_foodplating02_v2.jpg",
@@ -42,35 +33,25 @@
         {
           "name": "Pan-Seared Sea Bass",
           "price": "32",
-          "description": "Lemon beurre blanc, roasted vegetables.",
-         
+          "description": "Lemon beurre blanc, roasted vegetables."
         },
         {
           "name": "Filet Mignon",
           "price": "45",
-          "description": "Grass-fed filet, garlic mashed potatoes.",
-       
+          "description": "Grass-fed filet, garlic mashed potatoes."
         },
         {
           "name": "Wild Mushroom Risotto",
           "price": "28",
-          "description": "Creamy arborio rice, parmesan, truffle oil.",
-        
+          "description": "Creamy arborio rice, parmesan, truffle oil."
         },
         {
           "name": "Roasted Half Chicken",
           "price": "29",
-          "description": "Herb jus, charred broccolini.",
-        
+          "description": "Herb jus, charred broccolini."
         }
       ]
     },
-
-
-
-
-
-
     {
       "category_name": "Desserts",
       "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_kitchen02_v2.jpg",
@@ -78,33 +59,25 @@
         {
           "name": "Dark Chocolate Mousse",
           "price": "12",
-          "description": "Valrhona chocolate, whipped cream, sea salt.",
-          
+          "description": "Valrhona chocolate, whipped cream, sea salt."
         },
         {
           "name": "Crème Brûlée",
           "price": "11",
-          "description": "Vanilla custard, caramelized sugar crust.",
-       
+          "description": "Vanilla custard, caramelized sugar crust."
         },
         {
           "name": "Lemon Tart",
           "price": "10",
-          "description": "Citrus curd, toasted meringue.",
-        
+          "description": "Citrus curd, toasted meringue."
         },
         {
           "name": "Tiramisu",
           "price": "12",
-          "description": "Espresso-soaked ladyfingers, mascarpone.",
-         
+          "description": "Espresso-soaked ladyfingers, mascarpone."
         }
       ]
     },
-
-
-
-
     {
       "category_name": "Cocktails",
       "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_kitchen02_v2.jpg",
@@ -112,36 +85,25 @@
         {
           "name": "Classic Negroni",
           "price": "15",
-          "description": "Gin, Campari, sweet vermouth.",
-         
+          "description": "Gin, Campari, sweet vermouth."
         },
         {
           "name": "Smoked Old Fashioned",
           "price": "16",
-          "description": "Bourbon, smoked oak, bitters.",
-        
+          "description": "Bourbon, smoked oak, bitters."
         },
         {
           "name": "French 75",
           "price": "14",
-          "description": "Gin, lemon, prosecco.",
-       
+          "description": "Gin, lemon, prosecco."
         },
         {
           "name": "Spicy Margarita",
           "price": "14",
-          "description": "Tequila, lime, chili infusion.",
-      
+          "description": "Tequila, lime, chili infusion."
         }
       ]
     },
-
-
-
-
-
-
-
     {
       "category_name": "Non-Alcoholic Beverages",
       "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_chopping01_v2.png",
@@ -149,26 +111,22 @@
         {
           "name": "Sparkling Citrus Elixir",
           "price": "8",
-          "description": "Blood orange, yuzu, sparkling mineral water.",
-      
+          "description": "Blood orange, yuzu, sparkling mineral water."
         },
         {
           "name": "Jasmine Iced Tea",
           "price": "6",
-          "description": "White peach, elderflower, lightly chilled.",
-         
+          "description": "White peach, elderflower, lightly chilled."
         },
         {
           "name": "Cold Brew Coffee",
           "price": "7",
-          "description": "Single-origin cold brew with vanilla bean.",
-        
+          "description": "Single-origin cold brew with vanilla bean."
         },
         {
           "name": "Fresh Lemonade",
           "price": "6",
-          "description": "House-made lemonade with seasonal citrus.",
-  
+          "description": "House-made lemonade with seasonal citrus."
         }
       ]
     }
