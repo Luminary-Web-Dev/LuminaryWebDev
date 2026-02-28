@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/kay5xhu.css">
   <link rel="icon" type="image/x-icon" href="images/favicon.svg">
 
+  <!-- Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
@@ -17,17 +18,13 @@
 <!-- ================= NAVIGATION ================= -->
 <header class="navbar">
   <div class="nav-container">
-
     <div class="logo">
       <a href="index.html">
-     <img src="images/logo.svg" alt="Luminary Logo">
+        <img src="images/logo.svg" alt="Luminary Logo">
       </a>
     </div>
 
-
-    
-
-    <button class="hamburger" id="hamburger">☰</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">☰</button>
 
     <nav class="nav-links" id="navLinks">
       <a href="about.html">About</a>
@@ -35,7 +32,6 @@
       <a href="menu.html">Menu</a>
       <a href="reservation.html" class="nav-btn">Book a Table</a>
     </nav>
-
   </div>
 </header>
 
@@ -50,76 +46,62 @@
     </div>
   </section>
 
-
   <!-- ================= WELCOME ================= -->
   <section class="welcome">
     <h2>Welcome to Luminary</h2>
   </section>
 
-
   <!-- ================= OUR STORY ================= -->
   <section class="split-section light">
     <div class="split-text">
-      <h3>Our Story</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <a class="learn-link">
-  Learn More <span class="arrow">→</span>
-</a>
+      <h3 id="ourStoryTitle">Our Story</h3>
+      <p id="ourStoryText"></p>
+      <a href="about.html" class="learn-link">
+        Learn More <span class="arrow">→</span>
+      </a>
     </div>
 
     <div class="split-media">
-      <video controls>
-        <source src="videos/behind-scenes.mp4" type="video/mp4">
+      <video id="ourStoryVideo" controls>
+        <source id="ourStoryVideoSource" src="" type="video/mp4">
       </video>
     </div>
   </section>
-
 
   <!-- ================= CHEF PHILOSOPHY ================= -->
   <section class="split-section darker">
     <div class="split-media">
-      <video controls>
-        <source src="videos/philosophy.mp4" type="video/mp4">
+      <video id="chefVideo" controls>
+        <source id="chefVideoSource" src="" type="video/mp4">
       </video>
     </div>
 
     <div class="split-text">
-      <h3>Chef Philosophy</h3>
-      <p>
-  Through thoughtful technique and carefully sourced ingredients,
-  each dish is designed to reveal depth, contrast, and luminous discovery.
-</p>
-      <a class="learn-link">
-  Learn More <span class="arrow">→</span>
-</a>
+      <h3 id="chefTitle">Chef Philosophy</h3>
+      <p id="chefText"></p>
+      <a href="about.html" class="learn-link">
+        Learn More <span class="arrow">→</span>
+      </a>
     </div>
   </section>
 
+</main>
 
-  <!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
-
   <div class="footer-inner">
-
     <div class="footer-top">
 
-      <!-- LEFT SIDE -->
       <div class="footer-brand">
         <h2 class="footer-logo">LUMIN✦RY</h2>
-
         <div class="footer-column">
           <h4>Follow Us</h4>
-          <p>Instagram</p>
-          <p>Facebook</p>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
         </div>
       </div>
 
-      <!-- RIGHT SIDE -->
       <div class="footer-columns">
-
         <div class="footer-column">
           <h4>Contact Us</h4>
           <p>0420 Solstice Way</p>
@@ -127,19 +109,16 @@
           <p>(480) 888 - 5862</p>
           <p>hello@luminary.com</p>
           <p>events@luminary.com</p>
-          <p>Saturday - Sunday</p>
-          <p>10:00 AM - 10:00 PM</p>
         </div>
 
         <div class="footer-column">
           <h4>Helpful Links</h4>
-          <p>About</p>
-          <p>FAQ’s</p>
-          <p>Menu</p>
-          <p>Events</p>
-          <p>Careers</p>
+          <a href="about.html">About</a>
+          <a href="#">FAQ’s</a>
+          <a href="menu.html">Menu</a>
+          <a href="events.html">Events</a>
+          <a href="#">Careers</a>
         </div>
-
       </div>
 
     </div>
@@ -147,18 +126,14 @@
     <div class="footer-divider"></div>
 
     <div class="footer-bottom">
-  <a href="#">Privacy Policy</a>
-  <a href="#">Terms of Service</a>
-  <span>© Luminary 2026</span>
-</div>
-
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <span>© Luminary 2026</span>
+    </div>
   </div>
-
 </footer>
 
 <script src="script.js"></script>
-
-
 
 <!-- Netlify form detection backup -->
 <form name="reservation" data-netlify="true" hidden>
@@ -167,7 +142,6 @@
   <input type="email" name="email" />
 </form>
 
-
 <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("login", function () {
@@ -175,5 +149,6 @@
     });
   }
 </script>
+
 </body>
 </html>
