@@ -175,46 +175,87 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   
-
-/* ================= CMS LOADER ================= */
+/* =====================================================
+   CMS LOADER
+===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
   const page = window.location.pathname;
 
   // ================= HOMEPAGE =================
-  if (page.includes("index.html") || page === "/") {
+  if (page === "/" || page.includes("index.html")) {
 
-    fetch("content/homepage.json")
+    fetch("/content/homepage.json")
       .then(res => res.json())
       .then(data => {
 
-        if (document.getElementById("heroTitle")) {
-          document.getElementById("heroTitle").textContent = data.hero.title;
-          document.getElementById("heroDescription").textContent = data.hero.description;
+        const heroTitle = document.getElementById("heroTitle");
+        if (heroTitle && data.hero_title) {
+          heroTitle.textContent = data.hero_title;
+        }
+
+        const heroDescription = document.getElementById("heroDescription");
+        if (heroDescription && data.hero_description) {
+          heroDescription.textContent = data.hero_description;
+        }
+
+        const ourStoryTitle = document.getElementById("ourStoryTitle");
+        if (ourStoryTitle && data.our_story_title) {
+          ourStoryTitle.textContent = data.our_story_title;
+        }
+
+        const ourStoryText = document.getElementById("ourStoryText");
+        if (ourStoryText && data.our_story_text) {
+          ourStoryText.textContent = data.our_story_text;
+        }
+
+        const chefTitle = document.getElementById("chefTitle");
+        if (chefTitle && data.chef_title) {
+          chefTitle.textContent = data.chef_title;
+        }
+
+        const chefText = document.getElementById("chefText");
+        if (chefText && data.chef_text) {
+          chefText.textContent = data.chef_text;
+        }
+
+        const ourStoryVideoSource = document.getElementById("ourStoryVideoSource");
+        if (ourStoryVideoSource && data.our_story_video) {
+          ourStoryVideoSource.src = data.our_story_video;
+          document.getElementById("ourStoryVideo").load();
+        }
+
+        const chefVideoSource = document.getElementById("chefVideoSource");
+        if (chefVideoSource && data.chef_video) {
+          chefVideoSource.src = data.chef_video;
+          document.getElementById("chefVideo").load();
         }
 
       })
       .catch(err => console.error("Homepage CMS error:", err));
   }
 
-
-
-
-
-
-
-
-
   // ================= ABOUT =================
   if (page.includes("about.html")) {
 
-    fetch("content/about.json")
+    fetch("/content/about.json")
       .then(res => res.json())
       .then(data => {
 
-        if (document.getElementById("aboutHeroTitle")) {
-          document.getElementById("aboutHeroTitle").textContent = data.hero.title;
+        const heroTitle = document.getElementById("aboutHeroTitle");
+        if (heroTitle && data.hero_title) {
+          heroTitle.textContent = data.hero_title;
+        }
+
+        const storyText = document.getElementById("aboutStoryText");
+        if (storyText && data.our_story_text) {
+          storyText.textContent = data.our_story_text;
+        }
+
+        const chefText = document.getElementById("aboutChefText");
+        if (chefText && data.chef_text) {
+          chefText.textContent = data.chef_text;
         }
 
       })
@@ -224,12 +265,23 @@ document.addEventListener("DOMContentLoaded", function () {
   // ================= EVENTS =================
   if (page.includes("events.html")) {
 
-    fetch("content/events.json")
+    fetch("/content/events.json")
       .then(res => res.json())
       .then(data => {
 
-        if (document.getElementById("eventsHeroTitle")) {
-          document.getElementById("eventsHeroTitle").textContent = data.hero.title;
+        const heroTitle = document.getElementById("eventsHeroTitle");
+        if (heroTitle && data.hero_title) {
+          heroTitle.textContent = data.hero_title;
+        }
+
+        const privateText = document.getElementById("privateText");
+        if (privateText && data.private_text) {
+          privateText.textContent = data.private_text;
+        }
+
+        const hostingText = document.getElementById("hostingText");
+        if (hostingText && data.hosting_text) {
+          hostingText.textContent = data.hosting_text;
         }
 
       })
@@ -239,7 +291,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ================= MENU =================
   if (page.includes("menu.html")) {
 
-    fetch("content/menu.json")
+    fetch("/content/menu.json")
       .then(res => res.json())
       .then(data => {
 
@@ -251,8 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
         data.categories.forEach(category => {
 
           const section = document.createElement("div");
-
-          section.innerHTML = `<h2>${category.name}</h2>`;
+          section.innerHTML = `<h2>${category.category_name}</h2>`;
 
           category.items.forEach(item => {
             section.innerHTML += `
@@ -271,7 +322,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
-
 
 
 
