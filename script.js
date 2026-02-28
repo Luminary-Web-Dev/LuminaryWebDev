@@ -166,7 +166,7 @@ if (page.endsWith("events") || page.endsWith("events.html")) {
 
   /* ================= ABOUT PAGE ================= */
 
-  if (page.endsWith("about.html")) {
+  if (page.includes("about")) {
 
     fetch("content/about.json")
       .then(res => res.json())
@@ -205,7 +205,7 @@ if (page.endsWith("events") || page.endsWith("events.html")) {
 
   /* ================= MENU ================= */
 
-  if (page.endsWith("menu.html")) {
+  if (page.includes("menu")) {
 
     fetch("content/menu.json")
       .then(res => res.json())
