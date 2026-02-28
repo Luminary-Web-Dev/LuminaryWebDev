@@ -284,12 +284,24 @@ document.addEventListener("DOMContentLoaded", function () {
           if (index === 0) slide.classList.add("active");
 
           slide.innerHTML = `
-            <h3 class="carousel-category">${category.category_name}</h3>
+  <h3 class="carousel-category">${category.category_name}</h3>
 
-            ${category.category_image 
-              ? `<img src="${category.category_image}" class="carousel-image" alt="${category.category_name}">`
-              : ""
-            }
+  <div class="carousel-image-wrapper">
+    ${category.category_image 
+      ? `<img src="${category.category_image}" class="carousel-image" alt="${category.category_name}">`
+      : ""
+    }
+  </div>
+
+  <div class="carousel-items">
+    ${category.items.map(item => `
+      <div class="carousel-item">
+        <h4>${item.name} <span>/ ${item.price}</span></h4>
+        <p>${item.description}</p>
+      </div>
+    `).join("")}
+  </div>
+
 
             <div class="carousel-items">
               ${category.items.map(item => `
