@@ -5,31 +5,46 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   const slides = document.querySelectorAll(".carousel-slide");
+  const dotsContainer = document.getElementById("carouselDots");
 
-  if (slides.length > 0) {
+  if (!slides.length || !dotsContainer) return;
 
-    let currentSlide = 0;
+  let currentSlide = 0;
 
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove("active"));
-      slides[index].classList.add("active");
-    }
+  // Create dots safely
+  slides.forEach((_, index) => {
+    const dot = document.createElement("span");
 
-    window.changeSlide = function (direction) {
-      currentSlide += direction;
-
-      if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-      }
-
-      if (currentSlide >= slides.length) {
-        currentSlide = 0;
-      }
-
+    dot.addEventListener("click", () => {
+      currentSlide = index;
       showSlide(currentSlide);
-    };
+    });
+
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll("span");
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
   }
+
+  window.changeSlide = function (direction) {
+    currentSlide += direction;
+
+    if (currentSlide < 0) currentSlide = slides.length - 1;
+    if (currentSlide >= slides.length) currentSlide = 0;
+
+    showSlide(currentSlide);
+  };
+
+  showSlide(currentSlide);
 });
+
 
 
 /* =====================================================
@@ -236,6 +251,8 @@ if (page.endsWith("events.html")) {
     .then(res => res.json())
     .then(data => {
 
+      /* ================= HERO ================= */
+
       const heroSection = document.getElementById("eventsHero");
       const heroTitle = document.getElementById("eventsHeroTitle");
       const heroDesc = document.getElementById("eventsHeroDescription");
@@ -259,6 +276,55 @@ if (page.endsWith("events.html")) {
             </video>
           `;
         }
+      }
+
+      /* ================= PRIVATE DINING ================= */
+
+      const privateTitle = document.getElementById("privateDiningTitle");
+      const privateText = document.getElementById("privateDiningText");
+      const privateBtn = document.getElementById("privateDiningBtn");
+
+      if (privateTitle) privateTitle.textContent = data.private_dining.title;
+
+      if (privateText) {
+        privateText.innerHTML = `
+          <p>${data.private_dining.paragraph1}</p>
+          <p>${data.private_dining.paragraph2}</p>
+          <p>${data.private_dining.paragraph3}</p>
+        `;
+      }
+
+      if (privateBtn) {
+        privateBtn.textContent = data.private_dining.button_text;
+        privateBtn.href = data.private_dining.button_link;
+      }
+
+      /* ================= EVENT HOSTING ================= */
+
+      const hostingTitle = document.getElementById("eventHostingTitle");
+      const hostingText = document.getElementById("eventHostingText");
+      const hostingBtn = document.getElementById("eventHostingBtn");
+
+      if (hostingTitle) hostingTitle.textContent = data.event_hosting.title;
+
+      if (hostingText) {
+        hostingText.innerHTML = `
+          <p>${data.event_hosting.paragraph1}</p>
+          <p>${data.event_hosting.paragraph2}</p>
+          <p>${data.event_hosting.paragraph3}</p>
+        `;
+      }
+
+      if (hostingBtn) {
+        hostingBtn.textContent = data.event_hosting.button_text;
+        hostingBtn.href = data.event_hosting.button_link;
+      }
+
+      /* ================= RIGHT IMAGE ================= */
+
+      const rightImage = document.getElementById("eventsRightImage");
+      if (rightImage && data.private_dining.image) {
+        rightImage.src = data.private_dining.image;
       }
 
     })

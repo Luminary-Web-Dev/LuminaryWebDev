@@ -2,18 +2,17 @@
   "categories": [
     {
       "name": "Appetizers",
-      "image": "/images/appetizers.jpg",
-      "video": "",
+      "image": "/images/dish1.png",
       "items": [
         {
-          "name": "Starlight Tartare",
-          "price": 11,
-          "description": "Finely diced seasonal tuna with yuzu and avocado."
+          "title": "Starlight Tartare",
+          "price": "11",
+          "description": "Finely diced seasonal tuna with yuzu, avocado, and a touch of edible gold."
         },
         {
-          "name": "Lunar Croquettes",
-          "price": 12,
-          "description": "Crispy potato and fontina bites."
+          "title": "Nebula Carpaccio",
+          "price": "10",
+          "description": "Paper-thin slices of beetroot and radish, finished with truffle vinaigrette."
         }
       ]
     }
