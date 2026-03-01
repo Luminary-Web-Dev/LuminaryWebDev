@@ -5,10 +5,10 @@
     "image": "/images/our-story.jpg",
     "video": ""
   },
-  "chef_image": "/images/uploads/git_450-550_luminary_photo_-_video_chopping01_v2.png",
+  "chef_image": "/images/uploads/git_450-550_luminary_photo_-_video_kitchen01_v2.jpg",
   "welcome_heading": "Welcome",
-  "chef_text": "Chef Philosophy Text goes here ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n",
-  "our_story_text": "This is where Our Story Text goes.......\n............\n",
+  "chef_text": "Chef Philosophy\nExecutive Chef Brie Lumière builds each dish around the idea of illumination, revealing the full potential of an ingredient through precision, contrast, and clarity. Combining inspiration from the generosity from the land and sea, she hones in on sharpening flavors, refining textures, and composing plates that allow each ingredient to be seen, tasted, and understood.\n",
+  "our_story_text": "Our Story\nLuminary is an approachable,  fine-dining experience with rustic textures and celestial inspiration. Guided by the vision of our founder, John Luminary, here our seasonally driven menu is informed by the surrounding environment, forest, field, and stream.\n",
   "chef_philosophy": {
     "title": "Chef Philosophy",
     "text": "Our philosophy centers around precision, seasonal ingredients, and emotional storytelling through food.",
