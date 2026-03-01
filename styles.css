@@ -4,8 +4,8 @@
   --plum: #4C444E;
   --deep: #0C0910;
 
-  --font-primary: 'Elza Round', sans-serif;
-  --font-secondary: 'The Seasons', serif;
+  --font-primary: 'Elza Round';
+  --font-secondary: 'The Seasons';
 }
 
 /* =========================================
@@ -84,8 +84,6 @@ body {
 }
 
 
-
-
 /* =========================================
    MOBILE NAV
 ========================================= */
@@ -154,6 +152,12 @@ body {
 
 
   
+
+
+
+
+
+
 
 
 
@@ -289,11 +293,6 @@ body.nav-open {
 
 }
 
-
-
-
-
-
 /* ================= EVENTS HERO ================= */
 
 .events-hero {
@@ -328,6 +327,14 @@ body.nav-open {
   object-fit: cover;
   z-index: 1;
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -641,6 +648,18 @@ section.welcome h2 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* ================= CAROUSEL SECTION ================= */
 .carousel {
   position: relative;
@@ -870,6 +889,36 @@ section.welcome h2 {
   position: relative;
   z-index: 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1136,9 +1185,6 @@ display: inline-block;
   margin-bottom: 40px;
 }
 
-
-
-
 /* ================= FORM HEADER ================= */
 .form-header {
   display: flex;
@@ -1279,8 +1325,6 @@ display: inline-block;
 /* =====================================================
    event.html  only
    ===================================================== */
-
-
 /* ================= EVENTS PAGE SPLIT LAYOUT ================= */
 
 .events-page-split {
@@ -1303,8 +1347,6 @@ display: inline-block;
   gap: 50px; /* space BETWEEN the two blocks only */
 }
 
-
-
 /* EVENTS BUTTON */
 .events-primary-btn {
   display: inline-block;
@@ -1319,11 +1361,6 @@ display: inline-block;
    align-self: flex-start;
   
 }
-
-
-
-
-
 
 .events-primary-btn:hover {
   opacity: 0.85;
@@ -1352,10 +1389,6 @@ display: inline-block;
 .events-page-left p {
   color: var(--cream);
 }
-
-
-
-
 
 /* =====================================================
    RESPONSIVE BREAKPOINTS
@@ -1419,7 +1452,6 @@ display: inline-block;
 
 }
 
-
 /* ================= SMALL PHONES (≤480px) ================= */
 @media (max-width: 480px) {
 
@@ -1448,7 +1480,6 @@ display: inline-block;
 
 }
 
-
 /* =========================================
    NAVIGATION BASE (DESKTOP DEFAULT)
 ========================================= */
@@ -1467,7 +1498,6 @@ display: inline-block;
   cursor: pointer;
 }
 
-
 /* ================= NAV CONTAINER FIX ================= */
 
 
@@ -1476,11 +1506,163 @@ display: inline-block;
   padding-right: 80px;
 }
 
-
 .page-width {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding-left: 80px;
   padding-right: 80px;
+}
+
+
+
+/* =====================================================
+   CLEAN PROFESSIONAL TYPOGRAPHY SYSTEM
+   ===================================================== */
+
+/* ===== GLOBAL ===== */
+body {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ===== HEADINGS DESKTOP ===== */
+
+h1,
+.hero-content h1,
+.events-hero h1 {
+  font-family: var(--font-secondary), serif;
+  font-size: 56px;
+  font-weight: 400;
+}
+
+h2,
+.welcome h2,
+.menu-header h2,
+.form-header h2,
+.confirmation-card h2 {
+  font-family: var(--font-secondary), serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+h3,
+.split-text h3,
+.carousel-title {
+  font-family: var(--font-primary);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+p,
+.split-text p,
+.menu-item p,
+.carousel-item p,
+.confirmation-card p {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* ===== NAV ===== */
+.nav-links a {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
+.footer-column h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer-column p,
+.footer-bottom {
+  font-size: 14px;
+}
+
+/* =====================================================
+   TABLET (≤1024px)
+   ===================================================== */
+
+@media (max-width: 1024px) {
+
+  h1 {
+    font-size: 46px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  body,
+  p {
+    font-size: 17px;
+  }
+
+}
+
+/* =====================================================
+   MOBILE (≤768px)
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  body,
+  p {
+    font-size: 16px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  .footer-column p,
+  .footer-bottom {
+    font-size: 13px;
+  }
+
+}
+
+/* =====================================================
+   SMALL PHONES (≤480px)
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  body,
+  p {
+    font-size: 15px;
+  }
+
 }
