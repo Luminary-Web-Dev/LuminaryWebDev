@@ -19,7 +19,7 @@
 }
 
 body {
-  padding-top: 95px; /* navbar height */
+  padding-top: px; /* navbar height */
   font-family: serif;
   background: var(--deep);
   color: var(--cream);
@@ -31,8 +31,8 @@ body {
 ========================================= */
 
 .navbar {
-  background: #07040f;
-  padding: 20px 80px;
+ 
+  padding: 0px 80px;
   position: relative;
   width: 100%;
   top: 0;
