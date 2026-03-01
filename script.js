@@ -96,6 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(res => res.json())
       .then(data => {
 
+        
+
         document.getElementById("heroTitle").textContent = data.hero_title || "";
         document.getElementById("heroDescription").textContent = data.hero_description || "";
         document.getElementById("ourStoryTitle").textContent = data.our_story_title || "";
@@ -117,6 +119,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
       })
       .catch(err => console.error("Homepage CMS error:", err));
+
+        const heroImage = document.getElementById("heroImage");
+const heroVideo = document.getElementById("heroVideo");
+
+if (data.hero_image && heroImage) {
+  heroImage.src = data.hero_image;
+  heroImage.style.display = "block";
+
+  if (heroVideo) heroVideo.style.display = "none";
+}
+
+if (data.hero_video && heroVideo) {
+  heroVideo.querySelector("source").src = data.hero_video;
+  heroVideo.load();
+  heroVideo.style.display = "block";
+
+  if (heroImage) heroImage.style.display = "none";
+}
+
+      
   }
 
 
