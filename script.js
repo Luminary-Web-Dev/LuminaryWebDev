@@ -103,9 +103,16 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("chefTitle").textContent = data.chef_title || "";
         document.getElementById("chefText").textContent = data.chef_text || "";
 
-        if (data.hero_image) {
-          document.getElementById("heroImage").src = data.hero_image;
-        }
+       if (data.hero_image) {
+  const heroImg = document.getElementById("heroImage");
+
+  // Remove leading slash if present
+  const imagePath = data.hero_image.startsWith("/")
+    ? data.hero_image.substring(1)
+    : data.hero_image;
+
+  heroImg.src = imagePath;
+}
 
         if (data.our_story_image) {
           document.getElementById("ourStoryImage").src = data.our_story_image;
