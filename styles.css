@@ -33,7 +33,7 @@ body {
 .navbar {
   background: #07040f;
   padding: 20px 80px;
-  position: fixed;
+  position: relative;
   width: 100%;
   top: 0;
   z-index: 1000;
