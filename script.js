@@ -207,13 +207,14 @@ if (page.endsWith("events") || page.endsWith("events.html")) {
   /* ================= MENU ================= */
 
 if (page.includes("menu") || page === "/" || page.endsWith("index.html")) {
-  
+
   fetch("content/menu.json")
     .then(res => res.json())
     .then(data => {
 
-      const container = document.getElementById("menuSlidesContainer");
-      if (!container) return;
+      const containers = document.querySelectorAll(".menuSlidesContainer");
+if (!containers.length) return;
+
 
       container.innerHTML = "";
 
@@ -256,7 +257,9 @@ if (page.includes("menu") || page === "/" || page.endsWith("index.html")) {
           </div>
         `;
 
-        container.appendChild(slide);
+        containers.forEach(container => {
+    container.appendChild(slide.cloneNode(true));
+    });
 
       });
 
