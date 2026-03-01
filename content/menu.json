@@ -27,7 +27,7 @@
       ]
     },
     {
-      "category_name": "Entrées",
+      "category_name": "Signature Plates",
       "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_foodplating05_v2.jpg",
       "items": [
         {
@@ -79,8 +79,8 @@
       ]
     },
     {
-      "category_name": "Cocktails",
-      "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_cocktail_close_up_v2.png",
+      "category_name": "Beverages",
+      "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_chopping01_v2.png",
       "items": [
         {
           "name": "Classic Negroni",
@@ -105,8 +105,8 @@
       ]
     },
     {
-      "category_name": "Non-Alcoholic Beverages",
-      "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_chopping01_v2.png",
+      "category_name": "Cocktails",
+      "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_cocktail_close_up_v2.png",
       "items": [
         {
           "name": "Sparkling Citrus Elixir",
