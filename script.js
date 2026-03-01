@@ -206,8 +206,8 @@ if (page.endsWith("events") || page.endsWith("events.html")) {
 
   /* ================= MENU ================= */
 
-if (window.location.pathname.includes("menu")) {
-
+if (page.includes("menu") || page === "/" || page.endsWith("index.html")) {
+  
   fetch("content/menu.json")
     .then(res => res.json())
     .then(data => {
