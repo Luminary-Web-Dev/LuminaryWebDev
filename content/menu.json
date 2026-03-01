@@ -5,24 +5,24 @@
       "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_foodplating02_v2.jpg",
       "items": [
         {
-          "name": "Burrata & Heirloom Tomatoes",
-          "price": "18",
-          "description": "Fresh burrata, seasonal tomatoes, basil oil, sea salt."
+          "name": "Starlight Tartare ",
+          "price": "11",
+          "description": "Finely diced seasonal tuna with yuzu, avocado, and a touch of edible gold."
         },
         {
-          "name": "Crispy Calamari",
-          "price": "20",
-          "description": "Lightly fried calamari, lemon aioli, charred citrus."
-        },
-        {
-          "name": "Wild Mushroom Tart",
+          "name": "Nebula Carpaccio ",
           "price": "10",
-          "description": "Seasonal mushrooms, truffle cream, flaky pastry."
+          "description": "Paper-thin slices of beetroot and radish, finished with truffle vinaigrette."
         },
         {
-          "name": "Charred Octopus",
-          "price": "22",
-          "description": "Grilled octopus, fingerling potatoes, smoked paprika."
+          "name": "Lunar Croquettes ",
+          "price": "12",
+          "description": "Crispy potato and fontina bites served with smoked saffron aioli."
+        },
+        {
+          "name": "Celestial Garden Dip",
+          "price": "10",
+          "description": "Roasted seasonal vegetables with comet herb oil and mozzarella cheese with a side of toasted bread slices."
         }
       ]
     },
@@ -31,24 +31,24 @@
       "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_foodplating05_v2.jpg",
       "items": [
         {
-          "name": "Pan-Seared Sea Bass",
-          "price": "32",
-          "description": "Lemon beurre blanc, roasted vegetables."
+          "name": "Galactic Sea Bass",
+          "price": "18",
+          "description": "Pan-seared sea bass with a star anise glaze, served atop smoked leek purée."
         },
         {
-          "name": "Filet Mignon",
-          "price": "45",
-          "description": "Grass-fed filet, garlic mashed potatoes."
+          "name": "Nebula Lamb  Loin",
+          "price": "19",
+          "description": "Herb-crusted lamb loin with a rich black garlic jus, served with moonlit potato gratin."
         },
         {
-          "name": "Wild Mushroom Risotto",
-          "price": "28",
-          "description": "Creamy arborio rice, parmesan, truffle oil."
+          "name": "Cosmic Mushroom Risotto",
+          "price": "17",
+          "description": "Creamy arborio rice with wild forest mushrooms, parmesan dust, and truffle oil."
         },
         {
-          "name": "Roasted Half Chicken",
-          "price": "29",
-          "description": "Herb jus, charred broccolini."
+          "name": "Solar Flare Duck Breast",
+          "price": "20",
+          "description": "Crispy-skinned duck with a blood orange gastrique, served with celestial spiced lentils."
         }
       ]
     },
@@ -57,24 +57,24 @@
       "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_foodplating01_v2.jpg",
       "items": [
         {
-          "name": "Dark Chocolate Mousse",
-          "price": "12",
-          "description": "Valrhona chocolate, whipped cream, sea salt."
-        },
-        {
-          "name": "Crème Brûlée",
+          "name": "Stardust Chocolate Sphere",
           "price": "11",
-          "description": "Vanilla custard, caramelized sugar crust."
+          "description": "Dark chocolate sphere filled with passionfruit mousse and a cosmic reveal."
         },
         {
-          "name": "Lemon Tart",
+          "name": "Aurora Meringue Cloud",
+          "price": "9",
+          "description": "Light, airy meringue with a lavender cream, freeze-dried berries, and golden syrup"
+        },
+        {
+          "name": "Comet Lemon Tart",
           "price": "10",
-          "description": "Citrus curd, toasted meringue."
+          "description": "Tangy lemon curd on a crisp almond crust, topped with a scoop of vanilla ice cream and star sugar."
         },
         {
-          "name": "Tiramisu",
-          "price": "12",
-          "description": "Espresso-soaked ladyfingers, mascarpone."
+          "name": "Moonlit Panna Cotta",
+          "price": "10",
+          "description": "Silky vanilla panna cotta with blackberry nebula compote and a sprinkle of silver dust."
         }
       ]
     },
@@ -83,24 +83,24 @@
       "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_chopping01_v2.png",
       "items": [
         {
-          "name": "Classic Negroni",
-          "price": "15",
-          "description": "Gin, Campari, sweet vermouth."
+          "name": "Solar Citrus Elixir ",
+          "price": "11",
+          "description": "Fresh-squeezed blood orange, yuzu, and sparkling mineral water, with a lemon twist."
         },
         {
-          "name": "Smoked Old Fashioned",
-          "price": "16",
-          "description": "Bourbon, smoked oak, bitters."
+          "name": "Moonflower Iced Tea",
+          "price": "8",
+          "description": "Delicate jasmine tea with white peach and a hint of elderflower, lightly chilled."
         },
         {
-          "name": "French 75",
-          "price": "14",
-          "description": "Gin, lemon, prosecco."
+          "name": "Stardew Botanical Tonic",
+          "price": "10",
+          "description": "House-infused rosemary, cucumber, and lime with artisanal tonic water."
         },
         {
-          "name": "Spicy Margarita",
-          "price": "14",
-          "description": "Tequila, lime, chili infusion."
+          "name": "Nebula Cold Brew",
+          "price": "8",
+          "description": "Smooth single-origin cold brew with vanilla bean and a touch of oat milk."
         }
       ]
     },
@@ -109,24 +109,24 @@
       "category_image": "/images/uploads/git_450-550_luminary_photo_-_video_cocktail_close_up_v2.png",
       "items": [
         {
-          "name": "Sparkling Citrus Elixir",
-          "price": "8",
-          "description": "Blood orange, yuzu, sparkling mineral water."
+          "name": "Solar Flare Spirtz",
+          "price": "13",
+          "description": "Blood orange aperitif, prosecco, and a splash of sparkling water with a citrus twist."
         },
         {
-          "name": "Jasmine Iced Tea",
-          "price": "6",
-          "description": "White peach, elderflower, lightly chilled."
+          "name": "Nebula Negroni",
+          "price": "12",
+          "description": "Gin, sweet vermouth, and a house-infused hibiscus Campari, served with an ice-sphere."
         },
         {
-          "name": "Cold Brew Coffee",
-          "price": "7",
-          "description": "Single-origin cold brew with vanilla bean."
+          "name": "Midnight Orbit Martini",
+          "price": "10",
+          "description": "Vodka, elderflower liqueur, fresh lemon, and a shimmer of edible silver dust."
         },
         {
-          "name": "Fresh Lemonade",
-          "price": "6",
-          "description": "House-made lemonade with seasonal citrus."
+          "name": "Eclipse Old Fashioned",
+          "price": "9",
+          "description": "Small-batch bourbon, smoked star anise syrup, orange bitters, and a flamed citrus peel."
         }
       ]
     }
