@@ -268,4 +268,59 @@ if (!containers.length) return;
     })
     .catch(err => console.error("Menu CMS error:", err));
 }
+
+/* ================= MENU ================= */
+
+if (page.includes("menu") || page === "/" || page.endsWith("index.html")) {
+
+  fetch("./content/menu.json")
+    .then(res => res.json())
+    .then(data => {
+
+      const menuContainer = document.getElementById("menuSlidesContainer");
+      const homeContainer = document.getElementById("homeMenuSlidesContainer");
+
+      const containers = [menuContainer, homeContainer].filter(Boolean);
+
+      if (!containers.length) return;
+
+      containers.forEach(container => container.innerHTML = "");
+
+      data.categories.forEach((category, index) => {
+
+        const slide = document.createElement("div");
+        slide.classList.add("carousel-slide");
+        if (index === 0) slide.classList.add("active");
+
+        slide.innerHTML = `
+          <h3 class="carousel-category">${category.category_name}</h3>
+
+          <div class="carousel-image-wrapper">
+            ${category.category_image 
+              ? `<img src="${category.category_image}" class="carousel-image" alt="${category.category_name}">`
+              : ""
+            }
+          </div>
+
+          <div class="carousel-items">
+            ${category.items.map(item => `
+              <div class="carousel-item">
+                <h4>${item.name} <span>/ ${item.price}</span></h4>
+                <p>${item.description}</p>
+              </div>
+            `).join("")}
+          </div>
+        `;
+
+        containers.forEach(container => {
+          container.appendChild(slide.cloneNode(true));
+        });
+
+      });
+
+      initializeCarousel();
+
+    })
+    .catch(err => console.error("Menu CMS error:", err));
+}
 });
