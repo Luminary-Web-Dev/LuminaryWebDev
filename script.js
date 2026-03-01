@@ -205,50 +205,63 @@ if (page.endsWith("events") || page.endsWith("events.html")) {
 
   /* ================= MENU ================= */
 
-  if (page.includes("menu")) {
+if (page.includes("menu")) {
 
-    fetch("content/menu.json")
-      .then(res => res.json())
-      .then(data => {
+  fetch("content/menu.json")
+    .then(res => res.json())
+    .then(data => {
 
-        const container = document.getElementById("menuSlidesContainer");
-        if (!container) return;
+      const container = document.getElementById("menuSlidesContainer");
+      if (!container) return;
 
-        container.innerHTML = "";
+      container.innerHTML = "";
 
-        data.categories.forEach((category, index) => {
+      data.categories.forEach((category, index) => {
 
-          const slide = document.createElement("div");
-          slide.classList.add("carousel-slide");
-          if (index === 0) slide.classList.add("active");
+        const slide = document.createElement("div");
+        slide.classList.add("carousel-slide");
 
-          slide.innerHTML = `
-            <h3 class="carousel-category">${category.category_name}</h3>
+        if (index === 0) {
+          slide.classList.add("active");
+        }
 
-            <div class="carousel-image-wrapper">
-              ${category.category_image 
-                ? `<img src="${category.category_image}" class="carousel-image" alt="${category.category_name}">`
+        slide.innerHTML = `
+          <h3 class="carousel-category">
+            ${category.category_name}
+          </h3>
+
+          <div class="carousel-image-wrapper">
+            ${
+              category.category_image
+                ? `<img 
+                    src="${category.category_image}" 
+                    class="carousel-image" 
+                    alt="${category.category_name}">
+                  `
                 : ""
-              }
-            </div>
+            }
+          </div>
 
-            <div class="carousel-items">
-              ${category.items.map(item => `
-                <div class="carousel-item">
-                  <h4>${item.name} <span>/ ${item.price}</span></h4>
-                  <p>${item.description}</p>
-                </div>
-              `).join("")}
-            </div>
-          `;
+          <div class="carousel-items">
+            ${category.items.map(item => `
+              <div class="carousel-item">
+                <h4>
+                  ${item.name}
+                  <span>/ ${item.price}</span>
+                </h4>
+                <p>${item.description}</p>
+              </div>
+            `).join("")}
+          </div>
+        `;
 
-          container.appendChild(slide);
-        });
+        container.appendChild(slide);
 
-        initializeCarousel();
+      });
 
-      })
-      .catch(err => console.error("Menu CMS error:", err));
-  }
+      initializeCarousel();
 
+    })
+    .catch(err => console.error("Menu CMS error:", err));
+}
 });
