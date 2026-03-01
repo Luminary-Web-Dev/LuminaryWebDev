@@ -390,7 +390,7 @@ body.nav-open {
 
 .hero {
   position: relative;
-  background-color: #1f1f1f; /* default dark */
+  background-color:var(--deep);/* default dark */
   overflow: hidden;
 }
 
@@ -440,7 +440,7 @@ body.nav-open {
 /* ================= WELCOME ================= */
 .welcome {
   text-align: center;
-  padding: 60px 0;
+  padding: 45px 0px;
   background: var(--cream);
 }
 
@@ -463,6 +463,14 @@ section.welcome h2 {
   gap: 60px;
   padding: 100px 80px;
 }
+
+.split-section.light {
+  background: var(--cream);
+  margin-bottom: 0px;
+}
+
+
+
 
 /* LIGHT SECTION (cream background) */
 .split-section.light .learn-link {
@@ -966,6 +974,7 @@ section.welcome h2 {
 
 .about-text h2 {
   margin-bottom: 20px;
+  
 }
 
 .about-text p {
