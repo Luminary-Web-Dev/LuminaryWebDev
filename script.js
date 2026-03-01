@@ -84,6 +84,7 @@ function initializeCarousel() {
 document.addEventListener("DOMContentLoaded", function () {
 
   const page = window.location.pathname;
+  console.log("CURRENT PATH:", page);
 
   /* ================= HOMEPAGE ================= */
 
