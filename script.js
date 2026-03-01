@@ -88,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const page = window.location.pathname;
   console.log("CURRENT PATH:", page);
 
-  /* ================= HOMEPAGE ================= */
 /* ================= HOMEPAGE ================= */
 if (document.getElementById("heroTitle")) {
 
@@ -108,14 +107,28 @@ if (document.getElementById("heroTitle")) {
       const ourStoryImage = document.getElementById("ourStoryImage");
       const chefImage = document.getElementById("chefImage");
 
+      // HERO IMAGE
       if (data.hero_image && heroImage) {
         heroImage.src = data.hero_image;
+        heroImage.style.display = "block";
       }
 
+      // HERO VIDEO (only if exists in JSON)
+      if (data.hero_video && heroVideo) {
+        const source = heroVideo.querySelector("source");
+        if (source) source.src = data.hero_video;
+        heroVideo.load();
+        heroVideo.style.display = "block";
+      } else if (heroVideo) {
+        heroVideo.style.display = "none";
+      }
+
+      // OUR STORY IMAGE
       if (data.our_story_image && ourStoryImage) {
         ourStoryImage.src = data.our_story_image;
       }
 
+      // CHEF IMAGE
       if (data.chef_image && chefImage) {
         chefImage.src = data.chef_image;
       }
@@ -329,4 +342,19 @@ if (page.includes("menu") || page === "/" || page.endsWith("index.html")) {
     })
     .catch(err => console.error("Menu CMS error:", err));
 }
+});
+
+/* ================= ACTIVE NAV ================= */
+
+const currentPath = window.location.pathname;
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  const linkPath = link.getAttribute("href");
+
+  if (
+    currentPath === "/" && linkPath.includes("index") ||
+    currentPath.endsWith(linkPath)
+  ) {
+    link.classList.add("active");
+  }
 });

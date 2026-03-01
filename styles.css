@@ -19,13 +19,21 @@
 }
 
 body {
-  padding-top: px; /* navbar height */
+  padding-top: 95px; /* navbar height */
   font-family: serif;
   background: var(--deep);
   color: var(--cream);
   line-height: 1.6;
 }
 
+/* =========================================
+   SITE WIDTH RULE (NEW)
+========================================= */
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
 /* =========================================
    NAVIGATION
 ========================================= */
@@ -115,10 +123,6 @@ body {
     display: flex;
   }
 
-  .nav-links a {
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255,250,236,0.1);
-  }
 
   .nav-links a:last-child {
     border-bottom: none;
@@ -132,9 +136,6 @@ body {
   gap: 20px;
 }
 
-.nav-links a {
-  display: inline-block;
-}
 
 .nav-btn {
   background: var(--creem);
@@ -144,22 +145,6 @@ body {
   flex: 0 0 auto;     /* stop flex stretching */
 }
 }
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
 
 
 /* ===== HAMBURGER (VISIBLE ON MOBILE) ===== */
@@ -210,7 +195,7 @@ body {
 
 .nav-links a {
   padding: 8px 20px;
-  border: 1px solid var(--cream);
+  border: none;
   color: var(--cream);
   text-decoration: none;
   transition: 0.3s ease;
@@ -281,10 +266,7 @@ body.nav-open {
     justify-content: flex-end;
   }
 
-  .nav-links a {
-    font-size: 16px;
-    padding: 8px 14px;
-  }
+ 
 .nav-links a.active {
     border: 1px solid var(--cream);
     padding: 8px 14px;
