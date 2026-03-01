@@ -641,38 +641,13 @@ section.welcome h2 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ================= CAROUSEL SECTION ================= */
+.carousel {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .carousel-section {
   background: var(--deep);
   color: var(--cream);
@@ -705,28 +680,34 @@ section.welcome h2 {
   display: block;
 }
 
+.carousel-image-wrapper {
+  max-width: 800px;       /* controls width */
+  margin: 0 auto 40px;    /* center it */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
 .carousel-image {
   width: 100%;
-  max-width: 800px;
-  height: 320px;
-  object-fit: cover;
-  margin: 0 auto 50px;
+  height: 400px;          /* control height */
+  object-fit: cover;      /* crop nicely */
+  display: block;
 }
 
 .carousel-items {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 60px;
-  text-align: left;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 80px;   /* row gap / column gap */
 }
 
 .carousel-item h4 {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
-.carousel-item span {
+.carousel-item h4 span {
+  margin-left: 8px;   /* controls closeness */
   opacity: 0.7;
 }
 
@@ -737,23 +718,46 @@ section.welcome h2 {
 
 .carousel-btn {
   position: absolute;
-  top: 40%;
-  background: none;
+  top: 45%;
+  transform: translateY(-50%);
+  background: transparent;
   border: none;
-  color: var(--cream);
-  font-size: 40px;
+  font-size: 38px;
   cursor: pointer;
-  opacity: 0.7;
+  z-index: 10;
+  color: var(--cream);
 }
 
 .carousel-btn.left {
-  left: 10px;
+  left: -10%;
 }
 
 .carousel-btn.right {
-  right: 10px;
+  right: -10%;
 }
 
+
+/* ================= CAROUSEL DOTS ================= */
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.carousel-dots span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.carousel-dots span.active {
+  background:var(--cream);
+}
 
 
 /* ================= FOOTER ================= */
