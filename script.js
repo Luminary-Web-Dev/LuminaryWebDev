@@ -89,56 +89,40 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("CURRENT PATH:", page);
 
   /* ================= HOMEPAGE ================= */
+/* ================= HOMEPAGE ================= */
+if (document.getElementById("heroTitle")) {
 
-  if (document.getElementById("heroTitle")) {
+  fetch("/content/homepage.json")
+    .then(res => res.json())
+    .then(data => {
 
-    fetch("/content/homepage.json")
-      .then(res => res.json())
-      .then(data => {
+      document.getElementById("heroTitle").textContent = data.hero_title || "";
+      document.getElementById("heroDescription").textContent = data.hero_description || "";
+      document.getElementById("ourStoryTitle").textContent = data.our_story_title || "";
+      document.getElementById("ourStoryText").textContent = data.our_story_text || "";
+      document.getElementById("chefTitle").textContent = data.chef_title || "";
+      document.getElementById("chefText").textContent = data.chef_text || "";
 
-        console.log("Hero image from CMS:", data.hero_image);
+      const heroImage = document.getElementById("heroImage");
+      const heroVideo = document.getElementById("heroVideo");
+      const ourStoryImage = document.getElementById("ourStoryImage");
+      const chefImage = document.getElementById("chefImage");
 
-        document.getElementById("heroTitle").textContent = data.hero_title || "";
-        document.getElementById("heroDescription").textContent = data.hero_description || "";
-        document.getElementById("ourStoryTitle").textContent = data.our_story_title || "";
-        document.getElementById("ourStoryText").textContent = data.our_story_text || "";
-        document.getElementById("chefTitle").textContent = data.chef_title || "";
-        document.getElementById("chefText").textContent = data.chef_text || "";
+      if (data.hero_image && heroImage) {
+        heroImage.src = data.hero_image;
+      }
 
-        if (data.hero_image) {
-          document.getElementById("heroImage").src = data.hero_image;
-        }
+      if (data.our_story_image && ourStoryImage) {
+        ourStoryImage.src = data.our_story_image;
+      }
 
-        if (data.our_story_image) {
-          document.getElementById("ourStoryImage").src = data.our_story_image;
-        }
+      if (data.chef_image && chefImage) {
+        chefImage.src = data.chef_image;
+      }
 
-        if (data.chef_image) {
-          document.getElementById("chefImage").src = data.chef_image;
-        }
-
-      })
-      .catch(err => console.error("Homepage CMS error:", err));
-
-        const heroImage = document.getElementById("heroImage");
-        const heroVideo = document.getElementById("heroVideo");
-
-if (data.hero_image && heroImage) {
-  heroImage.src = data.hero_image;
-  heroImage.style.display = "block";
-
-  if (heroVideo) heroVideo.style.display = "none";
+    })
+    .catch(err => console.error("Homepage CMS error:", err));
 }
-
-if (data.hero_video && heroVideo) {
-  heroVideo.querySelector("source").src = data.hero_video;
-  heroVideo.load();
-  heroVideo.style.display = "block";
-
-  if (heroImage) heroImage.style.display = "none";
-}    
-  }
-
 
   /* ================= EVENTS PAGE ================= */
 
