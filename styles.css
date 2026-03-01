@@ -865,7 +865,6 @@ section.welcome h2 {
 .page-hero {
   height: 380px;
   padding-top: 95px; /* height of navbar */
-  background-image: url("images/dish2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
