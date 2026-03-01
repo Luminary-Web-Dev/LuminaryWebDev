@@ -27,13 +27,16 @@ body {
 }
 
 /* =========================================
-   SITE WIDTH RULE (NEW)
+   GLOBAL SITE WIDTH (FULL MOCKUP RULE)
 ========================================= */
 
-main {
+.site-wrapper {
   max-width: 1024px;
   margin: 0 auto;
+  background: var(--deep);
 }
+
+
 /* =========================================
    NAVIGATION
 ========================================= */
@@ -216,6 +219,8 @@ main {
 }
 
 
+Because
+
 /* Prevent scroll when nav open */
 body.nav-open {
   overflow: hidden;
@@ -310,22 +315,6 @@ body.nav-open {
   z-index: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ================= HERO ================= */
 
 .hero {
@@ -391,7 +380,7 @@ body.nav-open {
 }
 
 .hero-overlay {
-  position: absolute;
+  position: relative;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
   z-index: 2;
@@ -631,26 +620,6 @@ section.welcome h2 {
   line-height: 1.6;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ================= CAROUSEL SECTION ================= */
 .carousel {
   position: relative;
@@ -881,39 +850,6 @@ section.welcome h2 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ================= ABOUT DIVIDER ================= */
 
 .about-divider {
@@ -1083,6 +1019,7 @@ button{
 
 .page-hero {
   height: 520px;
+  width: 100%;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -1090,9 +1027,7 @@ button{
   justify-content: center;
 }
 
-.page-hero {
-  height: 520px;
-}
+
 
 .page-hero h1 {
   color: var(--cream);
