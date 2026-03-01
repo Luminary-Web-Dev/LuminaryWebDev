@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (document.getElementById("heroTitle")) {
 
-    fetch("content/homepage.json")
+    fetch("/content/homepage.json")
       .then(res => res.json())
       .then(data => {
 
