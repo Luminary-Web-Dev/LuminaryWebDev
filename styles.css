@@ -21,8 +21,8 @@
 body {
   padding-top: 95px; /* navbar height */
   font-family: serif;
-  background: var(--cream);
-  color: var(--deep);
+  background: var(--deep);
+  color: var(--cream);
   line-height: 1.6;
 }
 
@@ -851,8 +851,11 @@ section.welcome h2 {
   color: var(--cream);
 }
 
-
-
+.page-hero,
+.reservation-hero {
+  position: relative;
+  z-index: 1;
+}
 /* Dark overlay */
 .page-hero::before {
   content: "";
