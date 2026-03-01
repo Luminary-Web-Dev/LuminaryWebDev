@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function initializeCarousel() {
 
   const slides = document.querySelectorAll(".carousel-slide");
-  const dotsContainer = document.getElementById("carouselDots");
+  const dotsContainer =
+  document.getElementById("carouselDots") ||
+  document.getElementById("homeCarouselDots");
 
   if (!slides.length) return;
 
