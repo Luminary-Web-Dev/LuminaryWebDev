@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ================= HOMEPAGE ================= */
 
-  if (page === "/" || page.endsWith("index.html")) {
+  if (document.getElementById("heroTitle")) {
 
     fetch("content/homepage.json")
       .then(res => res.json())
