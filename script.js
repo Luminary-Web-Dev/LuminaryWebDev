@@ -89,53 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("CURRENT PATH:", page);
 
   /* ================= HOMEPAGE ================= */
-if (document.getElementById("heroTitle")) {
 
-  fetch("/content/homepage.json")
-    .then(res => res.json())
-    .then(data => {
-
-      document.getElementById("heroTitle").textContent = data.hero_title || "";
-      document.getElementById("heroDescription").textContent = data.hero_description || "";
-      document.getElementById("ourStoryTitle").textContent = data.our_story_title || "";
-      document.getElementById("ourStoryText").textContent = data.our_story_text || "";
-      document.getElementById("chefTitle").textContent = data.chef_title || "";
-      document.getElementById("chefText").textContent = data.chef_text || "";
-
-      const heroImage = document.getElementById("heroImage");
-      const heroVideo = document.getElementById("heroVideo");
-      const ourStoryImage = document.getElementById("ourStoryImage");
-      const chefImage = document.getElementById("chefImage");
-
-      // HERO IMAGE
-      if (data.hero_image && heroImage) {
-        heroImage.src = data.hero_image;
-        heroImage.style.display = "block";
-        if (heroVideo) heroVideo.style.display = "none";
-      }
-
-      // HERO VIDEO
-      if (data.hero_video && heroVideo) {
-        const source = heroVideo.querySelector("source");
-        if (source) source.src = data.hero_video;
-        heroVideo.load();
-        heroVideo.style.display = "block";
-        if (heroImage) heroImage.style.display = "none";
-      }
-
-      // OUR STORY IMAGE
-      if (data.our_story_image && ourStoryImage) {
-        ourStoryImage.src = data.our_story_image;
-      }
-
-      // CHEF IMAGE
-      if (data.chef_image && chefImage) {
-        chefImage.src = data.chef_image;
-      }
-
-    })
-    .catch(err => console.error("Homepage CMS error:", err));
-}
   if (document.getElementById("heroTitle")) {
 
     fetch("/content/homepage.json")
