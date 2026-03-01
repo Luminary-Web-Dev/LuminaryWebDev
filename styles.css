@@ -1253,6 +1253,17 @@ display: inline-block;
    ===================================================== */
 /* ================= EVENTS PAGE SPLIT LAYOUT ================= */
 
+html {
+  background: var(--deep);
+}
+
+.site-wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  background: var(--deep);
+}
+
+
 .events-page-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
