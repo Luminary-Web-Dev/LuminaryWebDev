@@ -1211,17 +1211,10 @@ p,
   font-size: 14px;
 }
 
-/* =====================================================
-   TABLET (≤1024px)
-   ===================================================== */
 
-@media (max-width: 1024px) {
 
-  .hero {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  /* Transparent Cream Outline Button */
+/* ===== HERO BUTTON (ALL SCREENS) ===== */
+
 .hero-btn {
   display: inline-block;
   padding: 14px 36px;
@@ -1237,6 +1230,20 @@ p,
 .hero-btn:hover {
   background: rgba(255, 250, 236, 0.1);
 }
+
+
+/* =====================================================
+   TABLET (≤1024px)
+   ===================================================== */
+
+@media (max-width: 1024px) {
+
+  .hero {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  /* Transparent Cream Outline Button */
+
 
   .hero-content h1 {
     font-size: 36px;
