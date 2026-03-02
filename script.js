@@ -357,4 +357,26 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   ) {
     link.classList.add("active");
   }
+
+/* ================= RESERVATION ================= */
+if (document.getElementById("reservationHeroTitle")) {
+
+  fetch("/content/reservation.json")
+    .then(res => res.json())
+    .then(data => {
+
+      document.getElementById("reservationHeroTitle").textContent =
+        data.hero_title || "";
+
+      const heroImage = document.getElementById("reservationHeroImage");
+
+      if (data.hero_image && heroImage) {
+        heroImage.src = data.hero_image;
+        heroImage.style.display = "block";
+      }
+
+    })
+    .catch(err => console.error("Reservation CMS error:", err));
+}
+
 });

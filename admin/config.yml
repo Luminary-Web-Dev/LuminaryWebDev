@@ -105,4 +105,16 @@ collections:
                   - { label: "Item Name", name: "name", widget: "string" }
                   - { label: "Price", name: "price", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
-               
+
+
+  # ================= RESERVATION =================
+  - name: "reservation"
+    label: "Reservation Page"
+    files:
+      - label: "Reservation Content"
+        name: "reservation"
+        file: "content/reservation.json"
+        format: "json"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
