@@ -105,23 +105,24 @@ if (document.getElementById("heroTitle")) {
      // ===== HERO MEDIA (Video First, Image Fallback) =====
 const heroImage = document.getElementById("heroImage");
 const heroVideo = document.getElementById("heroVideo");
-const heroVideoSource = heroVideo ? heroVideo.querySelector("source") : null;
+const ourStoryImage = document.getElementById("ourStoryImage");
+const chefImage = document.getElementById("chefImage");
 
-if (data.hero_video && heroVideo && heroVideoSource) {
-  heroVideoSource.src = data.hero_video;
+// HERO IMAGE
+if (data.hero_image && heroImage) {
+  heroImage.src = data.hero_image;
+  heroImage.style.display = "block";
+}
+
+// HERO VIDEO (only if exists in JSON)
+if (data.hero_video && heroVideo) {
+  const source = heroVideo.querySelector("source");
+  if (source) source.src = data.hero_video;
   heroVideo.load();
-  heroVideo.style.display = "block"}
-      
-
-      // HERO VIDEO (only if exists in JSON)
-      if (data.hero_video && heroVideo) {
-        const source = heroVideo.querySelector("source");
-        if (source) source.src = data.hero_video;
-        heroVideo.load();
-        heroVideo.style.display = "block";
-      } else if (heroVideo) {
-        heroVideo.style.display = "none";
-      }
+  heroVideo.style.display = "block";
+} else if (heroVideo) {
+  heroVideo.style.display = "none";
+}
 
       // OUR STORY IMAGE
       if (data.our_story_image && ourStoryImage) {
