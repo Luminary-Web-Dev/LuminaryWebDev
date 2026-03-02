@@ -102,16 +102,16 @@ if (document.getElementById("heroTitle")) {
       document.getElementById("chefTitle").textContent = data.chef_title || "";
       document.getElementById("chefText").textContent = data.chef_text || "";
 
-      const heroImage = document.getElementById("heroImage");
-      const heroVideo = document.getElementById("heroVideo");
-      const ourStoryImage = document.getElementById("ourStoryImage");
-      const chefImage = document.getElementById("chefImage");
+     // ===== HERO MEDIA (Video First, Image Fallback) =====
+const heroImage = document.getElementById("heroImage");
+const heroVideo = document.getElementById("heroVideo");
+const heroVideoSource = heroVideo ? heroVideo.querySelector("source") : null;
 
-      // HERO IMAGE
-      if (data.hero_image && heroImage) {
-        heroImage.src = data.hero_image;
-        heroImage.style.display = "block";
-      }
+if (data.hero_video && heroVideo && heroVideoSource) {
+  heroVideoSource.src = data.hero_video;
+  heroVideo.load();
+  heroVideo.style.display = "block"}
+      
 
       // HERO VIDEO (only if exists in JSON)
       if (data.hero_video && heroVideo) {
