@@ -19,11 +19,8 @@
 }
 
 body {
-  padding-top: 95px; /* navbar height */
-  font-family: serif;
-  background: var(--deep);
-  color: var(--cream);
-  line-height: 1.6;
+  margin: 0;
+ 
 }
 
 /* =========================================
@@ -31,8 +28,23 @@ body {
 ========================================= */
 
 .site-wrapper {
-  max-width: 1024px;
-  margin: 0 auto;
+ 
+  margin: 0;
+  border: 4px --deep;
+}
+
+
+
+
+
+.about-divider {
+    justify-content: space-between;
+  width: 50%;
+  border-top: 2px solid rgba(255,250,236,0.4);
+   margin: 0;
+
+   align-items: center;
+ border: 10; 
   background: var(--deep);
 }
 
@@ -48,6 +60,12 @@ body {
 }
 
 .nav-container {
+   max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -274,14 +292,17 @@ section.welcome h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 60px;
+  gap: 80px;
   padding: 100px 40px;
+
+
+  border-top: -1px;
+  margin: -0px 0 0px;
+   background: var(--cream);
+     color: var(--deep);
 }
 
-.split-section.light {
-  background: var(--cream);
-  margin-bottom: 0px;
-}
+
 
 
 
@@ -298,7 +319,7 @@ section.welcome h2 {
 
 /* DARK SECTION (plum background) */
 .split-section.darker .learn-link {
-  color: var(--cream);
+  color: var(--deep);
 }
 
 .split-section.darker .learn-link .arrow {
@@ -313,6 +334,12 @@ section.welcome h2 {
   color: var(--deep);
 }
 
+.split-section.light h2 {
+  color: var(--deep);
+  
+}
+
+
 .split-section.darker {
   background: var(--plum);
   margin-bottom: 0px;
@@ -325,8 +352,11 @@ section.welcome h2 {
 .split-section.darker p {
   color: var(--cream);
 }
+.split-section.darker h2 {
+  color: var(--cream);
+}
 
-.split-section.reverse {
+.split-section.reverse-media   {
   flex-direction: row-reverse;
 }
 
@@ -463,6 +493,13 @@ section.welcome h2 {
   line-height: 1.6;
 }
 
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 /* ================= CAROUSEL SECTION ================= */
 .carousel {
   position: relative;
@@ -594,16 +631,20 @@ section.welcome h2 {
 
 /* ===== TOP SECTION ===== */
 .footer-top {
+    color: var(--cream);
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content:space-between ;
+  align-items:stretch;
+  gap: 40px;
+  font-size: 14px;
+  opacity: 0.7;
 
 }
 
 
 /* LEFT SIDE */
 .footer-brand {
-  max-width: 300px;
+  max-width: 900px;
 }
 
 .footer-logo {
@@ -681,14 +722,6 @@ section.welcome h2 {
   object-fit: cover;
 }
 
-/* ===== OVERLAY ===== */
-.page-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(12, 9, 16, 0.5);
-  z-index: 1;   /* above image */
-}
 
 /* ===== CONTENT (TEXT + BUTTON) ===== */
 .hero-content {
@@ -697,71 +730,7 @@ section.welcome h2 {
   max-width: 600px;
 }
 
-
-
-
 /* ================= ABOUT DIVIDER ================= */
-
-.about-divider {
-  width: 80%;
-  height: 1px;
-  background: rgba(12, 9, 16, 0.2); /* subtle deep tone */
-  margin: 60px auto;
-}
-
-.about-section {
-  padding: 100px 10%;
-}
-
-.about-section.light {
-  background: var(--cream);
-  color: var(--deep);
-}
-
-.about-section.darker {
-  background: var(--plum);
-  color: var(--cream);
-  padding: 130px 8%;
-}
-
-.about-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 80px;
-  margin-bottom: 80px;
-}
-
-.about-row.reverse {
-  flex-direction: row-reverse;
-}
-
-.about-text {
-  flex: 1;
-}
-
-.about-text h2 {
-  margin-bottom: 20px;
-  
-}
-
-.about-text p {
-  line-height: 1.7;
-}
-
-.about-media {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.about-media img,
-.about-media video {
-  width: 100%;
-  max-width: 500px;
-  height: auto;   
-}
-
 
 
 
@@ -876,6 +845,7 @@ button{
   align-items: center;
   justify-content: center;
 }
+
 
 
 
@@ -1202,6 +1172,8 @@ html {
 /* ================= NAV CONTAINER FIX ================= */
 
 
+
+
 .container-padding {
   padding-left: 80px;
   padding-right: 80px;
@@ -1349,6 +1321,7 @@ p,
     padding: 120px 30px 0 30px;
     height: 80vh;
   }
+  
 
   .hero-content h1 {
     font-size: 38px;
