@@ -659,13 +659,11 @@ section.welcome h2 {
 /* ===== HERO BASE ===== */
 .page-hero {
   position: relative;
-  height: 90vh;
+  height: 420px;      /* default smaller size */
+  min-height: 420px;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 120px 120px 125px 20px;
-  color: var(--cream);
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ===== HERO MEDIA (Image / Video) ===== */
@@ -689,6 +687,11 @@ section.welcome h2 {
   z-index: 5;   /* ABOVE EVERYTHING */
   max-width: 600px;
 }
+
+/* Smaller hero only for reservation page */
+
+
+
 
 /* ================= ABOUT DIVIDER ================= */
 
