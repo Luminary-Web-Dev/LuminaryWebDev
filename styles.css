@@ -1231,7 +1231,12 @@ p,
   background: rgba(255, 250, 236, 0.1);
 }
 
-
+.square-video {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1; /* makes it square */
+  border: none;
+}
 /* =====================================================
    TABLET (≤1024px)
    ===================================================== */
