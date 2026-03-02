@@ -28,13 +28,10 @@ body {
 ========================================= */
 
 .site-wrapper {
- 
-  margin: 0;
-  border: 4px --deep;
+  max-width: 1024px;
+  margin: 0 auto;
+  background: var(--deep);
 }
-
-
-
 
 
 .about-divider {
@@ -58,18 +55,15 @@ body {
 .navbar {
   padding: 0 40px;
 }
-
 .nav-container {
    max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-
-
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 
 /* Regular Links (NO rectangle) */
 .nav-links {
@@ -323,7 +317,7 @@ section.welcome h2 {
 }
 
 .split-section.darker .learn-link .arrow {
-  color: var(--cream);
+  color: var(--deep);
 }
 
 .split-section.light h3 {
@@ -629,16 +623,13 @@ section.welcome h2 {
 }
 
 
-/* ===== TOP SECTION ===== */
+/* ===== TOP SECTION  left side wraper for home footer  border: 4px solid red;===== */
 .footer-top {
-    color: var(--cream);
   display: flex;
-  justify-content:space-between ;
-  align-items:stretch;
-  gap: 40px;
-  font-size: 14px;
-  opacity: 0.7;
-
+  justify-content: center;
+  align-items: flex-start;
+  gap: 500px;
+  
 }
 
 
@@ -653,10 +644,11 @@ section.welcome h2 {
   margin-bottom: 30px;
 }
 
-/* RIGHT SIDE */
+/* RIGHT SIDE , wrapper only for home screen footer*/
 .footer-columns {
   display: flex;
   gap: 60px;
+
 }
 
 .footer-column h4 {
@@ -1077,11 +1069,6 @@ html {
   background: var(--deep);
 }
 
-.site-wrapper {
-  max-width: 1024px;
-  margin: 0 auto;
-  background: var(--deep);
-}
 
 
 .events-page-split {
