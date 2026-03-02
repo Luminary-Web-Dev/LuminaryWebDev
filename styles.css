@@ -38,16 +38,13 @@ body {
 
 
 /* =========================================
-   NAVIGATION
+   NAVIGATION (CLEAN VERSION)
 ========================================= */
 
+/* ================= NAVIGATION CLEAN ================= */
+
 .navbar {
- 
-  padding: 0px 80px;
-  position: relative;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+  padding: 0 40px;
 }
 
 .nav-container {
@@ -56,83 +53,52 @@ body {
   align-items: center;
 }
 
-/* Desktop Links */
-
+/* Regular Links (NO rectangle) */
 .nav-links {
   display: flex;
-  gap: 20px;
   align-items: center;
+  gap: 40px;
 }
 
-.nav-link {
-  padding: 8px 20px;
-  border: 1px solid var(--cream);
+.nav-links a {
   color: var(--cream);
   text-decoration: none;
-  transition: 0.3s ease;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10;                /* remove rectangle */
+  border: 10;              /* remove border */
+  background: transparent;   /* remove fill */
+  transition:  border-color 0.25s ease;        /* fade */
 }
 
-.nav-link:hover {
-  background: var(--cream);
-  color: var(--deep);
+
+
+.nav-links a:hover {
+  opacity: 1;                
 }
 
-.nav-btn {
-  padding: 8px 20px;
-  background: var(--cream);
-  color: var(--deep);
-  text-decoration: none;
-  display: inline-block;
+
+
+.nav-btn:hover {
+  background: transparent;
+  color: var(--cream);
 }
 
 .hamburger {
   display: none;
-  font-size: 26px;
-  background: none;
-  border: none;
-  color: var(--cream);
-  cursor: pointer;
 }
 
 
-/* =========================================
-   MOBILE NAV
-========================================= */
-
-@media (max-width: 768px) {
-
-  .navbar {
-    padding: 20px 25px;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    width: 260px;
-    background: var(--deep);
-    padding: 30px;
-    box-shadow: 0 15px 40px rgba(12,9,16,0.4);
-    border-radius: 6px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
 
 
-  .nav-links a:last-child {
-    border-bottom: none;
-  }
+
+/* Active link gets rectangle */
+.nav-links a.active {
+  padding: 8px 18px;
+  border: 1px solid var(--cream);
+}
 
   /* FIX NAV BUTTON STRETCH */
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -140,145 +106,24 @@ body {
 }
 
 
-.nav-btn {
-  background: var(--creem);
-  color: var(--cream);
-  padding: 8px 20px;
-  width: auto;        /* force normal width */
-  flex: 0 0 auto;     /* stop flex stretching */
-}
-}
 
 
-/* ===== HAMBURGER (VISIBLE ON MOBILE) ===== */
-.hamburger {
-  display: none; 
-  font-size: 36px;
-  background: none;
-  border: none;
-  color: var(--cream);
-  cursor: pointer;
-}
-
-
-/* ===== MOBILE MENU (HIDDEN BY DEFAULT) ===== */
-.nav-links {
-  position: fixed;
-  inset: 0;
-  background: rgba(255, 253, 253, 0.96);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  transform: translateY(-100%);
-  transition: transform 0.4s ease;
-  z-index: 10000;
-}
-
-.nav-links.active {
-  transform: translateY(0);
-}
-
-.nav-links a {
-  color: var(--cream);
-  text-decoration: none;
-  font-size: 22px;
-}
-
-.nav-links .nav-btn {
-  padding: 8px 20px;
-  color: var(--cream);
-}
-.nav-btn {
-  padding: 8px 20px;
-}
-
-/* ===== NAV RECTANGLE FIX ===== */
-
-.nav-links a {
-  padding: 8px 20px;
-  border: none;
-  color: var(--cream);
-  text-decoration: none;
-  transition: 0.3s ease;
-  display: inline-block;
-}
-
-
-.nav-btn {
-  background: var(--deep);
-  color: var(--deep);
-}
 /* ================= hover  ================= */
 
-.hero-btn:hover {
+.btn:hover {
   background: var(--cream);
   border-color: var(--cream);
-   color: var(--deep);
+   
 }
 
 
-Because
 
 /* Prevent scroll when nav open */
 body.nav-open {
   overflow: hidden;
 }
 
-/* Smooth mobile slide animation */
-@media (max-width: 768px) {
 
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 260px;
-    background: #111;
-    display: flex;
-    flex-direction: column;
-    padding-top: 100px;
-    transform: translateX(100%);
-    transition: transform 0.35s ease;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    transform: translateX(0);
-  }
-
-}
-
-/* ================= DESKTOP NAV ================= */
-@media (min-width: 769px) {
-
-  .nav-container {
-    justify-content: space-between;
-  }
-
-  .hamburger {
-    display: none;
-  }
-
-  .nav-links {
-    position: static;
-    transform: none;
-    background: none;
-    flex-direction: row;
-    gap: 40px;
-    height: auto;
-    justify-content: flex-end;
-  }
-
- 
-.nav-links a.active {
-    border: 1px solid var(--cream);
-    padding: 8px 14px;
-    color: var(--cream);
-}
-
-}
 
 /* ================= EVENTS HERO ================= */
 
@@ -389,12 +234,14 @@ body.nav-open {
 .hero-content {
   position: relative;
   z-index: 3;
+   max-width: 600px;
 }
 
 .hero-btn {
-   margin-top: 10px;
+   margin-top: 5px;
   border: 1px solid var(--cream); /* FIXED */
-  padding: 10px 24px;
+  padding: 20
+  px 24px;
   text-decoration: none;
   color: var(--cream);
   display: inline-block;
@@ -744,21 +591,20 @@ section.welcome h2 {
 .footer {
   background-color: var(--deep);
   color: var(--cream);
-  padding: 60px 40px 30px; /* left/right padding controls layout */
+  padding: 10px 80px 10px; /* left/right padding controls layout */
   font-family: 'Cormorant Garamond', serif;
 }
 
-.footer-inner {
-  width: 100%;
-}
 
 /* ===== TOP SECTION ===== */
-
 .footer-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
+
 }
+
+
 /* LEFT SIDE */
 .footer-brand {
   max-width: 300px;
@@ -773,7 +619,7 @@ section.welcome h2 {
 /* RIGHT SIDE */
 .footer-columns {
   display: flex;
-  gap: 120px;
+  gap: 60px;
 }
 
 .footer-column h4 {
@@ -820,13 +666,15 @@ section.welcome h2 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
+ overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--cream);
+    padding-left: 120px;
+  padding-right: 120px;
 }
 
 .page-hero,
@@ -1327,95 +1175,9 @@ html {
   color: var(--cream);
 }
 
-/* =====================================================
-   RESPONSIVE BREAKPOINTS
-   ===================================================== */
 
 
-/* ================= TABLET (≤1024px) ================= */
-@media (max-width: 1024px) {
 
-  #reservationForm {
-    padding: 60px 50px;
-  }
-
-  .form-grid {
-    gap: 30px 50px;
-  }
-
-}
-
-
-/* ================= MOBILE (≤768px) ================= */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 20px 25px;
-  }
-
-  .nav-container {
-    position: relative;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 28px;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    width: 260px;
-    background: var(--deep);
-    padding: 30px;
-    z-index: 9999;
-    box-shadow: 0 15px 40px rgba(12,9,16,0.4);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255,250,236,0.1);
-  }
-
-  .nav-links a:last-child {
-    border-bottom: none;
-  }
-
-}
-
-/* ================= SMALL PHONES (≤480px) ================= */
-@media (max-width: 480px) {
-
-  #reservationForm {
-    padding: 30px 18px;
-  }
-
-  .form-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  .step-label {
-    font-size: 12px;
-  }
-
-  button {
-    padding: 14px 20px;
-    font-size: 14px;
-  }
-
-}
 
 /* =========================================
    NAVIGATION BASE (DESKTOP DEFAULT)
@@ -1470,7 +1232,7 @@ h1,
 .hero-content h1,
 .events-hero h1 {
   font-family: var(--font-secondary), serif;
-  font-size: 56px;
+  font-size: 50px;
   font-weight: 400;
 }
 
@@ -1479,7 +1241,7 @@ h2,
 .menu-header h2,
 .form-header h2,
 .confirmation-card h2 {
-  font-family: var(--font-secondary), serif;
+  font-family: var(--font-secondary);
   font-size: 40px;
   font-weight: 400;
 }
@@ -1526,8 +1288,23 @@ p,
 
 @media (max-width: 1024px) {
 
+  .hero {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+   
+  }
+
+  .hero-content p {
+    font-size: 19px;
+  }
+
+
   h1 {
-    font-size: 46px;
+    font-size: 45px;
   }
 
   h2 {
@@ -1603,3 +1380,4 @@ p,
   }
 
 }
+
