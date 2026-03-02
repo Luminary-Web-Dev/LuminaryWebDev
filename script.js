@@ -389,24 +389,26 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   }
 
 /* ================= RESERVATION ================= */
-if (document.getElementById("reservationHeroTitle")) {
+document.addEventListener("DOMContentLoaded", function () {
 
-  fetch("/content/reservation.json")
-    .then(res => res.json())
-    .then(data => {
+  const form = document.getElementById("reservationForm");
+  if (!form) return;   // only run on reservation page
 
-      document.getElementById("reservationHeroTitle").textContent =
-        data.hero_title || "";
+  const nextBtn = document.getElementById("nextBtn");
+  const backBtn = document.getElementById("backBtn");
+  const step1 = document.getElementById("step1");
+  const step2 = document.getElementById("step2");
 
-      const heroImage = document.getElementById("reservationHeroImage");
+  nextBtn.addEventListener("click", function () {
+    step1.classList.remove("active");
+    step2.classList.add("active");
+  });
 
-      if (data.hero_image && heroImage) {
-        heroImage.src = data.hero_image;
-        heroImage.style.display = "block";
-      }
+  backBtn.addEventListener("click", function () {
+    step2.classList.remove("active");
+    step1.classList.add("active");
+  });
 
-    })
-    .catch(err => console.error("Reservation CMS error:", err));
-}
+});
 
 });
