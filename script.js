@@ -389,25 +389,106 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   }
 
 /* ================= RESERVATION ================= */
+
+
+/* ================= RESERVATION COMPLETE LOGIC ================= */
+
 document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("reservationForm");
-  if (!form) return;   // only run on reservation page
+  if (!form) return;
 
   const nextBtn = document.getElementById("nextBtn");
   const backBtn = document.getElementById("backBtn");
   const step1 = document.getElementById("step1");
   const step2 = document.getElementById("step2");
 
+  const partySizeSelect = document.getElementById("partySizeSelect");
+  const dateSelect = document.getElementById("dateSelect");
+  const timeSelect = document.getElementById("timeSelect");
+  const occasionSelect = document.getElementById("occasionSelect");
+
+  const partySizeHidden = document.getElementById("partySizeHidden");
+  const dateHidden = document.getElementById("dateHidden");
+  const timeHidden = document.getElementById("timeHidden");
+  const occasionHidden = document.getElementById("occasionHidden");
+
+  // STEP 1 → STEP 2
   nextBtn.addEventListener("click", function () {
+
+    if (!partySizeSelect.value || !dateSelect.value || !timeSelect.value) {
+      alert("Please complete all required fields.");
+      return;
+    }
+
+    // Sync hidden fields
+    partySizeHidden.value = partySizeSelect.value;
+    dateHidden.value = dateSelect.value;
+    timeHidden.value = timeSelect.value;
+    occasionHidden.value = occasionSelect.value;
+
     step1.classList.remove("active");
     step2.classList.add("active");
   });
 
+  // BACK BUTTON
   backBtn.addEventListener("click", function () {
     step2.classList.remove("active");
     step1.classList.add("active");
   });
+
+  // STORE DATA BEFORE SUBMIT
+  form.addEventListener("submit", function () {
+
+    const reservationData = {
+      partySize: partySizeHidden.value,
+      date: dateHidden.value,
+      time: timeHidden.value,
+      occasion: occasionHidden.value,
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      dietary: form.dietary.value,
+      requests: form.requests.value
+    };
+
+    sessionStorage.setItem("reservationData", JSON.stringify(reservationData));
+  });
+
+});
+
+/* ================= CONFIRMATION PAGE ================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const confirmDateTime = document.getElementById("confirmDateTime");
+  if (!confirmDateTime) return; // only run on confirmation page
+
+  const data = JSON.parse(sessionStorage.getItem("reservationData"));
+  if (!data) return;
+
+  // Date & Time
+  if (data.date && data.time) {
+    confirmDateTime.textContent = data.date + " — " + data.time;
+  }
+
+  // Party Size
+  const confirmPartySize = document.getElementById("confirmPartySize");
+  if (confirmPartySize) {
+    confirmPartySize.textContent = data.partySize;
+  }
+
+  // Occasion
+  const confirmOccasion = document.getElementById("confirmOccasion");
+  if (confirmOccasion) {
+    confirmOccasion.textContent = data.occasion || "Not specified";
+  }
+
+  // Email
+  const confirmEmail = document.getElementById("confirmEmail");
+  if (confirmEmail) {
+    confirmEmail.textContent = data.email;
+  }
 
 });
 
