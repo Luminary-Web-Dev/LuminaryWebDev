@@ -103,25 +103,54 @@ if (document.getElementById("heroTitle")) {
       document.getElementById("chefText").textContent = data.chef_text || "";
 
      // ===== HERO MEDIA (Video First, Image Fallback) =====
-const heroImage = document.getElementById("heroImage");
-const heroVideo = document.getElementById("heroVideo");
+//const heroImage = document.getElementById("heroImage");
+//const heroVideo = document.getElementById("heroVideo");
 const ourStoryImage = document.getElementById("ourStoryImage");
 const chefImage = document.getElementById("chefImage");
 
 // HERO IMAGE
-if (data.hero_image && heroImage) {
-  heroImage.src = data.hero_image;
-  heroImage.style.display = "block";
-}
+//if (data.hero_image && heroImage) {
+//  heroImage.src = data.hero_image;
+//  heroImage.style.display = "block";
+//}
 
 // HERO VIDEO (only if exists in JSON)
+//if (data.hero_video && heroVideo) {
+//  const source = heroVideo.querySelector("source");
+//  if (source) source.src = data.hero_video;
+//  heroVideo.load();
+//  heroVideo.style.display = "block";
+//} else if (heroVideo) {
+ // heroVideo.style.display = "none";
+//}
+
+const heroImage = document.getElementById("heroImage");
+const heroVideo = document.getElementById("heroVideo");
+
 if (data.hero_video && heroVideo) {
-  const source = heroVideo.querySelector("source");
-  if (source) source.src = data.hero_video;
-  heroVideo.load();
-  heroVideo.style.display = "block";
-} else if (heroVideo) {
-  heroVideo.style.display = "none";
+
+  // Extract YouTube ID
+  let videoID = "";
+
+  if (data.hero_video.includes("youtu.be")) {
+    videoID = data.hero_video.split("youtu.be/")[1]?.split("?")[0];
+  } else if (data.hero_video.includes("watch?v=")) {
+    videoID = data.hero_video.split("watch?v=")[1]?.split("&")[0];
+  }
+
+  if (videoID) {
+    heroVideo.src =
+      `https://www.youtube.com/embed/${videoID}?autoplay=1&mute=1&loop=1&playlist=${videoID}&controls=0&showinfo=0&modestbranding=1`;
+
+    heroVideo.style.display = "block";
+    if (heroImage) heroImage.style.display = "none";
+  }
+
+} else if (data.hero_image && heroImage) {
+
+  heroImage.src = data.hero_image;
+  heroImage.style.display = "block";
+  if (heroVideo) heroVideo.style.display = "none";
 }
 
       // OUR STORY IMAGE
