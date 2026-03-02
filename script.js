@@ -390,8 +390,7 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
 /* ================= RESERVATION ================= */
 
-
-/* ================= RESERVATION COMPLETE LOGIC ================= */
+/* ================= RESERVATION SUBMIT (NETLIFY SAFE) ================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -403,93 +402,145 @@ document.addEventListener("DOMContentLoaded", function () {
   const step1 = document.getElementById("step1");
   const step2 = document.getElementById("step2");
 
-  const partySizeSelect = document.getElementById("partySizeSelect");
-  const dateSelect = document.getElementById("dateSelect");
-  const timeSelect = document.getElementById("timeSelect");
-  const occasionSelect = document.getElementById("occasionSelect");
+  /* ---------- STEP 1 → STEP 2 ---------- */
 
-  const partySizeHidden = document.getElementById("partySizeHidden");
-  const dateHidden = document.getElementById("dateHidden");
-  const timeHidden = document.getElementById("timeHidden");
-  const occasionHidden = document.getElementById("occasionHidden");
+  if (nextBtn && step1 && step2) {
+    nextBtn.addEventListener("click", function () {
 
-  // STEP 1 → STEP 2
-  nextBtn.addEventListener("click", function () {
+      const party = document.getElementById("partySizeSelect").value;
+      const date = document.getElementById("dateSelect").value;
+      const time = document.getElementById("timeSelect").value;
 
-    if (!partySizeSelect.value || !dateSelect.value || !timeSelect.value) {
-      alert("Please complete all required fields.");
-      return;
-    }
+      if (!party || !date || !time) {
+        alert("Please complete all required fields.");
+        return;
+      }
 
-    // Sync hidden fields
-    partySizeHidden.value = partySizeSelect.value;
-    dateHidden.value = dateSelect.value;
-    timeHidden.value = timeSelect.value;
-    occasionHidden.value = occasionSelect.value;
+      step1.classList.remove("active");
+      step2.classList.add("active");
+    });
+  }
 
-    step1.classList.remove("active");
-    step2.classList.add("active");
-  });
+  if (backBtn && step1 && step2) {
+    backBtn.addEventListener("click", function () {
+      step2.classList.remove("active");
+      step1.classList.add("active");
+    });
+  }
 
-  // BACK BUTTON
-  backBtn.addEventListener("click", function () {
-    step2.classList.remove("active");
-    step1.classList.add("active");
-  });
+  /* ---------- FORM SUBMIT ---------- */
 
-  // STORE DATA BEFORE SUBMIT
-  form.addEventListener("submit", function () {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
     const reservationData = {
-      partySize: partySizeHidden.value,
-      date: dateHidden.value,
-      time: timeHidden.value,
-      occasion: occasionHidden.value,
-      name: form.name.value,
-      email: form.email.value,
-      phone: form.phone.value,
-      dietary: form.dietary.value,
-      requests: form.requests.value
+      partySize: document.getElementById("partySizeSelect").value,
+      date: document.getElementById("dateSelect").value,
+      time: document.getElementById("timeSelect").value,
+      occasion: document.getElementById("occasionSelect").value,
+      name: form.querySelector('input[name="name"]').value,
+      email: form.querySelector('input[name="email"]').value,
+      phone: form.querySelector('input[name="phone"]').value,
+      dietary: form.querySelector('input[name="dietary"]').value,
+      requests: form.querySelector('textarea[name="requests"]').value
     };
 
-    sessionStorage.setItem("reservationData", JSON.stringify(reservationData));
+    // Save for confirmation page
+    localStorage.setItem("reservationData", JSON.stringify(reservationData));
+
+    // Send to Netlify
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: formData
+    })
+    .then(() => {
+      window.location.href = "/confirmation.html";
+    })
+    .catch(error => {
+      console.error("Submission error:", error);
+    });
+
   });
 
 });
 
-/* ================= CONFIRMATION PAGE ================= */
+/* ================= RESERVATION SUBMIT (NETLIFY SAFE) ================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  const confirmDateTime = document.getElementById("confirmDateTime");
-  if (!confirmDateTime) return; // only run on confirmation page
+  const form = document.getElementById("reservationForm");
+  if (!form) return;
 
-  const data = JSON.parse(sessionStorage.getItem("reservationData"));
-  if (!data) return;
+  const nextBtn = document.getElementById("nextBtn");
+  const backBtn = document.getElementById("backBtn");
+  const step1 = document.getElementById("step1");
+  const step2 = document.getElementById("step2");
 
-  // Date & Time
-  if (data.date && data.time) {
-    confirmDateTime.textContent = data.date + " — " + data.time;
+  /* ---------- STEP 1 → STEP 2 ---------- */
+
+  if (nextBtn && step1 && step2) {
+    nextBtn.addEventListener("click", function () {
+
+      const party = document.getElementById("partySizeSelect").value;
+      const date = document.getElementById("dateSelect").value;
+      const time = document.getElementById("timeSelect").value;
+
+      if (!party || !date || !time) {
+        alert("Please complete all required fields.");
+        return;
+      }
+
+      step1.classList.remove("active");
+      step2.classList.add("active");
+    });
   }
 
-  // Party Size
-  const confirmPartySize = document.getElementById("confirmPartySize");
-  if (confirmPartySize) {
-    confirmPartySize.textContent = data.partySize;
+  if (backBtn && step1 && step2) {
+    backBtn.addEventListener("click", function () {
+      step2.classList.remove("active");
+      step1.classList.add("active");
+    });
   }
 
-  // Occasion
-  const confirmOccasion = document.getElementById("confirmOccasion");
-  if (confirmOccasion) {
-    confirmOccasion.textContent = data.occasion || "Not specified";
-  }
+  /* ---------- FORM SUBMIT ---------- */
 
-  // Email
-  const confirmEmail = document.getElementById("confirmEmail");
-  if (confirmEmail) {
-    confirmEmail.textContent = data.email;
-  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const reservationData = {
+      partySize: document.getElementById("partySizeSelect").value,
+      date: document.getElementById("dateSelect").value,
+      time: document.getElementById("timeSelect").value,
+      occasion: document.getElementById("occasionSelect").value,
+      name: form.querySelector('input[name="name"]').value,
+      email: form.querySelector('input[name="email"]').value,
+      phone: form.querySelector('input[name="phone"]').value,
+      dietary: form.querySelector('input[name="dietary"]').value,
+      requests: form.querySelector('textarea[name="requests"]').value
+    };
+
+    // Save for confirmation page
+    localStorage.setItem("reservationData", JSON.stringify(reservationData));
+
+    // Send to Netlify
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: formData
+    })
+    .then(() => {
+      window.location.href = "/confirmation.html";
+    })
+    .catch(error => {
+      console.error("Submission error:", error);
+    });
+
+  });
 
 });
+
 
 });
