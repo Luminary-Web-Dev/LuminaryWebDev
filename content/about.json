@@ -11,7 +11,7 @@
   "events_video": "",
   "events_image": "/images/uploads/your-right-side-image.jpg",
   "hero_image": "/images/uploads/git_450-550_luminary_photo_-_video_atmosphere03_v2.jpg",
-  "hero_video": "https://www.youtube.com/embed/ElWSdcg67RY",
+  "hero_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ElWSdcg67RY\" frameborder=\"0\" allowfullscreen></iframe>",
   "story_text": "Luminary is an approachable, fine-dining experience with rustic textures and celestial inspiration. Guided by the vision of our founder, John Luminary, here our seasonally driven menu is informed by the surrounding environment,forest, field, and stream.\n\nFor over 10 years, Luminary has worked tirelessly to bolster a commitment to sustainability, ensuring that luxury doesn’t have to come at the cost of our environment. Through thoughtful technique and carefully sourced ingredients, each dish is designed to reveal depth, contrast, and luminary discovery.",
   "chef_title": "Chef Philosophy"
 }
