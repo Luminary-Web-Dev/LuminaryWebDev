@@ -69,7 +69,7 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 }
 
 .nav-links a {
@@ -1134,7 +1134,7 @@ html {
 
 .hamburger {
   display: none;
-  font-size: 26px;
+  font-size: 24px;
   background: none;
   border: none;
   color: var(--cream);
@@ -1343,9 +1343,48 @@ p,
     font-size: 13px;
   }
 
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
+  /* Center logo */
+  .nav-container {
+    justify-content: center;
+    position: relative;
+  }
+
+  .logo {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Hide nav links initially */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: var(--deep);
+    padding: 30px 0;
+    text-align: center;
+    gap: 25px;
+  }
+
+  /* Show when active */
+  .nav-links.active {
+    display: flex;
+  }
 
 }
+
+
 
 /* =====================================================
    SMALL PHONES (≤480px)
@@ -1371,3 +1410,95 @@ p,
   }
 
 }
+
+@media (max-width: 480px) {
+
+  /* Make site full width */
+  .site-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Remove side padding globally */
+  .container,
+  .nav-container,
+  .page-width {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Stack split sections */
+  .split-section {
+    flex-direction: column !important;
+    padding: 60px 20px !important;
+    gap: 30px !important;
+  }
+
+  .split-media {
+    order: -1;
+    width: 100%;
+  }
+
+  /* Fix hero */
+  .page-hero {
+    height: auto !important;
+    padding: 80px 20px !important;
+  }
+
+  .hero-content {
+    text-align: left; /* your mockup keeps it left aligned */
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 30px !important;
+    line-height: 1.2;
+  }
+   .nav-container {
+    position: relative;
+    justify-content: center;
+  }
+
+  /* Center logo */
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+  }
+
+  /* Hide links by default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--deep);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  /* Show when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+
+
+}
+
