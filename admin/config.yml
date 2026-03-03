@@ -118,3 +118,16 @@ collections:
           - { label: "Hero Title", name: "hero_title", widget: "string" }
           - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
           - { label: "Hero Video (YouTube Link)", name: "hero_video", widget: "string", required: false }
+
+
+    # ================= CONFIRMATION =================
+  - name: "confirmation"
+    label: "Confirmation Page"
+    files:
+    - label: "Confirmation Hero"
+      name: "confirmation"
+      file: "content/confirmation.json"
+      format: "json"
+      fields:
+        - { label: "Hero Title", name: "hero_title", widget: "string" }
+        - { label: "Hero Image", name: "hero_image", widget: "image" }
