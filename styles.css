@@ -210,6 +210,14 @@ max-width: 750px;   /* smaller width = more line breaks */
    
 }
 .hero-content h1 {
+  color:var(--cream);
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero-content  {
+  color:  var(--cream);
   font-size: 56px;
   line-height: 1.1;
   margin-bottom: 24px;
@@ -636,6 +644,12 @@ section.welcome h2 {
   margin: 50px 0 25px;
 }
 
+.footer-divider {
+  max-width: 1024px;
+  width: 100%;
+  border-top: 1px solid rgba(255,250,236,0.4);
+  margin: 40px auto; /* centers it */
+}
 .footer-bottom {
   color: var(--cream);
   display: flex;
@@ -1357,4 +1371,3 @@ p,
   }
 
 }
-
