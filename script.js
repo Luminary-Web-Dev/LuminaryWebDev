@@ -391,8 +391,6 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 /* ================= RESERVATION ================= */
 
 
-/* ================= RESERVATION SUBMIT (NETLIFY SAFE) ================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("reservationForm");
@@ -403,9 +401,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const step1 = document.getElementById("step1");
   const step2 = document.getElementById("step2");
 
-  /* ---------- STEP 1 → STEP 2 ---------- */
+  /* ---------- STEP SWITCHING ---------- */
 
-  if (nextBtn && step1 && step2) {
+  if (nextBtn) {
     nextBtn.addEventListener("click", function () {
 
       const party = document.getElementById("partySizeSelect").value;
@@ -422,14 +420,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  if (backBtn && step1 && step2) {
+  if (backBtn) {
     backBtn.addEventListener("click", function () {
       step2.classList.remove("active");
       step1.classList.add("active");
     });
   }
-
-  
 
   /* ---------- FORM SUBMIT ---------- */
 
@@ -437,26 +433,22 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
     const reservationData = {
+      dateTime:
+        document.getElementById("dateSelect").value +
+        " at " +
+        document.getElementById("timeSelect").value,
       partySize: document.getElementById("partySizeSelect").value,
-      date: document.getElementById("dateSelect").value,
-      time: document.getElementById("timeSelect").value,
       occasion: document.getElementById("occasionSelect").value,
-      name: form.querySelector('input[name="name"]').value,
-      email: form.querySelector('input[name="email"]').value,
-      phone: form.querySelector('input[name="phone"]').value,
-      dietary: form.querySelector('input[name="dietary"]').value,
-      requests: form.querySelector('textarea[name="requests"]').value
+      email: form.querySelector('input[name="email"]').value
     };
 
-    // Save for confirmation page
+    // Save to localStorage
     localStorage.setItem("reservationData", JSON.stringify(reservationData));
 
     // Send to Netlify
-    const formData = new FormData(form);
-
     fetch("/", {
       method: "POST",
-      body: formData
+      body: new FormData(form)
     })
     .then(() => {
       window.location.href = "/confirmation.html";
@@ -468,35 +460,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
-document.getElementById("reservationForm")
-.addEventListener("submit", function(e) {
+  
 
-  const partySize = document.getElementById("partySizeSelect").value;
-  const date = document.getElementById("dateSelect").value;
-  const time = document.getElementById("timeSelect").value;
-  const occasion = document.getElementById("occasionSelect").value;
+  /* ---------- FORM SUBMIT ---------- */
 
-  sessionStorage.setItem("partySize", partySize);
-  sessionStorage.setItem("date", date);
-  sessionStorage.setItem("time", time);
-  sessionStorage.setItem("occasion", occasion);
-});
+ document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", function() {
+  if (!window.location.pathname.includes("confirmation.html")) return;
+
+  const data = JSON.parse(localStorage.getItem("reservationData"));
+
+  if (!data) return;
+
+  document.getElementById("confirmDateTime").textContent =
+    data.dateTime || "";
 
   document.getElementById("confirmPartySize").textContent =
-    sessionStorage.getItem("partySize") || "";
-
-  document.getElementById("confirmDate").textContent =
-    sessionStorage.getItem("date") || "";
-
-  document.getElementById("confirmTime").textContent =
-    sessionStorage.getItem("time") || "";
+    data.partySize || "";
 
   document.getElementById("confirmOccasion").textContent =
-    sessionStorage.getItem("occasion") || "";
+    data.occasion || "";
+
+  document.getElementById("confirmEmail").textContent =
+    data.email || "";
 
 });
-
-
 });
