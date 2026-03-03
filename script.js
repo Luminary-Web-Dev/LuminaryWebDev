@@ -429,6 +429,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  
+
   /* ---------- FORM SUBMIT ---------- */
 
   form.addEventListener("submit", function (e) {
@@ -464,6 +466,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   });
+
+});
+document.getElementById("reservationForm")
+.addEventListener("submit", function(e) {
+
+  const partySize = document.getElementById("partySizeSelect").value;
+  const date = document.getElementById("dateSelect").value;
+  const time = document.getElementById("timeSelect").value;
+  const occasion = document.getElementById("occasionSelect").value;
+
+  sessionStorage.setItem("partySize", partySize);
+  sessionStorage.setItem("date", date);
+  sessionStorage.setItem("time", time);
+  sessionStorage.setItem("occasion", occasion);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  document.getElementById("confirmPartySize").textContent =
+    sessionStorage.getItem("partySize") || "";
+
+  document.getElementById("confirmDate").textContent =
+    sessionStorage.getItem("date") || "";
+
+  document.getElementById("confirmTime").textContent =
+    sessionStorage.getItem("time") || "";
+
+  document.getElementById("confirmOccasion").textContent =
+    sessionStorage.getItem("occasion") || "";
 
 });
 
