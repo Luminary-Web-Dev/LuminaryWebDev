@@ -485,4 +485,27 @@ document.addEventListener("DOMContentLoaded", function () {
     data.email || "";
 
 });
+
+/* ================= CONFIRMATION HERO CMS ================= */
+
+if (window.location.pathname.includes("confirmation.html")) {
+
+  fetch("/content/confirmation.json")
+    .then(res => res.json())
+    .then(data => {
+
+      const heroTitle = document.getElementById("confirmationHeroTitle");
+      const heroImage = document.getElementById("confirmationHeroImage");
+
+      if (heroTitle) {
+        heroTitle.textContent = data.hero_title || "";
+      }
+
+      if (heroImage && data.hero_image) {
+        heroImage.src = data.hero_image;
+      }
+
+    })
+    .catch(err => console.error("Confirmation CMS error:", err));
+}
 });
