@@ -390,7 +390,27 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
 /* ================= RESERVATION ================= */
 
+document.addEventListener("DOMContentLoaded", function () {
 
+  fetch("/content/reservation.json")
+    .then(response => response.json())
+    .then(data => {
+
+      const title = document.getElementById("reservationHeroTitle");
+      const image = document.getElementById("reservationHeroImage");
+
+      if (title && data.hero_title) {
+        title.textContent = data.hero_title;
+      }
+
+      if (image && data.hero_image) {
+        image.src = data.hero_image;
+      }
+
+    })
+    .catch(error => console.error("CMS load error:", error));
+
+});
 document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("reservationForm");
