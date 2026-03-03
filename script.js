@@ -509,14 +509,14 @@ if (window.location.pathname.includes("confirmation.html")) {
     .catch(err => console.error("Confirmation CMS error:", err));
 }
 
-if (window.location.pathname.includes("confirmation.html")) {
+if (window.location.pathname.includes("reservation.html")) {
 
-  fetch("/content/confirmation.json")
+  fetch("/content/reservation.json")
     .then(res => res.json())
     .then(data => {
 
-      const heroTitle = document.getElementById("confirmationHeroTitle");
-      const heroImage = document.getElementById("confirmationHeroImage");
+      const heroTitle = document.getElementById("reservationHeroTitle");
+      const heroImage = document.getElementById("reservationHeroImage");
 
       if (heroTitle) {
         heroTitle.textContent = data.hero_title || "";
@@ -527,7 +527,7 @@ if (window.location.pathname.includes("confirmation.html")) {
       }
 
     })
-    .catch(err => console.error("Confirmation CMS error:", err));
+    .catch(err => console.error("Reservation CMS error:", err));
 }
 
 
